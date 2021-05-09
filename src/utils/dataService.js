@@ -31,6 +31,7 @@ export const adverts = [
         {id: 26, image: 'facebook', groupId: 3, ratio: "16:9", videoId: "HmMeUiZp-bE"},
         {id: 27, image: 'vw3', groupId: 4, ratio: "16:9"},
         {id: 28, image: 'md4', groupId: 5, ratio: "9:16"},
+        {id: 34, image: 'global1', groupId: 12, ratio: "16:9", videoId: "U9ODOh0sNW4"},
         {id: 29, image: 'trix1', groupId: 7, ratio: "16:9", videoId: "AaRhMH9-Vj8"},
         {id: 30, image: 'trix2', groupId: 7, ratio: "9:16"},
         {id: 31, image: 'covid1', groupId: 10, ratio: "9:16"},
