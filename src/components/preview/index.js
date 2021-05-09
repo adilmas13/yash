@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "preact/hooks";
-import {advertsThumbnail, artsOriginal, awardsOriginal} from "../../utils/imgService";
+import {advertsOriginal, artsOriginal, awardsOriginal} from "../../utils/imgService";
 import style from "./style.css";
 
 const Back = (props) => {
@@ -35,7 +35,6 @@ const LoadableImage = (props) => {
     return <div class={style["image-wrapper"]}>
         <img
             class={isImageLoaded ? style["visible"] : style["hidden"]}
-
             ref={imgRef}
             alt="preview"
         />
@@ -71,7 +70,7 @@ const Preview = (props) => {
     let image;
     switch (props.data.type) {
         case "adverts":
-            image = advertsThumbnail(group[pageNo].image)
+            image = advertsOriginal(group[pageNo].image)
             break;
         case "arts":
             image = artsOriginal(group[pageNo].image)
