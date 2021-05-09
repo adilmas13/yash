@@ -1,7 +1,7 @@
 export const adverts = [
     [
         {id: 1, image: 'kwality', groupId: 1, ratio: "16:9", videoId: "V4dPeIPiJbM"},
-        {id: 2, image: 'polo', groupId: 4, ratio: "16:9", videoId: "4S-7FoZZQXQ"},
+        {id: 2, image: 'polo', groupId: 13, ratio: "16:9", videoId: "4S-7FoZZQXQ"},
         {id: 3, image: 'md1', groupId: 5, ratio: "9:16"},
         {id: 4, image: 'cor1', groupId: 6, ratio: "16:9", videoId: "n47l41MalLk"},
         {id: 5, image: 'cor2', groupId: 6, ratio: "16:9"},
