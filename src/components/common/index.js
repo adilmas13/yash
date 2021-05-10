@@ -5,6 +5,7 @@ import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
 import Preview from "../preview";
 import Logo from "../logo";
+import {adverts} from "../../utils/dataService";
 
 
 const MediaCell = (props) => {
@@ -101,8 +102,17 @@ const CommonListing = (props) => {
     const [activeMedia, setActiveMedia] = useState(undefined);
 
     const onClicked = (media) => {
+        let tempData;
+        switch (type) {
+            case "adverts":
+                tempData = adverts.find(it => it.groupId === media.groupId)?.assets || [];
+                break;
+            default:
+                tempData = data.flatMap(it => it).filter(it => it.groupId === media.groupId)
+                break
+        }
         setPreviewMedia({
-            group: data.flatMap(it => it).filter(it => it.groupId === media.groupId),
+            group: tempData,
             selected: media,
             type
         })
