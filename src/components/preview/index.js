@@ -70,7 +70,7 @@ const Preview = (props) => {
     let image;
     switch (props.data.type) {
         case "adverts":
-            image = advertsOriginal(group[pageNo].image)
+            image = advertsOriginal(group[pageNo].image, group[pageNo].extension)
             break;
         case "arts":
             image = artsOriginal(group[pageNo].image)
