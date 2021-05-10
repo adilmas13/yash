@@ -14,7 +14,7 @@ const MediaCell = (props) => {
     let video;
     switch (props.type) {
         case "adverts":
-            image = advertsThumbnail(media.image)
+            image = advertsThumbnail(media.image, media.extension)
             video = advertsThumbnail(media.image, "mp4")
             break;
         case "arts":

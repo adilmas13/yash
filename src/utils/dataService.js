@@ -1,45 +1,3 @@
-export const adverts = [
-    [
-        {id: 1, image: 'kwality', groupId: 1, ratio: "16:9", videoId: "V4dPeIPiJbM"},
-        {id: 2, image: 'polo', groupId: 13, ratio: "16:9", videoId: "4S-7FoZZQXQ"},
-        {id: 3, image: 'md1', groupId: 5, ratio: "9:16"},
-        {id: 4, image: 'cor1', groupId: 6, ratio: "16:9", videoId: "n47l41MalLk"},
-        {id: 5, image: 'cor2', groupId: 6, ratio: "16:9"},
-        {id: 6, image: 'trix3', groupId: 7, ratio: "9:16"},
-        {id: 7, image: 'jeep1', groupId: 11, ratio: "16:9"},
-        {id: 8, image: 'jeep4', groupId: 11, ratio: "16:9"},
-        {id: 9, image: 'jeep8', groupId: 11, ratio: "16:9"},
-    ], [
-        {id: 10, image: 'stayfree1', groupId: 2, ratio: "16:9", videoId: "PcNKTwgZEEk"},
-        {id: 11, image: 'vw1', groupId: 4, ratio: "16:9"},
-        {id: 12, image: 'md2', groupId: 5, ratio: "9:16"},
-        {id: 13, image: 'cor3', groupId: 6, ratio: "9:16"},
-        {id: 14, image: 'happy1', groupId: 8, ratio: "16:9"},
-        {id: 15, image: 'bbc1', groupId: 9, ratio: "16:9", videoId: "Cc7ikWnHsU8"},
-        {id: 16, image: 'jeep2', groupId: 11, ratio: "16:9"},
-        {id: 17, image: 'jeep5', groupId: 11, ratio: "16:9"},
-        {id: 18, image: 'jeep9', groupId: 11, ratio: "16:9"},
-    ], [
-        {id: 19, image: 'stayfree2', groupId: 12, ratio: "16:9", videoId: "khlgJP1sICE"},
-        {id: 20, image: 'vw2', groupId: 4, ratio: "16:9"},
-        {id: 21, image: 'md3', groupId: 5, ratio: "9:16"},
-        {id: 22, image: 'cor4', groupId: 6, ratio: "9:16"},
-        {id: 23, image: 'bbc2', groupId: 9, ratio: "9:16"},
-        {id: 24, image: 'jeep3', groupId: 11, ratio: "16:9"},
-        {id: 25, image: 'jeep7', groupId: 11, ratio: "9:16"},
-    ], [
-        {id: 26, image: 'facebook', groupId: 3, ratio: "16:9", videoId: "HmMeUiZp-bE"},
-        {id: 27, image: 'vw3', groupId: 4, ratio: "16:9"},
-        {id: 28, image: 'md4', groupId: 5, ratio: "9:16"},
-        {id: 34, image: 'global1', groupId: 12, ratio: "16:9", videoId: "U9ODOh0sNW4"},
-        {id: 29, image: 'trix1', groupId: 7, ratio: "16:9", videoId: "AaRhMH9-Vj8"},
-        {id: 30, image: 'trix2', groupId: 7, ratio: "9:16"},
-        {id: 31, image: 'covid1', groupId: 10, ratio: "9:16"},
-        {id: 32, image: 'jeep6', groupId: 11, ratio: "16:9"},
-        {id: 33, image: 'jeep10', groupId: 11, ratio: "16:9"},
-    ]
-];
-
 export const arts = [
     [
         {id: 1, image: 'bumble1', groupId: 1, ratio: "9:16"},
@@ -226,3 +184,287 @@ export const slotVideosReverse = [
     "7_Reverse_Awards_Up.mp4",
     "6_Reverse_Adverts.mp4",
 ]
+
+export const adverts = [
+    {
+        groupId: "kwality-1",
+        assets: [{
+            image: "kwality",
+            ratio: "16:9",
+            videoId: "V4dPeIPiJbM",
+            column: 1
+        }]
+    },
+    {
+        groupId: "stayfree-1",
+        assets: [{
+            image: "stayfree1",
+            ratio: "16:9",
+            videoId: "PcNKTwgZEEk",
+            column: 2
+        }]
+    },
+    {
+        groupId: "stayfree-2",
+        assets: [{
+            image: "stayfree2",
+            ratio: "16:9",
+            videoId: "khlgJP1sICE",
+            column: 3
+        }]
+    },
+    {
+        groupId: "facebook",
+        assets: [{
+            image: "facebook",
+            ratio: "16:9",
+            videoId: "HmMeUiZp-bE",
+            column: 4
+        }]
+    },
+    {
+        groupId: "polo",
+        assets: [{
+            image: "polo",
+            ratio: "16:9",
+            videoId: "4S-7FoZZQXQ",
+            column: 1
+        }]
+    },
+    {
+        groupId: "volkswagen",
+        assets: [{
+            image: "vw1",
+            ratio: "16:9",
+            column: 2
+        },
+            {
+                image: "vw2",
+                ratio: "16:9",
+                column: 3
+            },
+            {
+                image: "vw3",
+                ratio: "16:9",
+                column: 4
+            }
+        ]
+    },
+    {
+        groupId: "mcdonalds-1",
+        assets: [{
+            image: "md1",
+            ratio: "9:16",
+            column: 1
+        },
+            {
+                image: "md2",
+                ratio: "9:16",
+                column: 2
+            },
+            {
+                image: "md3",
+                ratio: "9:16",
+                column: 3
+            },
+            {
+                image: "md4",
+                ratio: "9:16",
+                column: 4
+            }
+        ]
+    },
+    {
+        groupId: "cornetto",
+        assets: [{
+            image: "cor1",
+            ratio: "16:9",
+            videoId: "n47l41MalLk",
+            column: 1
+        },
+            {
+                image: "cor2",
+                ratio: "16:9",
+                column: 1
+            },
+            {
+                image: "cor3",
+                ratio: "9:16",
+                column: 2
+            },
+            {
+                image: "cor4",
+                ratio: "9:16",
+                column: 3
+            },
+            {
+                image: "cor5",
+                ratio: "16:9",
+                videoId: "GQy4T2PLPm4",
+                column: 2
+            }
+        ]
+    },
+    {
+        groupId: "walls-global",
+        assets: [{
+            image: "global1",
+            ratio: "16:9",
+            videoId: "U9ODOh0sNW4",
+            column: 4
+        }]
+    },
+    {
+        groupId: "trix",
+        assets: [
+            {
+                image: "trix1",
+                ratio: "16:9",
+                videoId: "AaRhMH9-Vj8",
+                column: 4
+            },
+            {
+                image: "trix2",
+                ratio: "9:16",
+                column: 4
+            },
+            {
+                image: "trix3",
+                ratio: "9:16",
+                column: 4
+            },
+        ]
+    },
+    {groupId: "result", assets: [{image: "result", ratio: "16:9", videoId: "9DfxqhSHhC4", column: 1}]},
+    {
+        groupId: "happy",
+        assets: [{
+            image: "happy1",
+            ratio: "16:9",
+            column: 1
+        }]
+    },
+    {
+        groupId: "bbc",
+        assets: [{
+            image: "bbc1",
+            ratio: "16:9",
+            videoId: "Cc7ikWnHsU8",
+            column: 2
+        },
+            {
+                image: "bbc2",
+                ratio: "9:16",
+                column: 3
+            }
+        ]
+    },
+    {
+        groupId: "jeep",
+        assets: [{
+            image: "jeep1",
+            ratio: "16:9",
+            column: 1
+        },
+            {
+                image: "jeep2",
+                ratio: "16:9",
+                column: 2
+            },
+            {
+                image: "jeep3",
+                ratio: "16:9",
+                column: 3
+            },
+            {
+                image: "jeep4",
+                ratio: "16:9",
+                column: 1
+            },
+            {
+                image: "jeep5",
+                ratio: "16:9",
+                column: 2
+            },
+            {
+                image: "jeep6",
+                ratio: "16:9",
+                column: 1
+            },
+            {
+                image: "jeep7",
+                ratio: "16:9",
+                column: 2
+            },
+            {
+                image: "jeep8",
+                ratio: "9:16",
+                column: 3
+            },
+            {
+                image: "jeep9",
+                ratio: "16:9",
+                column: 4
+            },
+            {
+                image: "jeep10",
+                ratio: "16:9",
+                column: 4
+            }
+        ]
+    },
+    {
+        groupId: "volkswagen-new", assets: [
+            {image: "vw-1", ratio: "16:9", column: 1},
+            {image: "vw-2", ratio: "16:9", column: 2},
+            {image: "vw-3", ratio: "16:9", column: 1},
+            {image: "vw-4", ratio: "16:9", column: 2},
+            {image: "vw-5", ratio: "16:9", column: 3},
+            {image: "vw-6", ratio: "16:9", column: 4},
+            {image: "vw-7", ratio: "16:9", column: 1},
+            {image: "vw-8", ratio: "16:9", column: 2},
+            {image: "vw-9", ratio: "16:9", column: 3},
+            {image: "vw-10", ratio: "16:9", column: 4},
+            {image: "vw-11", ratio: "16:9", extension: "gif", column: 1},
+        ]
+    },
+    {
+        groupId: "mac-d", assets: [
+            {image: "mc1", ratio: "9:16", column: 2},
+            {image: "mc2", ratio: "9:16", column: 3},
+            {image: "mc3", ratio: "9:16", column: 4},
+        ]
+    },
+    {
+        groupId: "covid",
+        assets: [{
+            image: "covid1",
+            ratio: "9:16",
+            videoId: "Lx23epi7WgA",
+            column: 1
+        }]
+    },
+];
+
+export const getAdverts = () => {
+    let id = 0;
+    let reducer = (accumulator, currentValue) => {
+        let groupId = currentValue.groupId;
+        let assets = currentValue.assets.map(it => {
+            it["groupId"] = groupId;
+            it["id"] = id++;
+            return it;
+        })
+        assets.forEach(it => {
+            if (accumulator.has(it.column)) {
+                accumulator.get(it.column).push(it);
+            } else {
+                accumulator.set(it.column, [it]);
+            }
+        })
+        return accumulator;
+    };
+
+    let result = adverts.reduce(reducer, new Map());
+    return Array.from(result.values());
+};
