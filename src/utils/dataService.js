@@ -170,18 +170,20 @@ export const awardsOriginal = [
     },
 ]
 
-export const homeVideoSlots = [
+export const homeVideoForwardSlots = [
     {start: 1, end: 12},
     {start: 12, end: 24},
     {start: 24, end: 33},
     {start: 33, end: 55},
     {start: 55, end: 65},
+];
 
+export const homeVideoReverseSlots = [
     {start: 65, end: 82},
     {start: 82, end: 86},
     {start: 86, end: 93},
     {start: 93.5, end: 108},
-];
+]
 
 export const adverts = [
     {

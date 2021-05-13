@@ -4,7 +4,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
-import {homeVideoSlots} from "../../utils/dataService";
+import {homeVideoForwardSlots, homeVideoReverseSlots, homeVideoSlots} from "../../utils/dataService";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
@@ -121,7 +121,7 @@ const Yash = () => <div class={style["yash-text-wrapper"]}>
 const Home = () => {
 
     const [action, setAction] = useState({
-        position: 4,
+        position: 0,
         direction: "none"
     })
     const videoRef = createRef()
@@ -171,11 +171,9 @@ const Home = () => {
 
     useEffect(() => {
         const video = videoRef.current;
-        // video.muted = true; // added to enable auto play but results in video being mute
-        const position = action.direction === "previous"
-            ? homeVideoSlots.length - 1 + action.position
-            : action.position;
-        let {start, end} = homeVideoSlots[position];
+        const {start, end} = action.direction === "previous"
+            ? homeVideoReverseSlots[homeVideoReverseSlots.length - 1 - action.position]
+            : homeVideoForwardSlots[action.position];
         video.pause();
         video.currentTime = start;
 
@@ -186,7 +184,6 @@ const Home = () => {
         }
 
         video.addEventListener('timeupdate', progressListener);
-        video.muted = false;
         video.play();
         return () => video.removeEventListener('timeupdate', progressListener);
     }, [action])
