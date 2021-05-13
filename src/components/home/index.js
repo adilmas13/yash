@@ -2,9 +2,9 @@
 import React, {createRef} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import {slotVideos, slotVideosReverse} from "../../utils/dataService";
 import {route} from "preact-router";
 import Logo from "../logo";
+import {homeVideoSlots} from "../../utils/dataService";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
@@ -88,7 +88,8 @@ const SlotMachine = (props) => {
         }
     }
 
-    const noOp = () => {};
+    const noOp = () => {
+    };
 
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
@@ -100,7 +101,8 @@ const SlotMachine = (props) => {
                 onClick={() => props.direction !== "none" ? props.onPreviousClick() : noOp()} />
             <div class={style["slot-container"]}>
                 <div class={style["a-text"]}>A</div>
-                <div class={style.slot} ref={slotsRef} onClick={() => props.direction !== "none" ? redirect() : noOp()} />
+                <div class={style.slot} ref={slotsRef}
+                     onClick={() => props.direction !== "none" ? redirect() : noOp()} />
             </div>
             <img
                 id="down_arrow"
@@ -117,18 +119,12 @@ const Yash = () => <div class={style["yash-text-wrapper"]}>
 </div>
 
 const Home = () => {
+
     const [action, setAction] = useState({
         position: 4,
         direction: "none"
     })
     const videoRef = createRef()
-
-    const playVideo = (src) => {
-        const video = videoRef.current
-        video.pause()
-        video.src = `assets/videos/${src}`
-        video.play()
-    }
 
     const onNextClicked = () => {
         setAction(action => {
@@ -174,18 +170,32 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        const direction = action.direction;
-        const position = action.position;
-        if (action.direction !== "none") {
-            playVideo(direction === "next" ? slotVideos[position] : slotVideosReverse[position])
+        const video = videoRef.current;
+        // video.muted = true; // added to enable auto play but results in video being mute
+        const position = action.direction === "previous"
+            ? homeVideoSlots.length - 1 + action.position
+            : action.position;
+        let {start, end} = homeVideoSlots[position];
+        video.pause();
+        video.currentTime = start;
+
+        const progressListener = () => {
+            if (video.currentTime >= end) {
+                video.pause();
+            }
         }
+
+        video.addEventListener('timeupdate', progressListener);
+        video.muted = false;
+        video.play();
+        return () => video.removeEventListener('timeupdate', progressListener);
     }, [action])
 
     return <div class={style.parent}>
         <div class={style.body}>
             <div class={style["three-layer"]}>
                 <Yash />
-                <video ref={videoRef} src={"assets/videos/1_Ambre_First.mp4"} preload autoplay={true} />
+                <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoplay={true} />
                 <SlotMachine
                     position={action.position}
                     direction={action.direction}
