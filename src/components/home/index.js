@@ -121,7 +121,7 @@ const Yash = () => <div class={style["yash-text-wrapper"]}>
 const Home = () => {
 
     const [action, setAction] = useState({
-        position: 0,
+        position: 4,
         direction: "none"
     })
     const videoRef = createRef()
@@ -170,6 +170,9 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
+        if (action.direction === "none"){
+            return;
+        }
         const video = videoRef.current;
         const {start, end} = action.direction === "previous"
             ? homeVideoReverseSlots[homeVideoReverseSlots.length - 1 - action.position]
