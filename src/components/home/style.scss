@@ -1,5 +1,21 @@
 @import "../../assets/styles/colors";
 
+:global(.up-animation) {
+  animation: UpArrowAnim 1s linear infinite;
+}
+
+:global(.down-animation) {
+  animation: DownArrowAnim 1s linear infinite;
+}
+
+:global(.up-animation-once) {
+  animation: UpArrowAnim 1s linear;
+}
+
+:global(.down-animation-once) {
+  animation: DownArrowAnim 1s linear;
+}
+
 .parent {
   display: flex;
   position: relative;
@@ -73,7 +89,6 @@
             opacity: 0.7;
             cursor: pointer;
             margin-left: 32%;
-            animation: UpArrowAnim 1s linear infinite;
           }
 
           .down-arrow {
@@ -82,7 +97,6 @@
             transform: rotate(180deg);
             cursor: pointer;
             margin-left: 32%;
-            animation: DownArrowAnim 1s linear infinite;
           }
         }
       }

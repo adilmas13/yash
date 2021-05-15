@@ -1,3 +1,15 @@
+:global(.up-animation) {
+  animation: UpArrowAnim 1s linear infinite; }
+
+:global(.down-animation) {
+  animation: DownArrowAnim 1s linear infinite; }
+
+:global(.up-animation-once) {
+  animation: UpArrowAnim 1s linear; }
+
+:global(.down-animation-once) {
+  animation: DownArrowAnim 1s linear; }
+
 .parent {
   display: flex;
   position: relative;
@@ -53,15 +65,13 @@
             width: 30px;
             opacity: 0.7;
             cursor: pointer;
-            margin-left: 32%;
-            animation: UpArrowAnim 1s linear infinite; }
+            margin-left: 32%; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
             opacity: 0.7;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 32%;
-            animation: DownArrowAnim 1s linear infinite; }
+            margin-left: 32%; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;

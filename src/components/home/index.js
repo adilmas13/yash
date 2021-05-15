@@ -4,7 +4,8 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
-import {homeVideoForwardSlots, homeVideoReverseSlots, homeVideoSlots} from "../../utils/dataService";
+import {homeVideoForwardSlots, homeVideoReverseSlots} from "../../utils/dataService";
+import {animateDownArrowOnClick, animateUpArrowOnClick, cancelAnimation} from "./animationController";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
@@ -145,6 +146,10 @@ const Home = () => {
     }
 
     useEffect(() => {
+        const downArrow = document.getElementById("down_arrow");
+        const upArrow = document.getElementById("up_arrow");
+        if (upArrow) upArrow.classList.add("up-animation");
+        if (downArrow) downArrow.classList.add("down-animation");
         let innerTimer;
         const outerTimer = setTimeout(() => {
             setAction({
@@ -156,11 +161,9 @@ const Home = () => {
                     position: 0,
                     direction: "next"
                 })
-                const downArrow = document.getElementById("down_arrow");
-                if (downArrow) downArrow.style.animation = "none";
 
-                const upArrow = document.getElementById("up_arrow");
-                if (upArrow) upArrow.style.animation = "none";
+                if (downArrow) downArrow.classList.remove("down-animation");
+                if (upArrow) upArrow.classList.remove("up-animation");
             }, 1700)
         }, 500)
         return () => {
@@ -170,7 +173,7 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        if (action.direction === "none"){
+        if (action.direction === "none") {
             return;
         }
         const video = videoRef.current;
@@ -189,6 +192,27 @@ const Home = () => {
         video.addEventListener('timeupdate', progressListener);
         video.play();
         return () => video.removeEventListener('timeupdate', progressListener);
+    }, [action])
+
+    useEffect(() => {
+        let animation;
+        const direction = action.direction;
+        if (direction === "none") {
+            return;
+        }
+        switch (direction) {
+            case "next": {
+                animation = animateDownArrowOnClick();
+                break;
+            }
+            case "previous": {
+                animation = animateUpArrowOnClick();
+                break;
+            }
+        }
+        return () => {
+            cancelAnimation(animation);
+        }
     }, [action])
 
     return <div class={style.parent}>
