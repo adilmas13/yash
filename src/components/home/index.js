@@ -5,7 +5,18 @@ import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
 import {homeVideoForwardSlots, homeVideoReverseSlots} from "../../utils/dataService";
-import {animateDownArrowOnClick, animateUpArrowOnClick, cancelAnimation} from "./animationController";
+import {
+    animateDownArrowInfinitely,
+    animateDownArrowOnClick,
+    animateUpArrowInfinitely,
+    animateUpArrowOnClick,
+    cancelAnimation,
+    hideDownArrow,
+    hideUpArrow,
+    showDownArrow,
+    showUpArrow
+} from "./animationController";
+import {downArrow, upArrow} from "./utils";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
@@ -59,6 +70,7 @@ const SlotMachine = (props) => {
     }, [])
 
     useEffect(() => {
+        let position = props.position;
         let cellHeight = document.getElementsByClassName("cell")[0].clientHeight;
         let children = slotsRef.current.childNodes
         for (let i = 0; i < children.length; ++i) {
@@ -68,7 +80,7 @@ const SlotMachine = (props) => {
                 column.style.transition = "all 1s ease-in-out";
                 column.style.transitionDelay = `${delay}s`;
             }
-            column.style.transform = `translateY(-${cellHeight * props.position}px)`;
+            column.style.transform = `translateY(-${cellHeight * position}px)`;
         }
     }, [props.position])
 
@@ -89,28 +101,26 @@ const SlotMachine = (props) => {
         }
     }
 
-    const noOp = () => {
-    };
-
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
             <img
                 id="up_arrow"
-                style={{visibility: (props.position === 0 && props.direction !== "none") ? "hidden" : "visible"}}
                 class={style.arrow}
                 src={"assets/arrow.svg"}
-                onClick={() => props.direction !== "none" ? props.onPreviousClick() : noOp()} />
+                onClick={() => props.onPreviousClick()} />
+
             <div class={style["slot-container"]}>
                 <div class={style["a-text"]}>A</div>
-                <div class={style.slot} ref={slotsRef}
-                     onClick={() => props.direction !== "none" ? redirect() : noOp()} />
+                <div class={style.slot}
+                     ref={slotsRef}
+                     onClick={() => redirect()} />
             </div>
+
             <img
                 id="down_arrow"
-                style={{visibility: (props.position < 4 || props.direction === "none") ? "visible" : "hidden"}}
                 class={style["down-arrow"]}
                 src={"assets/arrow.svg"}
-                onClick={() => props.direction !== "none" ? props.onNextClicked() : noOp()} />
+                onClick={() => props.onNextClicked()} />
         </div>
     </div>
 }
@@ -123,8 +133,10 @@ const Home = () => {
 
     const [action, setAction] = useState({
         position: 4,
-        direction: "none"
+        direction: "next",
+        isFirst: true
     })
+
     const videoRef = createRef()
 
     const onNextClicked = () => {
@@ -145,35 +157,22 @@ const Home = () => {
         })
     }
 
-    useEffect(() => {
-        const downArrow = document.getElementById("down_arrow");
-        const upArrow = document.getElementById("up_arrow");
-        if (upArrow) upArrow.classList.add("up-animation");
-        if (downArrow) downArrow.classList.add("down-animation");
-        let innerTimer;
-        const outerTimer = setTimeout(() => {
-            setAction({
-                position: 0,
-                direction: "none"
-            })
-            innerTimer = setTimeout(() => {
-                setAction({
-                    position: 0,
-                    direction: "next"
-                })
+    const setActionWithDelay = (action, delay) => setTimeout(() => setAction(action), delay);
 
-                if (downArrow) downArrow.classList.remove("down-animation");
-                if (upArrow) upArrow.classList.remove("up-animation");
-            }, 1700)
-        }, 500)
-        return () => {
-            if (innerTimer) clearTimeout(innerTimer);
-            if (outerTimer) clearTimeout(outerTimer);
-        }
+    useEffect(() => {
+        setActionWithDelay({...action, position: 0}, 500);
+        const promises = [animateDownArrowInfinitely().finished, animateUpArrowInfinitely().finished];
+        Promise
+            .all(promises)
+            .then(() => {
+                // enable down arrow after initial arrow animations have ended and hide the top arrow;
+                downArrow().style.pointerEvents = "auto";
+                hideUpArrow(200);
+            })
     }, [])
 
     useEffect(() => {
-        if (action.direction === "none") {
+        if (action.isFirst) {
             return;
         }
         const video = videoRef.current;
@@ -195,18 +194,40 @@ const Home = () => {
     }, [action])
 
     useEffect(() => {
-        let animation;
-        const direction = action.direction;
-        if (direction === "none") {
+        if (action.isFirst) {
             return;
         }
-        switch (direction) {
+        let animation;
+        const position = action.position;
+        switch (action.direction) {
             case "next": {
+                const arrow = downArrow()
+                arrow.style.pointerEvents = "none";
                 animation = animateDownArrowOnClick();
+                animation.onfinish = () => {
+                    arrow.style.pointerEvents = "auto";
+                    if (position === 1) {
+                        showUpArrow();
+                    }
+                    if (position === 4) {
+                        hideDownArrow();
+                    }
+                }
                 break;
             }
             case "previous": {
+                const arrow = upArrow()
+                arrow.style.pointerEvents = "none";
                 animation = animateUpArrowOnClick();
+                animation.onfinish = () => {
+                    arrow.style.pointerEvents = "auto";
+                    if (position === 0) {
+                        hideUpArrow();
+                    }
+                    if (position === 3) {
+                        showDownArrow();
+                    }
+                }
                 break;
             }
         }
@@ -222,7 +243,7 @@ const Home = () => {
                 <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoplay={true} />
                 <SlotMachine
                     position={action.position}
-                    direction={action.direction}
+                    isFirstActionCall={action.isFirst}
                     onNextClicked={() => onNextClicked()}
                     onPreviousClick={() => onPreviousClick()}
                 />

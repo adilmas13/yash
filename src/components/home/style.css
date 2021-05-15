@@ -1,15 +1,3 @@
-:global(.up-animation) {
-  animation: UpArrowAnim 1s linear infinite; }
-
-:global(.down-animation) {
-  animation: DownArrowAnim 1s linear infinite; }
-
-:global(.up-animation-once) {
-  animation: UpArrowAnim 1s linear; }
-
-:global(.down-animation-once) {
-  animation: DownArrowAnim 1s linear; }
-
 .parent {
   display: flex;
   position: relative;
@@ -65,13 +53,15 @@
             width: 30px;
             opacity: 0.7;
             cursor: pointer;
-            margin-left: 32%; }
+            margin-left: 32%;
+            pointer-events: none; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
             opacity: 0.7;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 32%; }
+            margin-left: 32%;
+            pointer-events: none; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;
@@ -85,58 +75,5 @@
     position: absolute;
     top: 0;
     left: calc(50% - 25px); }
-
-@media only screen and (max-width: 600px) {
-  .parent {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    padding: 0; }
-    .parent .body .three-layer {
-      height: auto;
-      flex-direction: column; }
-      .parent .body .three-layer .yash-text-wrapper {
-        position: relative;
-        padding: 0;
-        right: 0;
-        margin-bottom: 10px; }
-        .parent .body .three-layer .yash-text-wrapper .yash-text {
-          font-size: 10vw;
-          letter-spacing: 4px; }
-      .parent .body .three-layer video {
-        width: 150px;
-        height: 150px; }
-      .parent .body .three-layer .slot-wrapper {
-        position: relative;
-        padding: 0;
-        left: 0; }
-        .parent .body .three-layer .slot-wrapper .slot-parent {
-          align-items: center; }
-          .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
-            font-size: 10vw; }
-            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
-              display: none; }
-          .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
-            margin: 0;
-            width: 20px; }
-          .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
-            margin: 0;
-            height: 20px; }
-    .parent .body .designation {
-      border-top: 1px solid rgba(0, 0, 0, 0.7);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-      padding: 10px 0;
-      margin-top: 20px; } }
-@keyframes DownArrowAnim {
-  0%, 100% {
-    transform: translateY(0px) rotate(180deg); }
-  50% {
-    transform: translateY(10px) rotate(180deg); } }
-@keyframes UpArrowAnim {
-  0%, 100% {
-    transform: translateY(0px); }
-  50% {
-    transform: translateY(-10px); } }
 
 /*# sourceMappingURL=style.css.map */
