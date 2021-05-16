@@ -468,3 +468,9 @@ export const getAdverts = () => {
     let result = adverts.reduce(reducer, new Map());
     return Array.from(result.values());
 };
+
+const PAGE_NO_KEY = "PAGE_NO";
+
+export const setPageNo = (pageNo) => localStorage.setItem(PAGE_NO_KEY, pageNo);
+
+export const getPageNo = () => parseInt(localStorage.getItem(PAGE_NO_KEY) || "0", 10);

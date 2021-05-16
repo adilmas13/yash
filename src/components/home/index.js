@@ -4,7 +4,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
-import {homeVideoForwardSlots, homeVideoReverseSlots} from "../../utils/dataService";
+import {getPageNo, homeVideoForwardSlots, homeVideoReverseSlots, setPageNo} from "../../utils/dataService";
 import {
     animateDownArrowInfinitely,
     animateDownArrowOnClick,
@@ -70,22 +70,22 @@ const SlotMachine = (props) => {
     }, [])
 
     useEffect(() => {
-        let position = props.position;
+        let position = props.action.position;
         let cellHeight = document.getElementsByClassName("cell")[0].clientHeight;
         let children = slotsRef.current.childNodes
-        for (let i = 0; i < children.length; ++i) {
-            const column = children[i];
-            if (props.position === 0) {
-                const delay = i * 0.2;
+        children.forEach((column, index) => {
+            if (!props.action.isFirst) {
+                const delay = index * 0.2;
                 column.style.transition = "all 1s ease-in-out";
                 column.style.transitionDelay = `${delay}s`;
             }
             column.style.transform = `translateY(-${cellHeight * position}px)`;
-        }
-    }, [props.position])
+        })
+    }, [props.action.position])
 
     const redirect = () => {
-        switch (props.position) {
+        const position = props.action.position;
+        switch (position) {
             case 1 :
                 route("/about-me")
                 break;
@@ -99,6 +99,7 @@ const SlotMachine = (props) => {
                 route("/arts")
                 break;
         }
+        setPageNo(position);
     }
 
     return <div class={style["slot-wrapper"]}>
@@ -160,14 +161,20 @@ const Home = () => {
     const setActionWithDelay = (action, delay) => setTimeout(() => setAction(action), delay);
 
     useEffect(() => {
-        setActionWithDelay({...action, position: 0}, 500);
+        const pageNo = getPageNo();
+        setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
         const promises = [animateDownArrowInfinitely().finished, animateUpArrowInfinitely().finished];
         Promise
             .all(promises)
             .then(() => {
-                // enable down arrow after initial arrow animations have ended and hide the top arrow;
+                upArrow().style.pointerEvents = "auto";
                 downArrow().style.pointerEvents = "auto";
-                hideUpArrow(200);
+                if (pageNo === 0) {
+                    hideUpArrow(300);
+                }
+                if (pageNo === 4) {
+                    hideDownArrow(300)
+                }
             })
     }, [])
 
@@ -242,8 +249,7 @@ const Home = () => {
                 <Yash />
                 <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoplay={true} />
                 <SlotMachine
-                    position={action.position}
-                    isFirstActionCall={action.isFirst}
+                    action={action}
                     onNextClicked={() => onNextClicked()}
                     onPreviousClick={() => onPreviousClick()}
                 />

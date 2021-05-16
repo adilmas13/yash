@@ -48,7 +48,7 @@ export const animateUpArrowInfinitely = () => {
     return animation;
 }
 
-export const hideUpArrow = (delay) => {
+export const hideUpArrow = (delay = 0) => {
     const arrow = upArrow();
     arrow.style.pointerEvents = "none";
     const animation = arrow.animate([
@@ -59,13 +59,13 @@ export const hideUpArrow = (delay) => {
     return animation;
 };
 
-export const hideDownArrow = () => {
+export const hideDownArrow = (delay = 0) => {
     const arrow = downArrow()
     arrow.style.pointerEvents = "none";
     const animation = arrow.animate([
         {transform: 'scale(1) rotate(180deg)'},
         {transform: 'scale(0) rotate(180deg)'}
-    ], {duration: 200, fill: "forwards"});
+    ], {duration: 200, delay, fill: "forwards"});
     animation.play();
     return animation;
 }

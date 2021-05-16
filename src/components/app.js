@@ -5,10 +5,17 @@ import Adverts from "./adverts";
 import Arts from "./arts";
 import Awards from "./awards";
 import Loader from "./loader";
+import {useEffect} from "preact/hooks";
+import {setPageNo} from "../utils/dataService";
 
 
-const App = () =>
-    <Router>
+const App = () => {
+
+    useEffect(() => {
+        window.onbeforeunload = () => setPageNo(0);
+    }, [])
+
+    return <Router>
         <Home default path="home" />
         <AboutMe path="about-me" />
         <Adverts path="adverts" />
@@ -16,6 +23,7 @@ const App = () =>
         <Awards path="awards" />
         <Loader path="loader" />
     </Router>
+}
 
 
 export default App;
