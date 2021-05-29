@@ -5,7 +5,14 @@ import {aboutMeImg} from "../../utils/imgService";
 import {useEffect, useState} from "preact/hooks";
 import {getExperience} from "../../utils/calculationService";
 
-const Experience = () => {
+const data = [
+    {place: 'ddb mudra', experience: '1.7 YEARS', designation: 'senior art director'},
+    {place: 'leo burnett', experience: '3.8 YEARS', designation: 'art director'},
+    {place: 'witty arts', experience: '2.0 YEARS', designation: 'graphic designer'},
+    {place: 'percept art', experience: '1.0 YEARS', designation: 'freelance designer'}
+];
+
+const ExperienceCounter = () => {
     const [exp, setExp] = useState({
         years: 0,
         months: 0,
@@ -14,12 +21,6 @@ const Experience = () => {
         minutes: 0,
         seconds: 0
     });
-    const data = [
-        {place: 'ddb mudra', experience: '1.7 YEARS', designation: 'senior art director'},
-        {place: 'leo burnett', experience: '3.8 YEARS', designation: 'art director'},
-        {place: 'leo burnett', experience: '2.0 YEARS', designation: 'graphic designer'},
-        {place: 'percept art', experience: '1.0 YEARS', designation: 'freelance designer'}
-    ];
 
     useEffect(() => {
         // 12 April 2012
@@ -31,42 +32,86 @@ const Experience = () => {
             clearInterval(id)
         }
     });
-    return <div class={style.parent}>
-        <div class={style['image-wrapper']}>
-            <img src={aboutMeImg("experience_shadow")} alt="yash-shadow" class={style['shadow-image']} />
-            <img src={aboutMeImg("experience")} alt="yash" class={style['main-image']} />
+
+    return <div className={style['time-parent']}>
+        <div className={style.number} value="YEARS">{exp.years}</div>
+        <div className={style.colon}>:</div>
+        <div className={style.number} value="MONTHS">{exp.months}</div>
+        <div className={style.colon}>:</div>
+        <div className={style.number} value="DAYS">{exp.days}</div>
+        <div className={style.colon}>:</div>
+        <div className={style.number} value="HOURS">{exp.hours}</div>
+        <div className={style.colon}>:</div>
+        <div className={style.number} value="MINUTES">{exp.minutes}</div>
+        <div className={style.colon}>:</div>
+        <div className={style.number} value="SECONDS">{exp.seconds}</div>
+    </div>
+}
+const MobileView = () => {
+
+    return <div className={style.parent}>
+        <div className={style['top']}>
+            <div className={style['main-image-wrapper']}>
+                <img src={aboutMeImg("experience_shadow")} alt="yash-shadow" className={style['main-image-shadow']} />
+                <img src={aboutMeImg("experience")} alt="yash" className={style['main-image']} />
+                <img src={aboutMeImg("experience_smoke", "gif")} alt="yash" className={style['smoke']} />
+            </div>
         </div>
-        <div class={style['right-content']}>
-            <div class={style['details-wrapper']}>
-                <div class={style['top-wrapper']}>
-                    <div class={style.header}>experience</div>
-                    <div class={style['time-parent']}>
-                        <div class={style.number} value="YEARS">{exp.years}</div>
-                        <div class={style.colon}>:</div>
-                        <div class={style.number} value="MONTHS">{exp.months}</div>
-                        <div class={style.colon}>:</div>
-                        <div class={style.number} value="DAYS">{exp.days}</div>
-                        <div class={style.colon}>:</div>
-                        <div class={style.number} value="HOURS">{exp.hours}</div>
-                        <div class={style.colon}>:</div>
-                        <div class={style.number} value="MINUTES">{exp.minutes}</div>
-                        <div class={style.colon}>:</div>
-                        <div class={style.number} value="SECONDS">{exp.seconds}</div>
-                    </div>
+        <div className={style.middle}>
+            <div className={style['middle-wrapper']}>
+                <div className={style.header}>experience</div>
+                <ExperienceCounter />
+            </div>
+        </div>
+        <div className={style.bottom}>
+            <div className={style.details}>
+                <div className={style.titles}>
+                    {data.map(it => <span>{it.place}<span>&#8250;</span></span>)}
                 </div>
-                <div class={style['middle-wrapper']}>
-                    <div class={style.details}>
-                        <div class={style.titles}>
+                <div className={style.desc}>
+                    {data.map(it => <span>{it.experience}<span
+                        className={style.designation}>{it.designation}</span></span>)}
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+const DesktopView = () => {
+    return <div className={style.parent}>
+        <div className={style['image-wrapper']}>
+            <img src={aboutMeImg("experience_shadow")} alt="yash-shadow" className={style['shadow-image']} />
+            <img src={aboutMeImg("experience")} alt="yash" className={style['main-image']} />
+        </div>
+        <div className={style['right-content']}>
+            <div className={style['details-wrapper']}>
+                <div className={style['top-wrapper']}>
+                    <div className={style.header}>experience</div>
+                    <ExperienceCounter />
+                </div>
+                <div className={style['middle-wrapper']}>
+                    <div className={style.details}>
+                        <div className={style.titles}>
                             {data.map(it => <span>{it.place}<span>&#8250;</span></span>)}
                         </div>
-                        <div class={style.desc}>
-                            {data.map(it => <span>{it.experience}<span class={style.designation}>{it.designation}</span></span>)}
+                        <div className={style.desc}>
+                            {data.map(it => <span>{it.experience}<span
+                                className={style.designation}>{it.designation}</span></span>)}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-};
+}
+const Experience = () => <div>
+    <div className={style.desktop}>
+        <DesktopView />
+    </div>
+    <div className={style.mobile}>
+        <MobileView />
+    </div>
+</div>
 
 export default Experience;
