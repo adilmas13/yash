@@ -16,6 +16,7 @@ html, body {
     color: #353335;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow: hidden
 }
 
 * {
