@@ -1,15 +1,14 @@
-.wrapper {
-    position: relative;
-}
+.mobile {
+  display: none; }
 
-.wrapper .scroll-container {
+.desktop .wrapper {
+  position: relative; }
+  .desktop .wrapper .scroll-container {
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    width: 100vw;
-}
-
-.wrapper .left {
+    width: 100vw; }
+  .desktop .wrapper .left {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -17,10 +16,8 @@
     color: #000000;
     font-size: 18px;
     letter-spacing: 1px;
-    cursor: pointer;
-}
-
-.wrapper .right {
+    cursor: pointer; }
+  .desktop .wrapper .right {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -28,7 +25,71 @@
     color: #000000;
     font-size: 18px;
     letter-spacing: 1px;
-    cursor: pointer;
-}
+    cursor: pointer; }
+
+@media only screen and (max-width: 700px) {
+  .desktop {
+    display: none; }
+
+  .mobile {
+    display: block; }
+    .mobile .parent {
+      width: 100vw;
+      height: 100vh;
+      position: relative; }
+    .mobile .scroll-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh; }
+    .mobile .top-arrow-container {
+      position: absolute;
+      top: 0;
+      height: 12.5vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .mobile .top-arrow-container .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) scale(0); }
+        .mobile .top-arrow-container .icon-wrapper img {
+          width: 20px; }
+        .mobile .top-arrow-container .icon-wrapper div {
+          font-family: Yfx, serif;
+          color: #000000;
+          font-size: 16px;
+          letter-spacing: 4px;
+          text-transform: capitalize; }
+    .mobile .bottom-arrow-container {
+      position: absolute;
+      bottom: 0;
+      height: 12.5vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+      .mobile .bottom-arrow-container .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; }
+        .mobile .bottom-arrow-container .icon-wrapper img {
+          width: 20px;
+          transform: rotate(180deg); }
+        .mobile .bottom-arrow-container .icon-wrapper div {
+          font-family: Yfx, serif;
+          color: #000000;
+          font-size: 16px;
+          letter-spacing: 4px;
+          text-transform: capitalize; } }
 
 /*# sourceMappingURL=style.css.map */

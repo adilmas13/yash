@@ -271,26 +271,3 @@
   }
 }
 
-@media only screen and (max-width: 460px) {
-
-  .mobile {
-
-    .parent {
-
-      .middle {
-        height: 20%;
-        
-        .gender-age {
-          width: 100%;
-          font-size: 13vw;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px;
-          text-align: center;
-          padding: 20px 0 10px 0;
-        }
-      }
-    }
-  }
-
-}
