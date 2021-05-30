@@ -78,7 +78,8 @@
         flex-direction: column;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) scale(0);
+        transition: 0.3s opacity ease-out;
+        transform: translateX(-50%);
 
         img {
           width: 20px;
@@ -90,9 +91,9 @@
           font-size: 16px;
           letter-spacing: 4px;
           text-transform: capitalize;
+          margin-top: 5px;
         }
       }
-
     }
 
     .bottom-arrow-container {
@@ -110,6 +111,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        transition: 0.3s opacity ease-out;
 
         img {
           width: 20px;
@@ -122,6 +124,7 @@
           font-size: 16px;
           letter-spacing: 4px;
           text-transform: capitalize;
+          margin-bottom: 5px;
         }
       }
     }

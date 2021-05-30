@@ -20,26 +20,19 @@ const MobileView = () => {
         };
     }, [pageNo]);
 
-    useEffect(() => {
-        const downArrow = nextArrowRef.current;
-        const upArrow = previousArrowRef.current;
-
-        if (pageNo === 2 && downArrow) {
-            downArrow.animate([
-                {transform: 'scale(1)'},
-                {transform: 'scale(0)'},
-            ], {duration: 200, fill: "forwards"}).play()
-        }
-        if (pageNo === 1 && upArrow) {
-            upArrow.animate([
-                {transform: 'scale(0) translateX(-50%)'},
-                {transform: 'scale(1) translateX(-50%)'},
-            ], {duration: 200, fill: "forwards"}).play()
-        }
-    }, [pageNo]);
-
     const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
     const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+
+    const hideIcon = {
+        opacity: 0,
+        userSelect : 'none',
+        pointerEvents: 'none'
+    }
+    const showIcon = {
+        opacity: 1,
+        userSelect : 'all',
+        pointerEvents: 'all'
+    }
 
     return <div className={style.parent}>
         <div className={style['scroll-container']} id="scroller">
@@ -48,14 +41,22 @@ const MobileView = () => {
             <Literacy />
         </div>
         <div className={style['top-arrow-container']}>
-            <Logo />
-            <div className={style['icon-wrapper']} onClick={onPrevClicked} ref={previousArrowRef}>
-                <div>next</div>
+            {pageNo === 0 ? <Logo /> : <div />}
+            <div
+                style={pageNo > 0 ? showIcon : hideIcon}
+                className={style['icon-wrapper']}
+                onClick={onPrevClicked}
+                ref={previousArrowRef}>
                 <img src={'assets/arrow_blunt.svg'} />
+                <div>previous</div>
             </div>
         </div>
         <div className={style['bottom-arrow-container']}>
-            <div className={style['icon-wrapper']} onClick={onNextClicked} ref={nextArrowRef}>
+            <div
+                style={pageNo < 2 ? showIcon : hideIcon}
+                className={style['icon-wrapper']}
+                 onClick={onNextClicked}
+                 ref={nextArrowRef}>
                 <div>next</div>
                 <img src={'assets/arrow_blunt.svg'} />
             </div>

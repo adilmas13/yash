@@ -59,7 +59,8 @@
         flex-direction: column;
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) scale(0); }
+        transition: 0.3s opacity ease-out;
+        transform: translateX(-50%); }
         .mobile .top-arrow-container .icon-wrapper img {
           width: 20px; }
         .mobile .top-arrow-container .icon-wrapper div {
@@ -67,7 +68,8 @@
           color: #000000;
           font-size: 16px;
           letter-spacing: 4px;
-          text-transform: capitalize; }
+          text-transform: capitalize;
+          margin-top: 5px; }
     .mobile .bottom-arrow-container {
       position: absolute;
       bottom: 0;
@@ -81,7 +83,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column; }
+        flex-direction: column;
+        transition: 0.3s opacity ease-out; }
         .mobile .bottom-arrow-container .icon-wrapper img {
           width: 20px;
           transform: rotate(180deg); }
@@ -90,6 +93,7 @@
           color: #000000;
           font-size: 16px;
           letter-spacing: 4px;
-          text-transform: capitalize; } }
+          text-transform: capitalize;
+          margin-bottom: 5px; } }
 
 /*# sourceMappingURL=style.css.map */
