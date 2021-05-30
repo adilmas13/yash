@@ -215,6 +215,7 @@ const Home = () => {
     const onNextClicked = () => {
         setAction(action => {
             return {
+                ...action,
                 position: ++action.position,
                 direction: "next"
             }
@@ -224,6 +225,7 @@ const Home = () => {
     const onPreviousClick = () => {
         setAction(action => {
             return {
+                ...action,
                 position: --action.position,
                 direction: "previous"
             }
