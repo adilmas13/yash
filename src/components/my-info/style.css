@@ -176,5 +176,15 @@
                 font-family: b-regular-italics, serif;
                 font-size: 3.5vw;
                 margin-top: 4px; } }
+@media only screen and (max-width: 460px) {
+  .mobile .parent .middle {
+    height: 20%; }
+    .mobile .parent .middle .gender-age {
+      width: 100%;
+      font-size: 6vh;
+      text-transform: capitalize;
+      font-family: Yfx, serif;
+      word-spacing: 20px;
+      text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */
