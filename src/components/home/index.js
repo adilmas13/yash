@@ -83,6 +83,50 @@ const SlotMachine = (props) => {
         })
     }, [props.action.position])
 
+    useEffect(() => {
+        const action = props.action;
+        if (action.isFirst) {
+            return;
+        }
+        let animation;
+        const position = action.position;
+        switch (action.direction) {
+            case "next": {
+                const arrow = downArrow()
+                arrow.style.pointerEvents = "none";
+                animation = animateDownArrowOnClick();
+                animation.onfinish = () => {
+                    arrow.style.pointerEvents = "auto";
+                    if (position === 1) {
+                        showUpArrow();
+                    }
+                    if (position === 4) {
+                        hideDownArrow();
+                    }
+                }
+                break;
+            }
+            case "previous": {
+                const arrow = upArrow()
+                arrow.style.pointerEvents = "none";
+                animation = animateUpArrowOnClick();
+                animation.onfinish = () => {
+                    arrow.style.pointerEvents = "auto";
+                    if (position === 0) {
+                        hideUpArrow();
+                    }
+                    if (position === 3) {
+                        showDownArrow();
+                    }
+                }
+                break;
+            }
+        }
+        return () => {
+            cancelAnimation(animation);
+        }
+    }, [props.action])
+
     const redirect = () => {
         const position = props.action.position;
         switch (position) {
@@ -205,49 +249,6 @@ const Home = () => {
                 }
             })
     }, [])
-
-    useEffect(() => {
-        if (action.isFirst) {
-            return;
-        }
-        let animation;
-        const position = action.position;
-        switch (action.direction) {
-            case "next": {
-                const arrow = downArrow()
-                arrow.style.pointerEvents = "none";
-                animation = animateDownArrowOnClick();
-                animation.onfinish = () => {
-                    arrow.style.pointerEvents = "auto";
-                    if (position === 1) {
-                        showUpArrow();
-                    }
-                    if (position === 4) {
-                        hideDownArrow();
-                    }
-                }
-                break;
-            }
-            case "previous": {
-                const arrow = upArrow()
-                arrow.style.pointerEvents = "none";
-                animation = animateUpArrowOnClick();
-                animation.onfinish = () => {
-                    arrow.style.pointerEvents = "auto";
-                    if (position === 0) {
-                        hideUpArrow();
-                    }
-                    if (position === 3) {
-                        showDownArrow();
-                    }
-                }
-                break;
-            }
-        }
-        return () => {
-            cancelAnimation(animation);
-        }
-    }, [action])
 
     return <div class={style.parent}>
         <div class={style.body}>
