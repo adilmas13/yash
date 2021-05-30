@@ -18,6 +18,17 @@ import {
 } from "./animationController";
 import {downArrow, upArrow} from "./utils";
 
+const useIsMobileView = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakPoint = 700;
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, [])
+    return width <= breakPoint;
+}
+
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>SENIOR</div>
     <div class={style.text}>ART</div>
@@ -43,9 +54,8 @@ const SlotMachine = (props) => {
     ]
 
     useEffect(() => {
-        const media = window.matchMedia("(max-width: 600px)")
         const noOfColumns = Math.max(
-            ...media.matches
+            ...props.isMobileView
                 ? slots2.map(it => it.length)
                 : slots.map(it => it.length)
         )
@@ -57,7 +67,7 @@ const SlotMachine = (props) => {
             column.classList.add("column");
             slotContainer.appendChild(column)
         }
-        (media.matches ? slots2 : slots)
+        (props.isMobileView ? slots2 : slots)
             .forEach((item) => {
                 const temp = item.split("")
                 temp.forEach((it, index) => {
@@ -155,7 +165,7 @@ const SlotMachine = (props) => {
                 onClick={() => props.onPreviousClick()} />
 
             <div class={style["slot-container"]}>
-                <div class={style["a-text"]}>A</div>
+                {!props.isMobileView && <div className={style["a-text"]}>A</div>}
                 <div class={style.slot}
                      ref={slotsRef}
                      onClick={() => redirect()} />
@@ -178,7 +188,6 @@ const YashVideo = (props) => {
     const videoRef = createRef()
 
     useEffect(() => {
-        console.log('Video', props.action);
         const action = props.action;
         if (action.isFirst) {
             return;
@@ -204,7 +213,43 @@ const YashVideo = (props) => {
     return <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoPlay={true} />
 }
 
+const DesktopView = (props) => <div class={style.parent}>
+    <div class={style.body}>
+        <div class={style["three-layer"]}>
+            <Yash />
+            <YashVideo action={props.action} />
+            <SlotMachine
+                isMobileView={props.isMobileView}
+                action={props.action}
+                onNextClicked={() => props.onNextClicked()}
+                onPreviousClick={() => props.onPreviousClick()} />
+        </div>
+        <Designation />
+    </div>
+    <div class={style["logo-wrapper"]}>
+        <Logo />
+    </div>
+</div>
+
+const MobileView = (props) => <div className={style.parent}>
+    <div className={style["logo-wrapper"]}>
+        <Logo />
+    </div>
+    <div className={style["three-layer"]}>
+        <Yash />
+        <YashVideo action={props.action} />
+        <SlotMachine
+            isMobileView={props.isMobileView}
+            action={props.action}
+            onNextClicked={() => props.onNextClicked()}
+            onPreviousClick={() => props.onPreviousClick()} />
+        <Designation />
+    </div>
+
+</div>;
+
 const Home = () => {
+    const isMobileView = useIsMobileView();
 
     const [action, setAction] = useState({
         position: 4,
@@ -252,23 +297,19 @@ const Home = () => {
             })
     }, [])
 
-    return <div class={style.parent}>
-        <div class={style.body}>
-            <div class={style["three-layer"]}>
-                <Yash />
-                <YashVideo action={action} />
-                <SlotMachine
-                    action={action}
-                    onNextClicked={() => onNextClicked()}
-                    onPreviousClick={() => onPreviousClick()}
-                />
-            </div>
-            <Designation />
-        </div>
-        <div class={style["logo-wrapper"]}>
-            <Logo />
-        </div>
-    </div>
-};
+    return isMobileView
+        ? <MobileView
+            action={action}
+            onNextClicked={onNextClicked}
+            onPreviousClick={onPreviousClick}
+            isMobileView={isMobileView}
+        />
+        : <DesktopView
+            action={action}
+            onNextClicked={onNextClicked}
+            onPreviousClick={onPreviousClick}
+            isMobileView={isMobileView}
+        />
+}
 
 export default Home;
