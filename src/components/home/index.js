@@ -130,6 +130,36 @@ const Yash = () => <div class={style["yash-text-wrapper"]}>
     <div class={style["yash-text"]}>yash</div>
 </div>
 
+const YashVideo = (props) => {
+    const videoRef = createRef()
+
+    useEffect(() => {
+        console.log('Video', props.action);
+        const action = props.action;
+        if (action.isFirst) {
+            return;
+        }
+        const video = videoRef.current;
+        const {start, end} = action.direction === "previous"
+            ? homeVideoReverseSlots[homeVideoReverseSlots.length - 1 - action.position]
+            : homeVideoForwardSlots[action.position];
+        video.pause();
+        video.currentTime = start;
+
+        const progressListener = () => {
+            if (video.currentTime >= end) {
+                video.pause();
+            }
+        }
+
+        video.addEventListener('timeupdate', progressListener);
+        video.play();
+        return () => video.removeEventListener('timeupdate', progressListener);
+    }, [props.action])
+
+    return <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoPlay={true} />
+}
+
 const Home = () => {
 
     const [action, setAction] = useState({
@@ -137,8 +167,6 @@ const Home = () => {
         direction: "next",
         isFirst: true
     })
-
-    const videoRef = createRef()
 
     const onNextClicked = () => {
         setAction(action => {
@@ -177,28 +205,6 @@ const Home = () => {
                 }
             })
     }, [])
-
-    useEffect(() => {
-        if (action.isFirst) {
-            return;
-        }
-        const video = videoRef.current;
-        const {start, end} = action.direction === "previous"
-            ? homeVideoReverseSlots[homeVideoReverseSlots.length - 1 - action.position]
-            : homeVideoForwardSlots[action.position];
-        video.pause();
-        video.currentTime = start;
-
-        const progressListener = () => {
-            if (video.currentTime >= end) {
-                video.pause();
-            }
-        }
-
-        video.addEventListener('timeupdate', progressListener);
-        video.play();
-        return () => video.removeEventListener('timeupdate', progressListener);
-    }, [action])
 
     useEffect(() => {
         if (action.isFirst) {
@@ -247,7 +253,7 @@ const Home = () => {
         <div class={style.body}>
             <div class={style["three-layer"]}>
                 <Yash />
-                <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoplay={true} />
+                <YashVideo action={action} />
                 <SlotMachine
                     action={action}
                     onNextClicked={() => onNextClicked()}
