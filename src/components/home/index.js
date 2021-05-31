@@ -19,7 +19,7 @@ import {
 import {downArrow, upArrow} from "./utils";
 
 const useIsMobileView = () => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
     const breakPoint = 700;
     useEffect(() => {
         const handleWindowResize = () => setWidth(window.innerWidth);
