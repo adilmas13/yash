@@ -179,8 +179,8 @@ export const homeVideoForwardSlots = [
 ];
 
 export const homeVideoReverseSlots = [
-    {start: 65, end: 82},
-    {start: 82, end: 86},
+    {start: 65, end: 81},
+    {start: 81, end: 86},
     {start: 86, end: 93},
     {start: 93.5, end: 108},
 ]
