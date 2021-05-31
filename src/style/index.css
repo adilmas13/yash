@@ -3,6 +3,10 @@
     --cell-height: 72px;
     --cell-font-size: 80px;
     --cell-padding: 5px;
+
+    --cell-width-responsive: 65px;
+    --cell-height-responsive: 72px;
+    --cell-font-size-responsive: 80px;
 }
 
 html, body {
@@ -30,8 +34,8 @@ html, body {
     display: flex;
     flex-direction: column;
     width: var(--cell-width);
-
 }
+
 
 .cell {
     display: flex;
@@ -41,13 +45,29 @@ html, body {
     min-height: var(--cell-height);
 }
 
-@media only screen and (max-width: 600px) {
-
-    .cell {
-        width: auto;
-    }
+@media only screen and (max-width: 700px) {
 
     .column {
-        width: auto;
+        display: flex;
+        flex-direction: column;
+        width: 60px;
+    }
+
+    .cell {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-top: var(--cell-padding);
+        min-height: var(--cell-height);
+        font-size: 8vh;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .column {
+        display: flex;
+        flex-direction: column;
+        width: 50px;
     }
 }

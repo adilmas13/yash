@@ -90,15 +90,14 @@
     .parent .three-layer {
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      height: 70vh; }
       .parent .three-layer .yash-text-wrapper .yash-text {
-        font-size: var(--cell-font-size);
+        font-size: 8vh;
         font-family: Yfx, serif;
-        letter-spacing: 4px;
-        height: var(--cell-height); }
+        letter-spacing: 4px; }
       .parent .three-layer video {
-        width: 250px;
-        height: 250px; }
+        width: 45%; }
       .parent .three-layer .designation {
         font-family: Yfx, serif;
         display: flex;
@@ -115,13 +114,11 @@
       .parent .three-layer .slot-wrapper .slot-parent {
         display: flex;
         flex-direction: column;
-        display: flex;
         align-items: center; }
         .parent .three-layer .slot-wrapper .slot-parent .slot-container {
-          display: flex;
-          font-size: var(--cell-font-size); }
+          display: flex; }
           .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-            height: var(--cell-height);
+            height: var(--cell-height-responsive);
             overflow: hidden;
             font-family: Yfx, serif;
             display: flex;

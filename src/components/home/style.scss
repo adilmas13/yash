@@ -129,20 +129,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 70vh;
 
       .yash-text-wrapper {
 
         .yash-text {
-          font-size: var(--cell-font-size);
+          font-size: 8vh;
           font-family: Yfx, serif;
           letter-spacing: 4px;
-          height: var(--cell-height);
         }
       }
 
       video {
-        width: 250px;
-        height: 250px;
+        width: 45%;
       }
 
       .designation {
@@ -167,15 +166,13 @@
         .slot-parent {
           display: flex;
           flex-direction: column;
-          display: flex;
           align-items: center;
 
           .slot-container {
             display: flex;
-            font-size: var(--cell-font-size);
 
             .slot {
-              height: var(--cell-height);
+              height: var(--cell-height-responsive);
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
