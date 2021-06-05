@@ -337,14 +337,6 @@ export const adverts = [
     },
     {groupId: "result", assets: [{image: "result", ratio: "16:9", videoId: "9DfxqhSHhC4", column: 1}]},
     {
-        groupId: "happy",
-        assets: [{
-            image: "happy1",
-            ratio: "16:9",
-            column: 1
-        }]
-    },
-    {
         groupId: "bbc",
         assets: [{
             image: "bbc1",
