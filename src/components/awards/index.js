@@ -2,14 +2,14 @@
 import {React} from "preact";
 import style from './style.css';
 import {awardsDescription, awardsOriginal, awardsThumbnails} from "../../utils/dataService";
-import {awardsLogo, awardsThumbnail} from "../../utils/imgService";
+import {awardsThumbnail} from "../../utils/imgService";
 import {useState} from "preact/hooks";
 import Logo from "../logo";
 import Preview from "../preview";
 
 const Description = (props) => {
-    const data = awardsDescription.find(it => it.id === props.id);
-    const logo = data.logo ? awardsLogo(data.logo.src) : "";
+    const data = props.data;
+    const logo = data.logo?.src || "";
 
     const logoStyle = {
         transform: `translateX(-50%) translateY(${data.logo?.top || 0})`,
@@ -58,7 +58,7 @@ const MediaCell = (props) => {
 
 const Awards = () => {
         const [previewMedia, setPreviewMedia] = useState(undefined);
-        const [selectedDescriptionId, setSelectedDescriptionId] = useState(undefined);
+        const [selectedDescription, setSelectedDescription] = useState(undefined);
 
         const onClicked = (media) => {
             const data = {
@@ -67,10 +67,10 @@ const Awards = () => {
                 type: "awards"
             }
             setPreviewMedia(data);
-            setSelectedDescriptionId(media.id);
+            setSelectedDescription(awardsDescription.find(it => it.id === media.id));
         };
 
-        const onDescriptionCloseClicked = () => setSelectedDescriptionId(undefined);
+        const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
 
         return <div class={style.parent}>
             <Logo />
@@ -81,8 +81,8 @@ const Awards = () => {
             <Preview
                 data={previewMedia}
                 onCancelClicked={() => setPreviewMedia(undefined)} />}
-            {selectedDescriptionId &&
-            <Description id={selectedDescriptionId} onCloseClicked={() => onDescriptionCloseClicked()} />}
+            {selectedDescription &&
+            <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
         </div>
     }
 ;

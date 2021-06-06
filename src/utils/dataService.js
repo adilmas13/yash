@@ -1,3 +1,5 @@
+import {awardsLogo} from "./imgService";
+
 export const arts = [
     [
         {id: 1, image: 'bumble1', groupId: 1, ratio: "9:16"},
@@ -161,24 +163,13 @@ export const awardsDescription = [
         description: "If radical recruiters are using simple technology to recruit unsuspecting youth, we beat them at their own game and use simple technology to best them. \n" +
             "And, of course, save these youth in the process. \n",
         closeText: "How to skip your popups?"
-    },
-    {
-        id: 10,
-        logo: null,
-        layout: {paddingTop: "50px"},
-        description: "If radical recruiters are using simple technology to recruit unsuspecting youth, we beat them at their own game and use simple technology to best them. \n" +
-            "And, of course, save these youth in the process. \n",
-        closeText: "How to skip your popups?"
-    },
-    {
-        id: 11,
-        logo: null,
-        layout: {paddingTop: "50px"},
-        description: "If radical recruiters are using simple technology to recruit unsuspecting youth, we beat them at their own game and use simple technology to best them. \n" +
-            "And, of course, save these youth in the process. \n",
-        closeText: "How to skip your popups?"
     }
-]
+].map(it => {
+    if (it.logo) {
+        it.logo.src = awardsLogo(it.logo.src);
+    }
+    return it;
+})
 
 export const awardsOriginal = [
     {id: 1, media: [{image: "", videoId: "NRxbrwi4WTE", ratio: "16:9"}]},
