@@ -1,4 +1,4 @@
-import {awardsLogo} from "./imgService";
+import {advertsLogo, awardsLogo} from "./imgService";
 
 export const arts = [
     [
@@ -550,7 +550,7 @@ export const getAdverts = () => {
     return Array.from(result.values());
 };
 
-export const advertsDescription = () => [
+export const advertsDescription = [
     {
         id: "kwality-1",
         logo: {src: "KW", top: "-35px", width: "50px"},
@@ -607,7 +607,12 @@ export const advertsDescription = () => [
             "Well… There’s a reason why this got nominated for DDB’s Global Lemon Awards.",
         closeText: "Can I be the Umpire here?"
     }
-]
+].map(it => {
+    if (it.logo) {
+        it.logo.src = advertsLogo(it.logo.src);
+    }
+    return it;
+})
 
 const PAGE_NO_KEY = "PAGE_NO";
 

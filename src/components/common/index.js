@@ -5,7 +5,8 @@ import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
 import Preview from "../preview";
 import Logo from "../logo";
-import {adverts} from "../../utils/dataService";
+import {adverts, advertsDescription, artsDescription, awardsDescription} from "../../utils/dataService";
+import Description from "../description";
 
 
 const MediaCell = (props) => {
@@ -100,15 +101,19 @@ const CommonListing = (props) => {
     const type = config.type;
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
+    const [selectedDescription, setSelectedDescription] = useState(undefined);
 
     const onClicked = (media) => {
+        console.log(media);
         let tempData;
         switch (type) {
             case "adverts":
                 tempData = adverts.find(it => it.groupId === media.groupId)?.assets || [];
+                setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
                 break;
             default:
                 tempData = data.flatMap(it => it).filter(it => it.groupId === media.groupId)
+                setSelectedDescription(artsDescription.find(it => it.id === media.groupId));
                 break
         }
         setPreviewMedia({
@@ -121,6 +126,8 @@ const CommonListing = (props) => {
     const onCellEnter = media => setActiveMedia(media);
 
     const onCellLeave = () => setActiveMedia(undefined);
+
+    const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
 
     return <div class={style.parent}>
         <Logo />
@@ -145,6 +152,8 @@ const CommonListing = (props) => {
         <Preview
             data={previewMedia}
             onCancelClicked={() => setPreviewMedia(undefined)} />}
+        {selectedDescription &&
+        <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
     </div>
 };
 
