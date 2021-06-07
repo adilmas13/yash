@@ -49,8 +49,10 @@ const Awards = () => {
 
         return <div class={style.parent}>
             <Logo />
-            <div class={style.grid}>
-                {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
+            <div className={style.container}>
+                <div className={style.grid}>
+                    {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
+                </div>
             </div>
             {previewMedia &&
             <Preview
