@@ -130,7 +130,7 @@ const CommonListing2 = (props) => {
 
     return <div class={style.parent}>
         <Logo />
-        <div class={style['scroll-container']}>
+        <div id='scroll-container' class={style['scroll-container']}>
             {data.map(it =>
                 <div style={{
                     position: "absolute",

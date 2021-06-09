@@ -7,21 +7,23 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-justify-content: center;
+  justify-content: center;
 
   .scroll-container {
     overflow: scroll;
     display: flex;
     height: 100%;
-    width: 800px;
     position: relative;
     justify-content: center;
     padding-top: 20px;
+    max-width: 1200px;
+    width: 100%;
 
     .media-wrapper {
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s ease-out all;
+      height: 100%;
 
       img {
         width: 100%;
@@ -52,4 +54,17 @@ justify-content: center;
 .visible {
   opacity: 1;
   filter: blur(0);
+}
+
+@media only screen and (max-width: 800px) {
+  .scroll-container{
+
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .scroll-container{
+    max-width: 100%;
+  }
 }
