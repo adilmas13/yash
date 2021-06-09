@@ -4,19 +4,24 @@ import {adverts} from "../../utils/dataService";
 import CommonListing2 from "../common2";
 import {useEffect, useState} from "preact/hooks";
 
-const breakpoints = [{
-    point: 600,
-    noOfColumns: 2,
-    width: '100'
-}, {
-    point: 800,
-    noOfColumns: 3,
-    width: '600'
-}, {
-    point: 1200,
-    noOfColumns: 4,
-    width: '1200'
-}];
+const breakpoints = [
+    {
+        point: 400,
+        noOfColumns: 2,
+        data: adverts
+            .filter(it => it.id !== "blank")
+            .sort((a, b) => a.id - b.id)
+    }, {
+        point: 800,
+        noOfColumns: 3,
+        data: adverts
+            .filter(it => it.id !== "blank")
+            .sort((a, b) => a.id - b.id)
+    }, {
+        point: 1200,
+        noOfColumns: 4,
+        data: adverts
+    }];
 
 const getDataBasedOnBreakPoint = () => {
     const width = window.innerWidth;
@@ -49,32 +54,22 @@ const useAdvertsData = () => {
         const containerWidth = document.getElementById('scroll-container').offsetWidth;
         const noOfColumns = breakPoint.noOfColumns;
         const gap = 10;
-        const columnWidth = (containerWidth / noOfColumns) - gap;
-        const final = adverts.reduce((accumulator, value, index) => {
-            const temp = index % noOfColumns;
-            const topIndex = (index - noOfColumns);
-            const left = columnWidth * temp + (index % noOfColumns !== 0 ? (gap * temp) : 0);
-            let data;
-            if (value.id === "blank") {
-                data = {
-                    top: topIndex > -1 ? accumulator[topIndex].height + accumulator[topIndex].top : 0,
-                    height: 0,
-                    left,
-                    width: columnWidth,
-                    media: value
-                };
-            } else {
+        const columnWidth = ((containerWidth - (gap * (noOfColumns + 1))) / noOfColumns);
+        const final = breakPoint.data
+            .reduce((accumulator, value, index) => {
+                const temp = index % noOfColumns;
+                const topIndex = (index - noOfColumns);
                 const aspect = value.ratio.split(":");
-                data = {
-                    top: topIndex > -1 ? accumulator[topIndex].height + accumulator[topIndex].top + gap : 0,
-                    height: columnWidth / (aspect[0] / aspect[1]),
-                    left,
+                const topGap = value.id !== "blank" ? gap : 0;
+                const data = {
+                    top: topIndex > -1 ? accumulator[topIndex].height + accumulator[topIndex].top + topGap : 0,
+                    height: value.id !== "blank" ? columnWidth / (aspect[0] / aspect[1]) : 0,
+                    left: (columnWidth * temp) + (gap * (temp + 1)),
                     width: columnWidth,
                     media: value
-                };
-            }
-            return [...accumulator, ...[data]]
-        }, [])
+                }
+                return [...accumulator, ...[data]]
+            }, [])
 
         setData(final);
     }, [breakPoint])

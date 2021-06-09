@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import {React, Fragment} from "preact";
+import {Fragment, React} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
