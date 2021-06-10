@@ -1,354 +1,362 @@
+import {advertsThumbnail, artsThumbnail} from "../service/imgService";
+
 export const arts = [
     {
         id: 1,
-        image: "bumble1",
+        thumbnail: "bumble1",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 13,
-        image: "bumble2",
+        thumbnail: "bumble2",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 25,
-        image: "bumble3",
+        thumbnail: "bumble3",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 36,
-        image: "bumble4",
+        thumbnail: "bumble4",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 47,
-        image: "bumble5",
+        thumbnail: "bumble5",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 2,
-        image: "bumble6",
+        thumbnail: "bumble6",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 14,
-        image: "bumble7",
+        thumbnail: "bumble7",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 26,
-        image: "bumble8",
+        thumbnail: "bumble8",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 37,
-        image: "bumble9",
+        thumbnail: "bumble9",
         groupId: 1,
         ratio: "9:16"
     },
     {
         id: 48,
-        image: "park1",
+        thumbnail: "park1",
         groupId: 2,
         ratio: "16:9",
         videoId: "mRM_W7_eN6I"
     },
     {
         id: 3,
-        image: "park3",
+        thumbnail: "park3",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 15,
-        image: "park4",
+        thumbnail: "park4",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 27,
-        image: "park5",
+        thumbnail: "park5",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 38,
-        image: "park6",
+        thumbnail: "park6",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 49,
-        image: "park7",
+        thumbnail: "park7",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 4,
-        image: "park8",
+        thumbnail: "park8",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 16,
-        image: "park9",
+        thumbnail: "park9",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 28,
-        image: "park10",
+        thumbnail: "park10",
         groupId: 2,
         ratio: "9:16"
     },
     {
         id: 39,
-        image: "nba1",
+        thumbnail: "nba1",
         groupId: 3,
         ratio: "16:9"
     },
     {
         id: 50,
-        image: "nba2",
+        thumbnail: "nba2",
         groupId: 3,
         ratio: "16:9"
     },
     {
         id: 6,
-        image: "nba8",
+        thumbnail: "nba8",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 18,
-        image: "nba9",
+        thumbnail: "nba9",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 29,
-        image: "nba5",
+        thumbnail: "nba5",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 17,
-        image: "nba4",
+        thumbnail: "nba4",
         groupId: 3,
         ratio: "16:9"
     },
     {
         id: 5,
-        image: "nba3",
+        thumbnail: "nba3",
         groupId: 3,
         ratio: "16:9"
     },
     {
-        id:'blank',
-        image : '',
+        id: 'blank',
+        thumbnail: '',
         groupId: '',
         ratio: ''
     },
     {
         id: 7,
-        image: "nba13",
+        thumbnail: "nba13",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 30,
-        image: "nba10",
+        thumbnail: "nba10",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 41,
-        image: "nba11",
+        thumbnail: "nba11",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 40,
-        image: "nba6",
+        thumbnail: "nba6",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 51,
-        image: "nba7",
+        thumbnail: "nba7",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 52,
-        image: "nba12",
+        thumbnail: "nba12",
         groupId: 3,
         ratio: "9:16"
     },
     {
         id: 19,
-        image: "tc1",
+        thumbnail: "tc1",
         groupId: 4,
         ratio: "9:16"
     },
     {
         id: 31,
-        image: "tc2",
+        thumbnail: "tc2",
         groupId: 4,
         ratio: "9:16"
     },
     {
         id: 42,
-        image: "tc3",
+        thumbnail: "tc3",
         groupId: 4,
         ratio: "9:16"
     },
     {
         id: 53,
-        image: "tc4",
+        thumbnail: "tc4",
         groupId: 4,
         ratio: "9:16"
     },
     {
         id: 8,
-        image: "gc1",
+        thumbnail: "gc1",
         groupId: 5,
         ratio: "9:16"
     },
     {
         id: 20,
-        image: "gc2",
+        thumbnail: "gc2",
         groupId: 5,
         ratio: "9:16"
     },
     {
         id: 32,
-        image: "gc3",
+        thumbnail: "gc3",
         groupId: 5,
         ratio: "9:16"
     },
     {
         id: 43,
-        image: "gc4",
+        thumbnail: "gc4",
         groupId: 5,
         ratio: "9:16"
     },
     {
         id: 54,
-        image: "gc5",
+        thumbnail: "gc5",
         groupId: 5,
         ratio: "9:16"
     },
     {
         id: 9,
-        image: "axn1",
+        thumbnail: "axn1",
         groupId: 6,
         ratio: "9:16"
     },
     {
         id: 10,
-        image: "axn6",
+        thumbnail: "axn6",
         groupId: 6,
         ratio: "16:9"
     },
     {
         id: 21,
-        image: "axn2",
+        thumbnail: "axn2",
         groupId: 6,
         ratio: "16:9"
     },
     {
         id: 22,
-        image: "axn7",
+        thumbnail: "axn7",
         groupId: 6,
         ratio: "9:16"
     },
     {
         id: 33,
-        image: "axn3",
+        thumbnail: "axn3",
         groupId: 6,
         ratio: "16:9"
     },
     {
         id: 44,
-        image: "axn4",
+        thumbnail: "axn4",
         groupId: 6,
         ratio: "16:9"
     },
     {
         id: 55,
-        image: "axn5",
+        thumbnail: "axn5",
         groupId: 6,
         ratio: "9:16"
     },
     {
         id: 11,
-        image: "goomo4",
+        thumbnail: "goomo4",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 23,
-        image: "goomo5",
+        thumbnail: "goomo5",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 34,
-        image: "goomo1",
+        thumbnail: "goomo1",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 35,
-        image: "goomo6",
+        thumbnail: "goomo6",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 45,
-        image: "goomo2",
+        thumbnail: "goomo2",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 46,
-        image: "goomo7",
+        thumbnail: "goomo7",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 56,
-        image: "goomo3",
+        thumbnail: "goomo3",
         groupId: 7,
         ratio: "9:16"
     },
     {
         id: 12,
-        image: "mcd2",
+        thumbnail: "mcd2",
         groupId: 8,
         ratio: "16:9"
     },
     {
         id: 24,
-        image: "mcd3",
+        thumbnail: "mcd3",
         groupId: 8,
         ratio: "9:16"
     },
     {
         id: 57,
-        image: "mcd1",
+        thumbnail: "mcd1",
         groupId: 8,
         ratio: "16:9"
     }
 ]
+    .map(media => {
+        media.thumbnail = artsThumbnail(media.thumbnail, media.extension);
+        media.src = artsThumbnail(media.thumbnail, media.videoId ? "mp4" : media.extension);
+        return media;
+    });
+
 
 export const artsDescription = [
     {

@@ -1,8 +1,8 @@
-import {advertsLogo} from "../service/imgService";
+import {advertsLogo, advertsThumbnail} from "../service/imgService";
 
 export const adverts = [
     {
-        image: "kwality",
+        thumbnail: "kwality",
         ratio: "1000:562",
         videoId: "V4dPeIPiJbM",
         column: 1,
@@ -10,7 +10,7 @@ export const adverts = [
         id: 0
     },
     {
-        image: "stayfree1",
+        thumbnail: "stayfree1",
         ratio: "1000:562",
         videoId: "PcNKTwgZEEk",
         column: 2,
@@ -18,7 +18,7 @@ export const adverts = [
         id: 1
     },
     {
-        image: "stayfree2",
+        thumbnail: "stayfree2",
         ratio: "1000:562",
         videoId: "khlgJP1sICE",
         column: 3,
@@ -26,7 +26,7 @@ export const adverts = [
         id: 2
     },
     {
-        image: "facebook",
+        thumbnail: "facebook",
         ratio: "700:394",
         videoId: "HmMeUiZp-bE",
         column: 4,
@@ -34,7 +34,7 @@ export const adverts = [
         id: 3
     },
     {
-        image: "polo",
+        thumbnail: "polo",
         ratio: "1000:562",
         videoId: "4S-7FoZZQXQ",
         column: 1,
@@ -42,56 +42,56 @@ export const adverts = [
         id: 4
     },
     {
-        image: "vw1",
+        thumbnail: "vw1",
         ratio: "700:394",
         column: 2,
         groupId: "volkswagen",
         id: 5
     },
     {
-        image: "vw2",
+        thumbnail: "vw2",
         ratio: "700:394",
         column: 3,
         groupId: "volkswagen",
         id: 6
     },
     {
-        image: "vw3",
+        thumbnail: "vw3",
         ratio: "700:394",
         column: 4,
         groupId: "volkswagen",
         id: 7
     },
     {
-        image: "md1",
+        thumbnail: "md1",
         ratio: "707:1000",
         column: 1,
         groupId: "mcdonalds-1",
         id: 8
     },
     {
-        image: "md2",
+        thumbnail: "md2",
         ratio: "707:1000",
         column: 2,
         groupId: "mcdonalds-1",
         id: 9
     },
     {
-        image: "md3",
+        thumbnail: "md3",
         ratio: "707:1000",
         column: 3,
         groupId: "mcdonalds-1",
         id: 10
     },
     {
-        image: "md4",
+        thumbnail: "md4",
         ratio: "707:1000",
         column: 4,
         groupId: "mcdonalds-1",
         id: 11
     },
     {
-        image: "cor1",
+        thumbnail: "cor1",
         ratio: "16:9",
         videoId: "n47l41MalLk",
         column: 1,
@@ -99,21 +99,21 @@ export const adverts = [
         id: 12
     },
     {
-        image: "cor3",
+        thumbnail: "cor3",
         ratio: "323:457",
         column: 2,
         groupId: "cornetto",
         id: 14
     },
     {
-        image: "cor4",
+        thumbnail: "cor4",
         ratio: "323:457",
         column: 3,
         groupId: "cornetto",
         id: 15
     },
     {
-        image: "global1",
+        thumbnail: "global1",
         ratio: "16:9",
         videoId: "U9ODOh0sNW4",
         column: 4,
@@ -121,7 +121,7 @@ export const adverts = [
         id: 17
     },
     {
-        image: "cor2",
+        thumbnail: "cor2",
         ratio: "16:9",
         column: 1,
         groupId: "cornetto",
@@ -129,7 +129,7 @@ export const adverts = [
     },
 
     {
-        image: "cor5",
+        thumbnail: "cor5",
         ratio: "16:9",
         videoId: "GQy4T2PLPm4",
         column: 2,
@@ -137,14 +137,14 @@ export const adverts = [
         id: 16
     },
     {
-        image: "bbc2",
+        thumbnail: "bbc2",
         ratio: "323:457",
         column: 3,
         groupId: "bbc",
         id: 23
     },
     {
-        image: "trix1",
+        thumbnail: "trix1",
         ratio: "16:9",
         videoId: "AaRhMH9-Vj8",
         column: 4,
@@ -152,7 +152,7 @@ export const adverts = [
         id: 18
     },
     {
-        image: "result",
+        thumbnail: "result",
         ratio: "16:9",
         videoId: "9DfxqhSHhC4",
         column: 1,
@@ -160,7 +160,7 @@ export const adverts = [
         id: 21
     },
     {
-        image: "bbc1",
+        thumbnail: "bbc1",
         ratio: "16:9",
         videoId: "Cc7ikWnHsU8",
         column: 2,
@@ -168,189 +168,189 @@ export const adverts = [
         id: 22
     },
     {
-        image: "jeep3",
+        thumbnail: "jeep3",
         ratio: "16:9",
         column: 3,
         groupId: "jeep",
         id: 26
     },
     {
-        image: "trix2",
+        thumbnail: "trix2",
         ratio: "323:457",
         column: 4,
         groupId: "trix",
         id: 19
     },
     {
-        image: "jeep1",
+        thumbnail: "jeep1",
         ratio: "16:9",
         column: 1,
         groupId: "jeep",
         id: 24
     },
     {
-        image: "jeep2",
+        thumbnail: "jeep2",
         ratio: "16:9",
         column: 2,
         groupId: "jeep",
         id: 25
     },
     {
-        image: "jeep8",
+        thumbnail: "jeep8",
         ratio: "323:457",
         column: 3,
         groupId: "jeep",
         id: 31
     },
     {
-        image: "trix3",
+        thumbnail: "trix3",
         ratio: "323:457",
         column: 4,
         groupId: "trix",
         id: 20
     },
     {
-        image: "jeep4",
+        thumbnail: "jeep4",
         ratio: "16:9",
         column: 1,
         groupId: "jeep",
         id: 27
     },
     {
-        image: "jeep5",
+        thumbnail: "jeep5",
         ratio: "16:9",
         column: 2,
         groupId: "jeep",
         id: 28
     },
     {
-        image: "vw-5",
+        thumbnail: "vw-5",
         ratio: "16:9",
         column: 3,
         groupId: "volkswagen-new",
         id: 38
     },
     {
-        image: "jeep9",
+        thumbnail: "jeep9",
         ratio: "16:9",
         column: 4,
         groupId: "jeep",
         id: 32
     },
     {
-        image: "jeep6",
+        thumbnail: "jeep6",
         ratio: "16:9",
         column: 1,
         groupId: "jeep",
         id: 29
     },
     {
-        image: "jeep7",
+        thumbnail: "jeep7",
         ratio: "16:9",
         column: 2,
         groupId: "jeep",
         id: 30
     },
     {
-        image: "vw-9",
+        thumbnail: "vw-9",
         ratio: "16:9",
         column: 3,
         groupId: "volkswagen-new",
         id: 42
     },
     {
-        image: "jeep10",
+        thumbnail: "jeep10",
         ratio: "2:1",
         column: 4,
         groupId: "jeep",
         id: 33
     },
     {
-        image: "vw-1",
+        thumbnail: "vw-1",
         ratio: "16:9",
         column: 1,
         groupId: "volkswagen-new",
         id: 34
     },
     {
-        image: "vw-2",
+        thumbnail: "vw-2",
         ratio: "16:9",
         column: 2,
         groupId: "volkswagen-new",
         id: 35
     },
     {
-        image: "mc2",
+        thumbnail: "mc2",
         ratio: "323:457",
         column: 3,
         groupId: "mac-d",
         id: 46
     },
     {
-        image: "vw-6",
+        thumbnail: "vw-6",
         ratio: "16:9",
         column: 4,
         groupId: "volkswagen-new",
         id: 39
     },
     {
-        image: "vw-3",
+        thumbnail: "vw-3",
         ratio: "16:9",
         column: 1,
         groupId: "volkswagen-new",
         id: 36
     },
     {
-        image: "vw-4",
+        thumbnail: "vw-4",
         ratio: "16:9",
         column: 2,
         groupId: "volkswagen-new",
         id: 37
     },
     {
-        image: "",
+        thumbnail: "",
         ratio: "",
         column: -1,
         groupId: "",
         id: "blank"
     },
     {
-        image: "vw-10",
+        thumbnail: "vw-10",
         ratio: "16:9",
         column: 4,
         groupId: "volkswagen-new",
         id: 43
     },
     {
-        image: "vw-7",
+        thumbnail: "vw-7",
         ratio: "16:9",
         column: 1,
         groupId: "volkswagen-new",
         id: 40
     },
     {
-        image: "vw-8",
+        thumbnail: "vw-8",
         ratio: "16:9",
         column: 2,
         groupId: "volkswagen-new",
         id: 41
     },
     {
-        image: "",
+        thumbnail: "",
         ratio: "",
         column: -1,
         groupId: "",
         id: "blank"
     },
     {
-        image: "mc3",
+        thumbnail: "mc3",
         ratio: "323:457",
         column: 4,
         groupId: "mac-d",
         id: 47
     },
     {
-        image: "vw-11",
+        thumbnail: "vw-11",
         ratio: "2:1",
         extension: "gif",
         column: 1,
@@ -358,35 +358,39 @@ export const adverts = [
         id: 44
     },
     {
-        image: "mc1",
+        thumbnail: "mc1",
         ratio: "323:457",
         column: 2,
         groupId: "mac-d",
         id: 45
     },
     {
-        image: "",
+        thumbnail: "",
         ratio: "",
         column: -1,
         groupId: "",
         id: "blank"
     },
     {
-        image: "",
+        thumbnail: "",
         ratio: "",
         column: -1,
         groupId: "",
         id: "blank"
     },
     {
-        image: "covid1",
+        thumbnail: "covid1",
         ratio: "323:457",
         videoId: "Lx23epi7WgA",
         column: 1,
         groupId: "covid",
         id: 48
     }
-];
+].map(media => {
+    media.thumbnail = advertsThumbnail(media.thumbnail, media.extension);
+    media.src = advertsThumbnail(media.thumbnail, media.videoId ? "mp4" : media.extension);
+    return media;
+});
 
 export const advertsDescription = [
     {

@@ -3,28 +3,27 @@ import {Fragment, React} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {advertsThumbnail, artsThumbnail} from "../../service/imgService";
-import Preview from "../preview";
 import Logo from "../logo";
 import {artsDescription} from "../../dataSource/arts";
 import {adverts, advertsDescription} from "../../dataSource/adverts";
-import Description from "../description";
+import {useMasonryData} from "./masonryData";
 
 
 const MediaCell = (props) => {
     const media = props.media;
 
-    let image;
-    let video;
-    switch (props.type) {
-        case "adverts":
-            image = advertsThumbnail(media.image, media.extension)
-            video = advertsThumbnail(media.image, "mp4")
-            break;
-        case "arts":
-            image = artsThumbnail(media.image)
-            video = artsThumbnail(media.image, "mp4")
-            break;
-    }
+    // let image;
+    // let video;
+    // switch (props.type) {
+    //     case "adverts":
+    //         image = advertsThumbnail(media.image, media.extension)
+    //         video = advertsThumbnail(media.image, "mp4")
+    //         break;
+    //     case "arts":
+    //         image = artsThumbnail(media.image)
+    //         video = artsThumbnail(media.image, "mp4")
+    //         break;
+    // }
     const [isVideoVisible, setVideoVisibility] = useState(false);
     const [isImageLoaded, setImageLoaded] = useState(false);
 
@@ -84,43 +83,39 @@ const MediaCell = (props) => {
                  }}>
         <img
             class={isImageLoaded ? style["visible"] : style["hidden"]}
-            alt="adverts" src={image} onLoad={() => setImageLoaded(true)} />
+            alt="adverts" src={media.thumbnail} onLoad={() => setImageLoaded(true)} />
         <div style={overlayStyle} />
         {(isVideoVisible && media.videoId) &&
-        <video src={advertsThumbnail(media.image, "mp4")} poster={image} autoplay loop />}
+        <video src={media.src} poster={media.thumbnail} autoplay loop />}
     </div>)
 };
 
-// config = {
-//      data: {},
-//      type: "adverts" | "arts"
-// }
-const CommonListing2 = (props) => {
+const MasonryGrid = (props) => {
+    const dataa = useMasonryData(props.breakpoints);
     const config = props.config;
-    const data = config.data;
-    const type = config.type;
+    const data = config?.data ?? "";
+    const type = config?.type ?? "";
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
     const [selectedDescription, setSelectedDescription] = useState(undefined);
 
     const onClicked = (media) => {
-        console.log(media);
         let tempData;
-        switch (type) {
-            case "adverts":
-                tempData = adverts.find(it => it.groupId === media.groupId)?.assets || [];
-                setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
-                break;
-            default:
-                tempData = data.flatMap(it => it).filter(it => it.groupId === media.groupId)
-                setSelectedDescription(artsDescription.find(it => it.id === media.groupId));
-                break
-        }
-        setPreviewMedia({
-            group: tempData,
-            selected: media,
-            type
-        })
+        // switch (type) {
+        //     case "adverts":
+        //         tempData = adverts.find(it => it.groupId === media.groupId)?.assets || [];
+        //         setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
+        //         break;
+        //     default:
+        //         tempData = data.flatMap(it => it).filter(it => it.groupId === media.groupId)
+        //         setSelectedDescription(artsDescription.find(it => it.id === media.groupId));
+        //         break
+        // }
+        // setPreviewMedia({
+        //     group: tempData,
+        //     selected: media,
+        //     type
+        // })
     };
 
     const onCellEnter = media => setActiveMedia(media);
@@ -132,7 +127,7 @@ const CommonListing2 = (props) => {
     return <div class={style.parent}>
         <Logo />
         <div id='scroll-container' class={style['scroll-container']}>
-            {data.map(it =>
+            {dataa.map(it =>
                 <div style={{
                     position: "absolute",
                     height: it.height,
@@ -152,13 +147,13 @@ const CommonListing2 = (props) => {
                 </div>
             )}
         </div>
-        {previewMedia &&
-        <Preview
-            data={previewMedia}
-            onCancelClicked={() => setPreviewMedia(undefined)} />}
-        {selectedDescription &&
-        <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
+        {/*{previewMedia &&*/}
+        {/*<Preview*/}
+        {/*    data={previewMedia}*/}
+        {/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/}
+        {/*{selectedDescription &&*/}
+        {/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/}
     </div>
 };
 
-export default CommonListing2;
+export default MasonryGrid;
