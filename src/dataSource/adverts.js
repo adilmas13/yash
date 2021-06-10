@@ -387,8 +387,9 @@ export const adverts = [
         id: 48
     }
 ].map(media => {
-    media.thumbnail = advertsThumbnail(media.thumbnail, media.extension);
-    media.src = advertsThumbnail(media.thumbnail, media.videoId ? "mp4" : media.extension);
+    const temp = media.thumbnail;
+    media.thumbnail = advertsThumbnail(temp, media.extension);
+    media.src = advertsThumbnail(temp, media.videoId ? "mp4" : media.extension);
     return media;
 });
 

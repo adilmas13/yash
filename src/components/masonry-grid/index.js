@@ -12,18 +12,6 @@ import {useMasonryData} from "./masonryData";
 const MediaCell = (props) => {
     const media = props.media;
 
-    // let image;
-    // let video;
-    // switch (props.type) {
-    //     case "adverts":
-    //         image = advertsThumbnail(media.image, media.extension)
-    //         video = advertsThumbnail(media.image, "mp4")
-    //         break;
-    //     case "arts":
-    //         image = artsThumbnail(media.image)
-    //         video = artsThumbnail(media.image, "mp4")
-    //         break;
-    // }
     const [isVideoVisible, setVideoVisibility] = useState(false);
     const [isImageLoaded, setImageLoaded] = useState(false);
 
@@ -91,10 +79,7 @@ const MediaCell = (props) => {
 };
 
 const MasonryGrid = (props) => {
-    const dataa = useMasonryData(props.breakpoints);
-    const config = props.config;
-    const data = config?.data ?? "";
-    const type = config?.type ?? "";
+    const data = useMasonryData(props.breakpoints);
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
     const [selectedDescription, setSelectedDescription] = useState(undefined);
@@ -127,7 +112,7 @@ const MasonryGrid = (props) => {
     return <div class={style.parent}>
         <Logo />
         <div id='scroll-container' class={style['scroll-container']}>
-            {dataa.map(it =>
+            {data.map(it =>
                 <div style={{
                     position: "absolute",
                     height: it.height,
@@ -137,23 +122,24 @@ const MasonryGrid = (props) => {
                 }}>
                     {it.media.id !== "blank" ? <MediaCell
                         media={it.media}
-                        type={type}
                         handleClick={onClicked}
                         onCellEnter={() => onCellEnter(it.media)}
                         onCellLeave={() => onCellLeave()}
                         activeMedia={activeMedia}
-                        isActive={activeMedia && activeMedia.groupId === it.media.groupId && activeMedia.image !== it.media.image}
+                        isActive={activeMedia && activeMedia.groupId === it.media.groupId && it.media.id !== activeMedia.id}
                     /> : <Fragment />}
                 </div>
             )}
         </div>
-        {/*{previewMedia &&*/}
-        {/*<Preview*/}
-        {/*    data={previewMedia}*/}
-        {/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/}
-        {/*{selectedDescription &&*/}
-        {/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/}
+
     </div>
 };
 
 export default MasonryGrid;
+
+    {/*{previewMedia &&*/}
+    {/*<Preview*/}
+    {/*    data={previewMedia}*/}
+    {/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/}
+    {/*{selectedDescription &&*/}
+    {/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/}
