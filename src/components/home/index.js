@@ -4,7 +4,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
-import {getPageNo, homeVideoForwardSlots, homeVideoReverseSlots, setPageNo} from "../../utils/dataService";
+import {getPageNo, homeVideoForwardSlots, homeVideoReverseSlots, setPageNo} from "../../dataSource/home";
 import {
     animateDownArrowInfinitely,
     animateDownArrowOnClick,

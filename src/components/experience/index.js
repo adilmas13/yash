@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import style from './style.css';
-import {aboutMeImg} from "../../utils/imgService";
+import {aboutMeImg} from "../../service/imgService";
 import {useEffect, useState} from "preact/hooks";
-import {getExperience} from "../../utils/calculationService";
+import {getExperience} from "../../service/calculationService";
 
 const data = [
     {place: 'ddb mudra', experience: '1.7 YEARS', designation: 'senior art director'},

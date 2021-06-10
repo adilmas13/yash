@@ -2,10 +2,11 @@
 import {Fragment, React} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import {advertsThumbnail, artsThumbnail} from "../../utils/imgService";
+import {advertsThumbnail, artsThumbnail} from "../../service/imgService";
 import Preview from "../preview";
 import Logo from "../logo";
-import {adverts, advertsDescription, artsDescription} from "../../utils/dataService";
+import {artsDescription} from "../../dataSource/arts";
+import {adverts, advertsDescription} from "../../dataSource/adverts";
 import Description from "../description";
 
 

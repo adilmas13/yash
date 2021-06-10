@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import {adverts} from "../../utils/dataService";
+import {adverts} from "../../dataSource/adverts";
 import CommonListing2 from "../common2";
 import {useEffect, useState} from "preact/hooks";
 

@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import {React} from "preact";
 import style from './style.css';
-import {awardsDescription, awardsOriginal, awardsThumbnails} from "../../utils/dataService";
-import {awardsThumbnail} from "../../utils/imgService";
+import {awardsDescription, awardsOriginal, awardsThumbnails} from "../../dataSource/awards";
+import {awardsThumbnail} from "../../service/imgService";
 import {useState} from "preact/hooks";
 import Logo from "../logo";
 import Preview from "../preview";

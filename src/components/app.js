@@ -6,7 +6,7 @@ import Arts from "./arts";
 import Awards from "./awards";
 import Loader from "./loader";
 import {useEffect} from "preact/hooks";
-import {setPageNo} from "../utils/dataService";
+import {setPageNo} from "../dataSource/home";
 
 
 const App = () => {

@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "preact/hooks";
-import {advertsOriginal, artsOriginal, awardsOriginal} from "../../utils/imgService";
+import {advertsOriginal, artsOriginal, awardsOriginal} from "../../service/imgService";
 import style from "./style.css";
 
 const Back = (props) => {

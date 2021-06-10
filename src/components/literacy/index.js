@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import style from './style.css';
-import {aboutMeImg} from "../../utils/imgService";
+import {aboutMeImg} from "../../service/imgService";
 
 const data = [
     {field: 'applied arts', place: 'RACHANA SANSAD', degree: 'Diploma'},

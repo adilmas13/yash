@@ -2,7 +2,7 @@
 import React from "preact";
 import {useEffect, useState} from "preact/hooks";
 import CommonListing2 from "../common2";
-import {arts} from "../../utils/dataService";
+import {arts} from "../../dataSource/arts";
 
 const breakpoints = [
     {

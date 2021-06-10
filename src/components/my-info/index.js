@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import style from './style.css';
-import {aboutMeImg} from "../../utils/imgService";
-import {getAge} from "../../utils/calculationService";
+import {aboutMeImg} from "../../service/imgService";
+import {getAge} from "../../service/calculationService";
 
 const details = {
     name: 'yash',
