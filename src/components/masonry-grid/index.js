@@ -80,34 +80,11 @@ const MediaCell = (props) => {
 
 const MasonryGrid = (props) => {
     const data = useMasonryData(props.breakpoints);
-    const [previewMedia, setPreviewMedia] = useState(undefined);
     const [activeMedia, setActiveMedia] = useState(undefined);
-    const [selectedDescription, setSelectedDescription] = useState(undefined);
-
-    const onClicked = (media) => {
-        let tempData;
-        // switch (type) {
-        //     case "adverts":
-        //         tempData = adverts.find(it => it.groupId === media.groupId)?.assets || [];
-        //         setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
-        //         break;
-        //     default:
-        //         tempData = data.flatMap(it => it).filter(it => it.groupId === media.groupId)
-        //         setSelectedDescription(artsDescription.find(it => it.id === media.groupId));
-        //         break
-        // }
-        // setPreviewMedia({
-        //     group: tempData,
-        //     selected: media,
-        //     type
-        // })
-    };
 
     const onCellEnter = media => setActiveMedia(media);
 
     const onCellLeave = () => setActiveMedia(undefined);
-
-    const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
 
     return <div class={style.parent}>
         <Logo />
@@ -122,7 +99,7 @@ const MasonryGrid = (props) => {
                 }}>
                     {it.media.id !== "blank" ? <MediaCell
                         media={it.media}
-                        handleClick={onClicked}
+                        handleClick={() => props.onClick(it.media)}
                         onCellEnter={() => onCellEnter(it.media)}
                         onCellLeave={() => onCellLeave()}
                         activeMedia={activeMedia}

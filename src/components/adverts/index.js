@@ -1,7 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
-import {adverts} from "../../dataSource/adverts";
+import {adverts, advertsDescription} from "../../dataSource/adverts";
+import {useState} from "preact/hooks";
+import style from './style.css'
+import Preview from "../preview";
+import Description from "../description";
 
 const breakpoints = [
     {
@@ -23,7 +27,32 @@ const breakpoints = [
     }]
 
 const Adverts = () => {
-    return <MasonryGrid breakpoints={breakpoints} />
+    const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
+    const [previewMedia, setPreviewMedia] = useState(undefined);
+    const [selectedDescription, setSelectedDescription] = useState(undefined);
+
+    const handleOnClick = (media) => {
+        console.log('MEDIA', media);
+        const group = adverts.filter(it => it.groupId === media.groupId);
+        setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
+        setPreviewMedia({
+            group,
+            selected: media,
+        })
+    };
+
+    return <div className={style.parent}>
+        <MasonryGrid
+            breakpoints={breakpoints}
+            onClick={handleOnClick}
+        />
+        {previewMedia &&
+        <Preview
+            data={previewMedia}
+            onCancelClicked={() => setPreviewMedia(undefined)} />}
+        {selectedDescription &&
+        <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
+    </div>
 };
 
 export default Adverts;
