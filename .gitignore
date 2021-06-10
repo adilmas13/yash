@@ -5,3 +5,4 @@ node_modules
 *.map
 size-plugin.json
 .sass-cache/
+*.css

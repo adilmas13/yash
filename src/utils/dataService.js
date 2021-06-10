@@ -670,20 +670,8 @@ export const arts = [
         ratio: "9:16"
     },
     {
-        id: 2,
-        image: "bumble6",
-        groupId: 1,
-        ratio: "9:16"
-    },
-    {
         id: 13,
         image: "bumble2",
-        groupId: 1,
-        ratio: "9:16"
-    },
-    {
-        id: 14,
-        image: "bumble7",
         groupId: 1,
         ratio: "9:16"
     },
@@ -694,20 +682,8 @@ export const arts = [
         ratio: "9:16"
     },
     {
-        id: 26,
-        image: "bumble8",
-        groupId: 1,
-        ratio: "9:16"
-    },
-    {
         id: 36,
         image: "bumble4",
-        groupId: 1,
-        ratio: "9:16"
-    },
-    {
-        id: 37,
-        image: "bumble9",
         groupId: 1,
         ratio: "9:16"
     },
@@ -718,45 +694,27 @@ export const arts = [
         ratio: "9:16"
     },
     {
-        id: 3,
-        image: "park3",
-        groupId: 2,
+        id: 2,
+        image: "bumble6",
+        groupId: 1,
         ratio: "9:16"
     },
     {
-        id: 4,
-        image: "park8",
-        groupId: 2,
+        id: 14,
+        image: "bumble7",
+        groupId: 1,
         ratio: "9:16"
     },
     {
-        id: 15,
-        image: "park4",
-        groupId: 2,
+        id: 26,
+        image: "bumble8",
+        groupId: 1,
         ratio: "9:16"
     },
     {
-        id: 16,
-        image: "park9",
-        groupId: 2,
-        ratio: "9:16"
-    },
-    {
-        id: 27,
-        image: "park5",
-        groupId: 2,
-        ratio: "9:16"
-    },
-    {
-        id: 28,
-        image: "park10",
-        groupId: 2,
-        ratio: "9:16"
-    },
-    {
-        id: 38,
-        image: "park6",
-        groupId: 2,
+        id: 37,
+        image: "bumble9",
+        groupId: 1,
         ratio: "9:16"
     },
     {
@@ -767,20 +725,68 @@ export const arts = [
         videoId: "mRM_W7_eN6I"
     },
     {
+        id: 3,
+        image: "park3",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
+        id: 15,
+        image: "park4",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
+        id: 27,
+        image: "park5",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
+        id: 38,
+        image: "park6",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
         id: 49,
         image: "park7",
         groupId: 2,
         ratio: "9:16"
     },
     {
-        id: 6,
-        image: "nba8",
-        groupId: 3,
+        id: 4,
+        image: "park8",
+        groupId: 2,
         ratio: "9:16"
     },
     {
-        id: 7,
-        image: "nba13",
+        id: 16,
+        image: "park9",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
+        id: 28,
+        image: "park10",
+        groupId: 2,
+        ratio: "9:16"
+    },
+    {
+        id: 39,
+        image: "nba1",
+        groupId: 3,
+        ratio: "16:9"
+    },
+    {
+        id: 50,
+        image: "nba2",
+        groupId: 3,
+        ratio: "16:9"
+    },
+    {
+        id: 6,
+        image: "nba8",
         groupId: 3,
         ratio: "9:16"
     },
@@ -797,26 +803,32 @@ export const arts = [
         ratio: "9:16"
     },
     {
-        id: 30,
-        image: "nba10",
-        groupId: 3,
-        ratio: "9:16"
-    },
-    {
-        id: 39,
-        image: "nba1",
-        groupId: 3,
-        ratio: "16:9"
-    },
-    {
         id: 17,
         image: "nba4",
         groupId: 3,
         ratio: "16:9"
     },
     {
-        id: 40,
-        image: "nba6",
+        id: 5,
+        image: "nba3",
+        groupId: 3,
+        ratio: "16:9"
+    },
+    {
+        id:'blank',
+        image : '',
+        groupId: '',
+        ratio: ''
+    },
+    {
+        id: 7,
+        image: "nba13",
+        groupId: 3,
+        ratio: "9:16"
+    },
+    {
+        id: 30,
+        image: "nba10",
         groupId: 3,
         ratio: "9:16"
     },
@@ -827,16 +839,10 @@ export const arts = [
         ratio: "9:16"
     },
     {
-        id: 50,
-        image: "nba2",
+        id: 40,
+        image: "nba6",
         groupId: 3,
-        ratio: "16:9"
-    },
-    {
-        id: 5,
-        image: "nba3",
-        groupId: 3,
-        ratio: "16:9"
+        ratio: "9:16"
     },
     {
         id: 51,
