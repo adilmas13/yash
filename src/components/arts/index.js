@@ -1,27 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import CommonListing from "../common";
-import {adverts, arts, artss} from "../../utils/dataService";
 import {useEffect, useState} from "preact/hooks";
 import CommonListing2 from "../common2";
+import {arts} from "../../utils/dataService";
 
 const breakpoints = [
     {
         point: 400,
         noOfColumns: 3,
-        data: artss
+        data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
         point: 800,
         noOfColumns: 4,
-        data: artss
+        data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
         point: 1200,
         noOfColumns: 5,
-        data: artss
+        data: arts
     }];
 
 const getDataBasedOnBreakPoint = () => {
