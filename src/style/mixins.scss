@@ -1,9 +1,0 @@
-@import "colors.css";
-
-@mixin header {
-  font-size: 6rem;
-  text-transform: capitalize;
-  font-family: Yfx, serif;
-  word-spacing: 20px;
-  color: $secondary-text-color;
-}
