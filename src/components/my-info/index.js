@@ -65,8 +65,8 @@ const MobileView = () => {
             </div>
         </div>
         <div class={style.middle}>
-                <div className={style['gender-age']}>{details.gender}. {details.age}.</div>
-                <div className={style.designation}>{details.designation}</div>
+            <div className={style['gender-age']}>{details.gender}. {details.age}.</div>
+            <div className={style.designation}>{details.designation}</div>
         </div>
         <div class={style.bottom}>
             <div className={style['divide-container']}>

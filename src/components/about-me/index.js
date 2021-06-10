@@ -25,12 +25,12 @@ const MobileView = () => {
 
     const hideIcon = {
         opacity: 0,
-        userSelect : 'none',
+        userSelect: 'none',
         pointerEvents: 'none'
     }
     const showIcon = {
         opacity: 1,
-        userSelect : 'all',
+        userSelect: 'all',
         pointerEvents: 'all'
     }
 
@@ -55,8 +55,8 @@ const MobileView = () => {
             <div
                 style={pageNo < 2 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}
-                 onClick={onNextClicked}
-                 ref={nextArrowRef}>
+                onClick={onNextClicked}
+                ref={nextArrowRef}>
                 <div>next</div>
                 <img src={'assets/arrow_blunt.svg'} />
             </div>

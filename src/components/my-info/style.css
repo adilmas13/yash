@@ -1,190 +1,279 @@
 @import url(../../assets/fonts/fonts.css);
+
 .mobile {
-  display: none; }
+    display: none;
+}
 
 .desktop {
-  display: block; }
-  .desktop .parent {
+    display: block;
+}
+
+.desktop .parent {
     display: flex;
     position: relative;
     height: 100vh;
     width: 100vw;
     justify-content: flex-end;
-    min-width: 100vw; }
-    .desktop .parent .image-wrapper {
-      position: relative;
-      height: 100%;
-      margin-right: 3.5rem; }
-    .desktop .parent .details-wrapper {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: calc(100% / 2);
-      display: flex;
-      flex-direction: column;
-      padding: 0 8rem;
-      justify-content: space-evenly; }
-      .desktop .parent .details-wrapper .top-wrapper {
-        color: #353335; }
-        .desktop .parent .details-wrapper .top-wrapper .gender-age {
-          font-size: 6rem;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px; }
-        .desktop .parent .details-wrapper .top-wrapper .designation {
-          font-size: 3.25rem;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          margin-top: 2rem;
-          letter-spacing: 2px; }
-      .desktop .parent .details-wrapper .middle-wrapper {
-        color: #000000; }
-        .desktop .parent .details-wrapper .middle-wrapper .name {
-          font-family: b-light, serif;
-          font-size: 50px;
-          letter-spacing: 1px; }
-        .desktop .parent .details-wrapper .middle-wrapper .noun-success {
-          font-size: 30px; }
-          .desktop .parent .details-wrapper .middle-wrapper .noun-success span:first-child {
-            font-family: b-bold-italic, serif; }
-          .desktop .parent .details-wrapper .middle-wrapper .noun-success span:last-child {
-            font-family: b-regular-italics, serif; }
-        .desktop .parent .details-wrapper .middle-wrapper .description {
-          font-family: b-regular-italics, serif;
-          line-height: 1.5;
-          letter-spacing: 2px;
-          font-size: 18px;
-          margin-top: 1rem; }
-      .desktop .parent .details-wrapper .bottom-wrapper {
-        color: #000000; }
-        .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper {
-          display: flex; }
-          .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split {
-            display: flex;
-            flex-direction: column; }
-            .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
-              margin-left: 2rem; }
-            .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:first-child {
-              text-transform: uppercase;
-              font-family: b-bold-italic, serif; }
-            .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
-              font-family: b-regular-italics, serif;
-              font-size: 16px;
-              margin-top: 4px; }
-    .desktop .parent .main-image {
-      height: 100%; }
+    min-width: 100vw;
+}
+
+.desktop .parent .image-wrapper {
+    position: relative;
+    height: 100%;
+    margin-right: 3.5rem;
+}
+
+.desktop .parent .details-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    padding: 0 8rem;
+    justify-content: space-evenly;
+}
+
+.desktop .parent .details-wrapper .top-wrapper {
+    color: #353335;
+}
+
+.desktop .parent .details-wrapper .top-wrapper .gender-age {
+    font-size: 6rem;
+    text-transform: capitalize;
+    font-family: Yfx, serif;
+    word-spacing: 20px;
+}
+
+.desktop .parent .details-wrapper .top-wrapper .designation {
+    font-size: 3.25rem;
+    text-transform: capitalize;
+    font-family: Yfx, serif;
+    margin-top: 2rem;
+    letter-spacing: 2px;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper {
+    color: #000000;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper .name {
+    font-family: b-light, serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper .noun-success {
+    font-size: 30px;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper .noun-success span:first-child {
+    font-family: b-bold-italic, serif;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper .noun-success span:last-child {
+    font-family: b-regular-italics, serif;
+}
+
+.desktop .parent .details-wrapper .middle-wrapper .description {
+    font-family: b-regular-italics, serif;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 1rem;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper {
+    color: #000000;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper {
+    display: flex;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split {
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
+    margin-left: 2rem;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:first-child {
+    text-transform: uppercase;
+    font-family: b-bold-italic, serif;
+}
+
+.desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
+    font-family: b-regular-italics, serif;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.desktop .parent .main-image {
+    height: 100%;
+}
 
 @media only screen and (max-width: 700px) {
-  .desktop {
-    display: none; }
+    .desktop {
+        display: none;
+    }
 
-  .mobile {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
+    .mobile {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .mobile .parent {
-      width: 100%;
-      height: 75vh;
-      display: flex;
-      flex-direction: column; }
-      .mobile .parent .top {
         width: 100%;
-        height: 30%; }
-        .mobile .parent .top .main-image-wrapper {
-          background: linear-gradient(45deg, #dcdcdc, #ffffff);
-          position: relative;
-          height: 100%;
-          width: 100%; }
-          .mobile .parent .top .main-image-wrapper .main-image-shadow {
-            height: 95%;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-55%); }
-          .mobile .parent .top .main-image-wrapper .main-image {
-            height: 95%;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%); }
-      .mobile .parent .middle {
+        height: 75vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile .parent .top {
+        width: 100%;
+        height: 30%;
+    }
+
+    .mobile .parent .top .main-image-wrapper {
+        background: linear-gradient(45deg, #dcdcdc, #ffffff);
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    .mobile .parent .top .main-image-wrapper .main-image-shadow {
+        height: 95%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-55%);
+    }
+
+    .mobile .parent .top .main-image-wrapper .main-image {
+        height: 95%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mobile .parent .middle {
         height: 25%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        padding: 10px 15px 0 15px; }
-        .mobile .parent .middle .gender-age {
-          width: 100%;
-          font-size: 8vh;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px;
-          text-align: center; }
-        .mobile .parent .middle .designation {
-          font-size: 2vh;
-          text-align: center;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          letter-spacing: 3px;
-          border-top: 1px solid #000;
-          border-bottom: 1px solid #000;
-          padding: 15px 0 10px 0; }
-      .mobile .parent .bottom {
-        flex: 1;
-        padding: 0 15px; }
-        .mobile .parent .bottom .divide-container {
-          display: flex;
-          justify-content: space-between;
-          padding-top: 2vh; }
-          .mobile .parent .bottom .divide-container .name-description-container {
-            width: 58%;
-            display: flex;
-            flex-direction: column; }
-            .mobile .parent .bottom .divide-container .name-description-container .name {
-              font-family: b-light, serif;
-              font-size: 7vw;
-              letter-spacing: 1px; }
-            .mobile .parent .bottom .divide-container .name-description-container .noun-success {
-              font-size: 5vw; }
-              .mobile .parent .bottom .divide-container .name-description-container .noun-success span:first-child {
-                font-family: b-bold-italic, serif; }
-              .mobile .parent .bottom .divide-container .name-description-container .noun-success span:last-child {
-                font-family: b-regular-italics, serif; }
-            .mobile .parent .bottom .divide-container .name-description-container .description {
-              font-family: b-regular-italics, serif;
-              line-height: 1.5;
-              letter-spacing: 2px;
-              font-size: 3vw;
-              margin-top: 1rem; }
-          .mobile .parent .bottom .divide-container .contact-container {
-            width: 39%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-top: 10px; }
-            .mobile .parent .bottom .divide-container .contact-container .split {
-              display: flex;
-              flex-direction: column; }
-              .mobile .parent .bottom .divide-container .contact-container .split span:first-child {
-                text-transform: uppercase;
-                font-family: b-bold-italic, serif;
-                font-size: 3.4vw; }
-              .mobile .parent .bottom .divide-container .contact-container .split span:last-child {
-                font-family: b-regular-italics, serif;
-                font-size: 3.5vw;
-                margin-top: 4px; } }
-@media only screen and (max-width: 460px) {
-  .mobile .parent .middle {
-    height: 20%; }
+        padding: 10px 15px 0 15px;
+    }
+
     .mobile .parent .middle .gender-age {
-      width: 100%;
-      font-size: 6vh;
-      text-transform: capitalize;
-      font-family: Yfx, serif;
-      word-spacing: 20px;
-      text-align: center; } }
+        width: 100%;
+        font-size: 8vh;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        word-spacing: 20px;
+        text-align: center;
+    }
+
+    .mobile .parent .middle .designation {
+        font-size: 2vh;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        letter-spacing: 3px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 15px 0 10px 0;
+    }
+
+    .mobile .parent .bottom {
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    .mobile .parent .bottom .divide-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2vh;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container {
+        width: 58%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container .name {
+        font-family: b-light, serif;
+        font-size: 7vw;
+        letter-spacing: 1px;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container .noun-success {
+        font-size: 5vw;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container .noun-success span:first-child {
+        font-family: b-bold-italic, serif;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container .noun-success span:last-child {
+        font-family: b-regular-italics, serif;
+    }
+
+    .mobile .parent .bottom .divide-container .name-description-container .description {
+        font-family: b-regular-italics, serif;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        font-size: 3vw;
+        margin-top: 1rem;
+    }
+
+    .mobile .parent .bottom .divide-container .contact-container {
+        width: 39%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+
+    .mobile .parent .bottom .divide-container .contact-container .split {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile .parent .bottom .divide-container .contact-container .split span:first-child {
+        text-transform: uppercase;
+        font-family: b-bold-italic, serif;
+        font-size: 3.4vw;
+    }
+
+    .mobile .parent .bottom .divide-container .contact-container .split span:last-child {
+        font-family: b-regular-italics, serif;
+        font-size: 3.5vw;
+        margin-top: 4px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .mobile .parent .middle {
+        height: 20%;
+    }
+
+    .mobile .parent .middle .gender-age {
+        width: 100%;
+        font-size: 6vh;
+        text-transform: capitalize;
+        font-family: Yfx, serif;
+        word-spacing: 20px;
+        text-align: center;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */
