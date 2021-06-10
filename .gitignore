@@ -4,3 +4,4 @@ node_modules
 *.scssc
 *.map
 size-plugin.json
+.sass-cache/
