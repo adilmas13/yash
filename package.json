@@ -10,7 +10,7 @@
     "lint": "eslint src",
     "test": "jest",
     "build-it": "preact build && cp _redirects build",
-    "build-no-prerender" : "preact build --no-prerender && cp _redirects build"
+    "build-no-prerender": "preact build --no-prerender && cp _redirects build"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -25,14 +25,14 @@
     "eslint-config-preact": "^1.1.0",
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
-    "preact-cli": "^3.0.0",
+    "preact-cli": "^3.2.2",
     "sirv-cli": "1.0.3"
   },
   "dependencies": {
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
-    "preact-ssr-prepass": "^1.1.2",
+    "preact-ssr-prepass": "^1.1.2"
   },
   "jest": {
     "preset": "jest-preset-preact",
