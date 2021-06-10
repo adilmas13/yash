@@ -33,7 +33,6 @@
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
     "preact-ssr-prepass": "^1.1.2",
-    "react-lottie": "^1.2.3"
   },
   "jest": {
     "preset": "jest-preset-preact",
