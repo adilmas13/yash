@@ -2,10 +2,7 @@
 import {Fragment, React} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import {advertsThumbnail, artsThumbnail} from "../../service/imgService";
 import Logo from "../logo";
-import {artsDescription} from "../../dataSource/arts";
-import {adverts, advertsDescription} from "../../dataSource/adverts";
 import {useMasonryData} from "./masonryData";
 
 
@@ -86,25 +83,30 @@ const MasonryGrid = (props) => {
 
     const onCellLeave = () => setActiveMedia(undefined);
 
+    const positionStyle = it => {
+        return {
+            position: "absolute",
+            height: it.height,
+            width: it.width,
+            top: it.top,
+            left: it.left,
+        }
+    }
+
     return <div class={style.parent}>
         <Logo />
         <div id='scroll-container' class={style['scroll-container']}>
             {data.map(it =>
-                <div style={{
-                    position: "absolute",
-                    height: it.height,
-                    width: it.width,
-                    top: it.top,
-                    left: it.left,
-                }}>
-                    {it.media.id !== "blank" ? <MediaCell
-                        media={it.media}
-                        handleClick={() => props.onClick(it.media)}
-                        onCellEnter={() => onCellEnter(it.media)}
-                        onCellLeave={() => onCellLeave()}
-                        activeMedia={activeMedia}
-                        isActive={activeMedia && activeMedia.groupId === it.media.groupId && it.media.id !== activeMedia.id}
-                    /> : <Fragment />}
+                <div style={positionStyle(it)}>
+                    {it.media.id !== "blank" ?
+                        <MediaCell
+                            media={it.media}
+                            handleClick={() => props.handleClick(it.media)}
+                            onCellEnter={() => onCellEnter(it.media)}
+                            onCellLeave={() => onCellLeave()}
+                            activeMedia={activeMedia}
+                            isActive={activeMedia && activeMedia.groupId === it.media.groupId && it.media.id !== activeMedia.id}
+                        /> : <Fragment />}
                 </div>
             )}
         </div>
@@ -114,9 +116,15 @@ const MasonryGrid = (props) => {
 
 export default MasonryGrid;
 
-    {/*{previewMedia &&*/}
-    {/*<Preview*/}
-    {/*    data={previewMedia}*/}
-    {/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/}
-    {/*{selectedDescription &&*/}
-    {/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/}
+{/*{previewMedia &&*/
+}
+{/*<Preview*/
+}
+{/*    data={previewMedia}*/
+}
+{/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/
+}
+{/*{selectedDescription &&*/
+}
+{/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/
+}

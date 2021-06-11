@@ -2,6 +2,9 @@
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
 import {arts} from "../../dataSource/arts";
+import {useState} from "preact/hooks";
+import style from "./style.css"
+import Preview from "../preview";
 
 const breakpoints = [
     {
@@ -23,7 +26,22 @@ const breakpoints = [
     }];
 
 const Arts = () => {
-    return <MasonryGrid breakpoints={breakpoints} />
-};
+    const [previewMedia, setPreviewMedia] = useState(undefined)
+
+    const handleClick = media => {
+        const group = arts.filter(it => it.groupId === media.groupId);
+        setPreviewMedia({group, selected: group.indexOf(media)})
+    }
+    
+    const handlePreviewBackClick = () => setPreviewMedia(undefined);
+
+    return <div className={style.parent}>
+        <MasonryGrid
+            breakpoints={breakpoints}
+            handleClick={handleClick}
+        />
+        {previewMedia && <Preview data={previewMedia}  handleBackClick={handlePreviewBackClick} />}
+    </div>
+}
 
 export default Arts;
