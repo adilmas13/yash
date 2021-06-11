@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import {React} from "preact";
 import style from './style.css';
-import {awardsDescription, awardsOriginal, awardsThumbnails} from "../../dataSource/awards";
-import {awardsThumbnail} from "../../service/imgService";
+import {awardsDescription, awardsDetails, awardsOriginal, awardsThumbnails} from "../../dataSource/awards";
 import {useState} from "preact/hooks";
 import Logo from "../logo";
 import Preview from "../preview";
 import Description from "../description";
 
 const MediaCell = (props) => {
+    const media = props.media;
+
     const [isImageLoaded, setImageLoaded] = useState(false);
 
     let cellStyle = {
@@ -16,14 +17,14 @@ const MediaCell = (props) => {
     }
 
     let imageWrapperStyle = {
-        backgroundColor: `${props.media.color}33` || "lightgrey"
+        backgroundColor: `${media.color}33` || "lightgrey"
     }
 
     return <div class={style["image-wrapper"]} style={imageWrapperStyle}>
         <img
             class={style.cell}
             style={cellStyle}
-            src={awardsThumbnail(props.media.image)}
+            src={media.thumbnail}
             alt="image"
             onLoad={() => setImageLoaded(true)}
             onClick={() => props.onClicked()}
@@ -32,20 +33,18 @@ const MediaCell = (props) => {
 };
 
 const Awards = () => {
-        const [previewMedia, setPreviewMedia] = useState(undefined);
-        const [selectedDescription, setSelectedDescription] = useState(undefined);
+        const [preview, setPreview] = useState(undefined);
+        const [description, setDescription] = useState(undefined);
 
         const onClicked = (media) => {
-            const data = {
-                group: awardsOriginal.find(it => it.id === media.id).media,
-                selected: awardsOriginal.find(it => it.id === media.id).media[0],
-                type: "awards"
-            }
-            setPreviewMedia(data);
-            setSelectedDescription(awardsDescription.find(it => it.id === media.id));
+            setPreview({
+                group: awardsDetails.filter(it => it.groupId === media.id),
+                selected: 0,
+            });
+            setDescription(awardsDescription.find(it => it.id === media.id));
         };
 
-        const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
+        const handleDescriptionBackClick = () => setDescription(undefined);
 
         return <div class={style.parent}>
             <Logo />
@@ -54,12 +53,12 @@ const Awards = () => {
                     {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
                 </div>
             </div>
-            {previewMedia &&
+            {preview &&
             <Preview
-                data={previewMedia}
-                onCancelClicked={() => setPreviewMedia(undefined)} />}
-            {selectedDescription &&
-            <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
+                data={preview}
+                handleBackClick={() => setPreview(undefined)} />}
+            {description &&
+            <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
         </div>
     }
 ;
