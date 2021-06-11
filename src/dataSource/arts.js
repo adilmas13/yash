@@ -362,7 +362,7 @@ export const arts = [
 
 export const artsDescription = [
     {
-        id: "park-avenue",
+        id: 2,
         logo: null,
         layout: {paddingTop: "50px"},
         description: "How often do we get to “CREATE” something in art with your own hands and not use any Shutterstock or Getty?\n" +

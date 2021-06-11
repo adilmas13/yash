@@ -77,6 +77,7 @@ const MediaCell = (props) => {
 
 const MasonryGrid = (props) => {
     const data = useMasonryData(props.breakpoints);
+
     const [activeMedia, setActiveMedia] = useState(undefined);
 
     const onCellEnter = media => setActiveMedia(media);
@@ -110,21 +111,7 @@ const MasonryGrid = (props) => {
                 </div>
             )}
         </div>
-
     </div>
 };
 
 export default MasonryGrid;
-
-{/*{previewMedia &&*/
-}
-{/*<Preview*/
-}
-{/*    data={previewMedia}*/
-}
-{/*    onCancelClicked={() => setPreviewMedia(undefined)} />}*/
-}
-{/*{selectedDescription &&*/
-}
-{/*<Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}*/
-}

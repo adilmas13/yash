@@ -44,7 +44,6 @@ const LoadableImage = (props) => {
 
 const Preview = (props) => {
     const group = props.data.group;
-    console.log('PREVIEW', group, props.data.selected);
     const [pageNo, setPageNo] = useState(props.data.selected);
 
     const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
