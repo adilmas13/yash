@@ -30,8 +30,8 @@ const useIsMobileView = () => {
 }
 
 const Designation = () => <div class={style.designation}>
-    <div class={style.text}>SENIOR</div>
-    <div class={style.text}>ART</div>
+    <div class={style.text}>ASSOCIATE</div>
+    <div class={style.text}>CREATIVE</div>
     <div class={style.text}>DIRECTOR</div>
 </div>;
 

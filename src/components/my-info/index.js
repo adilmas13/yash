@@ -6,7 +6,7 @@ import {getAge} from "../../service/calculationService";
 const details = {
     name: 'yash',
     age: getAge("12/22/1991"),
-    designation: 'senior art director',
+    designation: 'associate creative director',
     contact: '+91-8080606226',
     email: 'yash.ambre92@gmail.com',
     gender: 'male',
@@ -92,12 +92,6 @@ const MobileView = () => {
                 </div>
             </div>
         </div>
-
-        {/*<div class={style['bottom-wrapper']}>*/}
-
-        {/*    */}
-        {/*</div>*/}
-
     </div>
 }
 const MyInfo = () => {
