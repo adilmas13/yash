@@ -360,7 +360,8 @@ export const arts = [
             media['video'] = {
                 id: media.videoId,
                 src: `https://www.youtube.com/embed/${media.videoId}`,
-                thumbnail_video: artsThumbnail(media.image_name, "mp4")
+                thumbnail_video: artsThumbnail(media.image_name, "mp4"),
+                always_play_thumbnail: true
             };
         }
         delete media['videoId'];

@@ -66,12 +66,12 @@ const MediaCell = (props) => {
                      props.handleClick(media);
                      setVideoVisibility(false);
                  }}>
-        <img
-            class={isImageLoaded ? style["visible"] : style["hidden"]}
-            alt="adverts" src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />
+        {(!media.video || (media.video && !media.video.always_play_thumbnail)) && <img
+            className={isImageLoaded ? style["visible"] : style["hidden"]}
+            alt="adverts" src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />}
         <div style={overlayStyle} />
-        {(isVideoVisible && media.video) &&
-        <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop />}
+        {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
+        <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop muted />}
     </div>)
 };
 
