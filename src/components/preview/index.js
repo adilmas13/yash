@@ -53,10 +53,9 @@ const Preview = (props) => {
     const parentWidth = document.body.clientWidth;
 
     let width = parentWidth * 0.75;
-    let height = 0;
+    let height;
 
     const media = group[pageNo];
-    console.log(media.ratio);
     const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
 
     if (ratioWidth > ratioHeight) {
@@ -90,12 +89,12 @@ const Preview = (props) => {
                 <div class={style.text}>prev</div>
             </div>
             <div class={style.body}>
-                {media.videoId
+                {media.video
                     ? <iframe
                         width={width}
                         height={height}
-                        src={media.src} />
-                    : <LoadableImage src={media.src} />
+                        src={media.video.src} />
+                    : <LoadableImage src={media.image.src} />
                 }
             </div>
             <div

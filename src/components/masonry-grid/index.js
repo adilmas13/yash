@@ -68,10 +68,10 @@ const MediaCell = (props) => {
                  }}>
         <img
             class={isImageLoaded ? style["visible"] : style["hidden"]}
-            alt="adverts" src={media.thumbnail} onLoad={() => setImageLoaded(true)} />
+            alt="adverts" src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />
         <div style={overlayStyle} />
-        {(isVideoVisible && media.videoId) &&
-        <video src={media.src} poster={media.thumbnail} autoplay loop />}
+        {(isVideoVisible && media.video) &&
+        <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop />}
     </div>)
 };
 

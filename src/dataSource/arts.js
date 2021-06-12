@@ -352,10 +352,19 @@ export const arts = [
     }
 ]
     .map(media => {
-        media.thumbnail = artsThumbnail(media.image_name, media.extension);
-        media.src = media.videoId
-            ? `https://www.youtube.com/embed/${media.videoId}`
-            : artsOriginal(media.image_name, media.extension);
+        media['image'] = {
+            thumbnail: artsThumbnail(media.image_name, media.extension),
+            src: artsOriginal(media.image_name, media.extension)
+        }
+        if (media.videoId) {
+            media['video'] = {
+                id: media.videoId,
+                src: `https://www.youtube.com/embed/${media.videoId}`,
+                thumbnail_video: artsThumbnail(media.image_name, "mp4")
+            };
+        }
+        delete media['videoId'];
+        delete media['image_name'];
         return media;
     });
 
