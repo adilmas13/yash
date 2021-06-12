@@ -1,5 +1,4 @@
 import {useEffect, useRef, useState} from "preact/hooks";
-import {advertsOriginal, artsOriginal, awardsOriginal} from "../../service/imgService";
 import style from "./style.css";
 
 const Back = (props) => {
@@ -57,17 +56,15 @@ const Preview = (props) => {
     let height = 0;
 
     const media = group[pageNo];
+    console.log(media.ratio);
+    const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
 
-    if (media.ratio) {
-        if (media.ratio === "16:9") {
-            height = width * (9 / 16);
-        }
-        if (media.ratio === "9:16") {
-            height = parentHeight * 0.80;
-            width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
-        }
+    if (ratioWidth > ratioHeight) {
+        height = width * (ratioHeight / ratioWidth);
+    } else {
+        height = parentHeight * 0.80;
+        width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
     }
-
 
     const enableArrow = {
         visibility: 'visible',
