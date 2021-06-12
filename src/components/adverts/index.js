@@ -27,31 +27,31 @@ const breakpoints = [
     }]
 
 const Adverts = () => {
-    const onDescriptionCloseClicked = () => setSelectedDescription(undefined);
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [selectedDescription, setSelectedDescription] = useState(undefined);
 
-    const handleOnClick = (media) => {
-        console.log('MEDIA', media);
+    const handleClick = (media) => {
         const group = adverts.filter(it => it.groupId === media.groupId);
-        setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
         setPreviewMedia({
             group,
-            selected: media,
+            selected: group.indexOf(media),
         })
+        setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
     };
+
+    const handleDescriptionBackClick = () => setSelectedDescription(undefined);
 
     return <div className={style.parent}>
         <MasonryGrid
             breakpoints={breakpoints}
-            onClick={handleOnClick}
+            handleClick={handleClick}
         />
         {previewMedia &&
         <Preview
             data={previewMedia}
-            onCancelClicked={() => setPreviewMedia(undefined)} />}
+            handleBackClick={() => setPreviewMedia(undefined)} />}
         {selectedDescription &&
-        <Description data={selectedDescription} onCloseClicked={() => onDescriptionCloseClicked()} />}
+        <Description data={selectedDescription} onCloseClicked={handleDescriptionBackClick} />}
     </div>
 };
 
