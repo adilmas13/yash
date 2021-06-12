@@ -1,4 +1,4 @@
-import {advertsLogo, advertsOriginal, advertsThumbnail, artsOriginal, artsThumbnail} from "../service/imgService";
+import {advertsLogo, advertsOriginal, advertsThumbnail} from "../service/imgService";
 
 export const adverts = [
     {
@@ -397,16 +397,16 @@ export const adverts = [
 export const advertsDescription = [
     {
         id: "kwality-1",
-        logo: {src: "KW", top: "-35px", width: "50px"},
-        layout: {paddingTop: "120px"},
+        logo: {src: "KW", top: "-60px", width: "70px"},
+        layout: {paddingTop: "90px"},
         description: "All “Art directors” wish to have a film in their book that is entirely theirs. This is the one for me. Fun fact: The ‘first draft’ of my script is what was filmed. No edits. No changes. Yes, even I thought I was in a movie.\n" +
             "And this had to win a Prestigious Kyoorius Elephant.",
         closeText: "This better be good"
     },
     {
         id: "stayfree-1",
-        logo: {src: "SF", top: "-35px", width: "50px"},
-        layout: {paddingTop: "120px"},
+        logo: {src: "SF", top: "-60px", width: "90px"},
+        layout: {paddingTop: "100px"},
         description: "Remember how uncomfortable, lost and insecure we felt when we got our first period? \n" +
             "Now imagine getting your periods when you are confined in a room, with the entire country in a state of lockdown. And not just one, or two, but a staggering 23 million girls in India would get their first period during this state.\n" +
             "And that is the ‘Insight’ of this film.\n" +
@@ -415,8 +415,8 @@ export const advertsDescription = [
     },
     {
         id: "stayfree-2",
-        logo: {src: "SKC", top: "-35px", width: "50px"},
-        layout: {paddingTop: "120px"},
+        logo: {src: "SKC", top: "-40px", width: "110px"},
+        layout: {paddingTop: "80px"},
         description: "The Stayfree ‘cloth’ film spoke about the hindrance and humiliation that young girls have to face was a poignant success in breaking taboos. So we decided to take it further and collaborate with UNICEF to reach out to girls to talk about what they are most hesitant to- their periods. Guess what it won? - A Majestic Silver Effie! Come on, this had to happen!",
         closeText: "Empathy points on the way."
     },
@@ -443,8 +443,8 @@ export const advertsDescription = [
     },
     {
         id: "polo",
-        logo: {src: "GCFI", top: "-35px", width: "50px"},
-        layout: {paddingTop: "50px"},
+        logo: {src: "GCFI", top: "-40px", width: "90px"},
+        layout: {paddingTop: "60px"},
         description: "An Indian Cricket Superstar cheers for a German Football team during the FIFA World Cup, 2016.\n" +
             "Now it’s 2019, we have Indian team playing in the Cricket World Cup. Would you expect the Germans to return the cheer?\n" +
             "Why would they right?\n" +
