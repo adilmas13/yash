@@ -10,7 +10,6 @@
       display: grid;
       grid-template-columns: 32% 32% 32%;
       justify-content: space-evenly;
-      padding-top: 20px;
       padding-bottom: 10px;
       grid-row-gap: 15px; }
       .parent .container .grid .image-wrapper {
