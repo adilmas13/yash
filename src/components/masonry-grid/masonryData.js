@@ -22,7 +22,7 @@ export const useMasonryData = (breakpoints) => {
             }
             timeOut = setTimeout(() => {
                 setBreakPoint(Object.assign({}, getDataBasedOnBreakPoint(breakpoints)));
-            }, 1000);
+            }, 300);
         };
         window.addEventListener("resize", handleWindowResize);
         return () => window.removeEventListener("resize", handleWindowResize);
