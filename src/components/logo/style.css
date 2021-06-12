@@ -20,4 +20,13 @@
   .logo-parent:hover {
     transform: scale(1.1); }
 
+@media only screen and (max-width: 600px) {
+  .logo-parent {
+    padding: 15px 0; }
+    .logo-parent .logo {
+      height: 40px;
+      width: 40px; }
+    .logo-parent .logo-text {
+      font-size: 10px; } }
+
 /*# sourceMappingURL=style.css.map */
