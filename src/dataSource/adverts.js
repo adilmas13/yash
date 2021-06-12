@@ -36,7 +36,7 @@ export const adverts = [
     {
         image_name: "polo",
         ratio: "1000:562",
-        videoId: "4S-7FoZZQXQ",
+        videoId: "C0U1Gf6tej4",
         column: 1,
         groupId: "polo",
         id: 4
