@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import {Fragment, React} from "preact";
+import {createRef, Fragment, React} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
@@ -76,6 +76,9 @@ const MediaCell = (props) => {
 };
 
 const MasonryGrid = (props) => {
+
+    const scrollerRef = createRef()
+
     const data = useMasonryData(props.breakpoints);
 
     const [activeMedia, setActiveMedia] = useState(undefined);
@@ -94,9 +97,15 @@ const MasonryGrid = (props) => {
         }
     }
 
+    useEffect(() => {
+        const isScrollDisable = props.disableScroll;
+        const scroller = scrollerRef.current;
+        scroller.style.overflow = isScrollDisable ? 'hidden' : 'auto';
+    }, [props.disableScroll])
+
     return <div class={style.parent}>
         <Logo />
-        <div id='scroll-container' class={style['scroll-container']}>
+        <div id='scroll-container' class={style['scroll-container']} ref={scrollerRef}>
             {data.map((it, i) =>
                 <div style={positionStyle(it)}>
                     {it.media.id !== "blank" ?

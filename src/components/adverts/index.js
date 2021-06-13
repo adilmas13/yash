@@ -45,6 +45,7 @@ const Adverts = () => {
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}
+            disableScroll={previewMedia}
         />
         {previewMedia &&
         <Preview

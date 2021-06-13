@@ -44,6 +44,7 @@ const Arts = () => {
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}
+            disableScroll={previewMedia}
         />
         {previewMedia && <Preview data={previewMedia} handleBackClick={handlePreviewBackClick} />}
         {description &&  <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
