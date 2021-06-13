@@ -10,12 +10,19 @@ import Description from "../description";
 const breakpoints = [
     {
         point: 400,
+        noOfColumns: 2,
+        data: arts
+            .filter(it => it.id !== "blank")
+            .sort((a, b) => a.id - b.id)
+    },
+    {
+        point: 700,
         noOfColumns: 3,
         data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
-        point: 800,
+        point: 900,
         noOfColumns: 4,
         data: arts
             .filter(it => it.id !== "blank")
@@ -44,10 +51,9 @@ const Arts = () => {
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}
-            disableScroll={previewMedia}
-        />
+            disableScroll={previewMedia} />
         {previewMedia && <Preview data={previewMedia} handleBackClick={handlePreviewBackClick} />}
-        {description &&  <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
+        {description && <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
     </div>
 }
 
