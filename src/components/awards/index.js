@@ -49,7 +49,7 @@ const Awards = () => {
 
         useEffect(() => {
             const container = containerRef.current;
-            container.style.overflow = preview ? 'hidden' : 'auto';
+            container.style.overflow = preview ? 'hidden' : 'inherit';
         }, [preview])
 
         return <div class={style.parent}>

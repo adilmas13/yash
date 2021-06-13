@@ -100,7 +100,7 @@ const MasonryGrid = (props) => {
     useEffect(() => {
         const isScrollDisable = props.disableScroll;
         const scroller = scrollerRef.current;
-        scroller.style.overflow = isScrollDisable ? 'hidden' : 'auto';
+        scroller.style.overflow = isScrollDisable ? 'hidden' : 'inherit';
     }, [props.disableScroll])
 
     return <div class={style.parent}>
