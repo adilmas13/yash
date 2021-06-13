@@ -3,12 +3,13 @@
   display: none; }
 
 .desktop {
-  display: block; }
+  display: block;
+  height: 100%; }
   .desktop .parent {
     display: flex;
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     justify-content: flex-end;
     min-width: 100vw; }
     .desktop .parent .image-wrapper {
@@ -23,8 +24,9 @@
       width: calc(100% / 2);
       display: flex;
       flex-direction: column;
-      padding: 0 8rem;
-      justify-content: space-evenly; }
+      padding: 0 8vw;
+      justify-content: space-evenly;
+      overflow: hidden; }
       .desktop .parent .details-wrapper .top-wrapper {
         color: #353335; }
         .desktop .parent .details-wrapper .top-wrapper .gender-age {
@@ -73,9 +75,56 @@
               font-size: 16px;
               margin-top: 4px; }
     .desktop .parent .main-image {
+      height: 100%;
+      position: absolute;
+      right: 10px; }
+    .desktop .parent .image-shadow {
       height: 100%; }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1200px) {
+  .desktop {
+    display: block;
+    height: 100%; }
+    .desktop .parent {
+      display: flex;
+      flex-direction: row-reverse; }
+      .desktop .parent .main-image {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto; }
+      .desktop .parent .image-shadow {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto; }
+      .desktop .parent .image-wrapper {
+        position: absolute;
+        height: 100%;
+        margin-right: 0;
+        right: 0;
+        width: calc(100% * 0.75); }
+      .desktop .parent .details-wrapper {
+        position: relative;
+        flex: 0.3;
+        padding-left: 3vw; }
+        .desktop .parent .details-wrapper .top-wrapper {
+          color: #353335; }
+          .desktop .parent .details-wrapper .top-wrapper .gender-age {
+            font-size: 5vw; }
+          .desktop .parent .details-wrapper .top-wrapper .designation {
+            font-size: 4vw; }
+        .desktop .parent .details-wrapper .middle-wrapper .name {
+          font-size: 3vw; }
+        .desktop .parent .details-wrapper .middle-wrapper .noun-success {
+          font-size: 2vw; }
+        .desktop .parent .details-wrapper .middle-wrapper .description {
+          font-size: 1.5vw; }
+        .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
+          margin-left: 2rem; }
+        .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
+          font-size: 1.5vw; } }
+@media only screen and (max-width: 950px) {
   .desktop {
     display: none; }
 

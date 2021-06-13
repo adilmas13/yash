@@ -7,12 +7,13 @@
 
 .desktop {
   display: block;
+  height: 100%;
 
   .parent {
     display: flex;
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     justify-content: flex-end;
     min-width: 100vw;
 
@@ -30,8 +31,10 @@
       width: calc(100% / 2);
       display: flex;
       flex-direction: column;
-      padding: 0 8rem;
+      padding: 0 8vw;
       justify-content: space-evenly;
+      overflow: hidden;
+      //background: floralwhite;
 
       .top-wrapper {
         color: $secondary-text-color;
@@ -117,12 +120,104 @@
 
     .main-image {
       height: 100%;
+      position: absolute;
+      right: 10px;
+    }
+
+    .image-shadow {
+      height: 100%;
     }
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .desktop {
+    display: block;
+    height: 100%;
 
-@media only screen and (max-width: 700px) {
+    .parent {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .main-image{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-shadow{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-wrapper {
+        position: absolute;
+        height: 100%;
+        margin-right: 0;
+        right: 0;
+        width: calc(100% * 0.75);
+      }
+
+      .details-wrapper {
+        position: relative;
+        flex: 0.3;
+        padding-left: 3vw;
+
+        .top-wrapper {
+          color: $secondary-text-color;
+
+          .gender-age {
+            font-size: 5vw;
+          }
+
+          .designation {
+            font-size: 4vw;
+          }
+        }
+
+        .middle-wrapper {
+
+          .name {
+            font-size: 3vw;
+          }
+
+          .noun-success {
+            font-size: 2vw;
+          }
+
+          .description {
+            font-size: 1.5vw;
+          }
+        }
+
+        .bottom-wrapper {
+
+          .digits-letters-wrapper {
+
+            .split {
+
+              &:last-child {
+                margin-left: 2rem;
+              }
+
+              span {
+
+                &:last-child {
+                  font-size: 1.5vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
   .desktop {
     display: none;
   }

@@ -21,9 +21,8 @@ const details = {
 const DesktopView = () => {
     return <div class={style.parent}>
         <div class={style["image-wrapper"]}>
-            <img src={aboutMeImg("about_shadow")} alt="yash-shadow" class={style['main-image']} />
-            <img src={aboutMeImg("about")} alt="yash" class={style['main-image']}
-                 style="position: absolute; right: 10px" />
+            <img src={aboutMeImg("about_shadow")} alt="yash-shadow" class={style['image-shadow']} />
+            <img src={aboutMeImg("about")} alt="yash" class={style['main-image']} />
         </div>
         <div class={style['details-wrapper']}>
             <div class={style['top-wrapper']}>
