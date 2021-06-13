@@ -1,4 +1,4 @@
-import {awardsOriginal, awardsLogo, awardsThumbnail} from "../service/imgService";
+import {awardsOriginal, awardsLogo, awardsThumbnail, advertsThumbnail, advertsOriginal} from "../service/imgService";
 
 export const awardsThumbnails = [
     {id: 1, image: "1jugnooH", color: "#f2fc75"},
@@ -369,8 +369,18 @@ export const awardsDetails = [
         groupId: 11
     }
 ].map(media => {
-    media.src = media.videoId
-        ? `https://www.youtube.com/embed/${media.videoId}`
-        : awardsOriginal(media.image_name, media.extension);
+    media['image'] = {
+        thumbnail: awardsThumbnail(media.image_name, media.extension),
+        src: awardsOriginal(media.image_name, media.extension)
+    }
+    if (media.videoId) {
+        media['video'] = {
+            id: media.videoId,
+            src: `https://www.youtube.com/embed/${media.videoId}`,
+            thumbnail_video: awardsThumbnail(media.image_name, "mp4")
+        };
+    }
+    delete media['videoId'];
+    delete media['image_name'];
     return media;
 })
