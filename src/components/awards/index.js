@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import {React} from "preact";
+import {createRef, React} from "preact";
 import style from './style.css';
 import {awardsDescription, awardsDetails, awardsOriginal, awardsThumbnails} from "../../dataSource/awards";
-import {useState} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
 import Preview from "../preview";
 import Description from "../description";
@@ -33,6 +33,7 @@ const MediaCell = (props) => {
 };
 
 const Awards = () => {
+        const containerRef = createRef();
         const [preview, setPreview] = useState(undefined);
         const [description, setDescription] = useState(undefined);
 
@@ -46,9 +47,14 @@ const Awards = () => {
 
         const handleDescriptionBackClick = () => setDescription(undefined);
 
+        useEffect(() => {
+            const container = containerRef.current;
+            container.style.overflow = preview ? 'hidden' : 'auto';
+        }, [preview])
+
         return <div class={style.parent}>
             <Logo />
-            <div className={style.container}>
+            <div className={style.container} ref={containerRef}>
                 <div className={style.grid}>
                     {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
                 </div>
