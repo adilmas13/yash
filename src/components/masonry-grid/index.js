@@ -97,7 +97,7 @@ const MasonryGrid = (props) => {
     return <div class={style.parent}>
         <Logo />
         <div id='scroll-container' class={style['scroll-container']}>
-            {data.map(it =>
+            {data.map((it, i) =>
                 <div style={positionStyle(it)}>
                     {it.media.id !== "blank" ?
                         <MediaCell
@@ -108,6 +108,17 @@ const MasonryGrid = (props) => {
                             activeMedia={activeMedia}
                             isActive={activeMedia && activeMedia.groupId === it.media.groupId && it.media.id !== activeMedia.id}
                         /> : <Fragment />}
+                    <div style={{
+                        position: 'absolute',
+                        left: 0,
+                        bottom: 0,
+                        color: 'white',
+                        padding: '10px',
+                        fontStyle: 'italic',
+                        fontWeight : 'bold',
+                        fontSize: '40px',
+                        backgroundColor: 'rgba(0,0,0,0.8)'
+                    }}>{i + 1}</div>
                 </div>
             )}
         </div>
