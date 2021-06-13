@@ -53,17 +53,19 @@
               cursor: pointer; }
           .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
             width: 30px;
-            opacity: 0.7;
+            opacity: 0;
             cursor: pointer;
             margin-left: 32%;
-            pointer-events: none; }
+            pointer-events: none;
+            margin-bottom: 50px; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
-            opacity: 0.7;
+            opacity: 0;
             transform: rotate(180deg);
             cursor: pointer;
             margin-left: 32%;
-            pointer-events: none; }
+            pointer-events: none;
+            margin-top: 50px; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;
@@ -129,14 +131,16 @@
               cursor: pointer; }
           .parent .three-layer .slot-wrapper .slot-parent .arrow {
             width: 30px;
-            opacity: 0.7;
+            opacity: 0;
             cursor: pointer;
-            pointer-events: none; }
+            pointer-events: none;
+            margin-bottom: 0; }
           .parent .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
-            opacity: 0.7;
+            opacity: 0;
             transform: rotate(180deg);
             cursor: pointer;
-            pointer-events: none; } }
+            pointer-events: none;
+            margin-top: 0; } }
 
 /*# sourceMappingURL=style.css.map */

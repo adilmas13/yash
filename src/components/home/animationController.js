@@ -1,4 +1,4 @@
-import {downArrow, homeBody, upArrow} from "./utils";
+import {downArrow, homeBody, upArrow, yashText} from "./utils";
 
 const downArrowAnimationKeyFrames = [
     {transform: 'translateY(0px) rotate(180deg)'},
@@ -26,24 +26,6 @@ export const animateDownArrowOnClick = () => {
 export const animateUpArrowOnClick = () => {
     const arrow = upArrow();
     const animation = arrow.animate(upArrowAnimationKeyFrames, commonAnimationOptions)
-    animation.play();
-    return animation;
-}
-
-export const animateDownArrowInfinitely = () => {
-    const animation = downArrow().animate(downArrowAnimationKeyFrames, {
-        ...commonAnimationOptions,
-        iterations: 2
-    });
-    animation.play();
-    return animation
-}
-
-export const animateUpArrowInfinitely = () => {
-    const animation = upArrow().animate(upArrowAnimationKeyFrames, {
-        ...commonAnimationOptions,
-        iterations: 2
-    });
     animation.play();
     return animation;
 }
@@ -111,4 +93,34 @@ export const revealHome = () => {
     })
     animation.play()
     return animation
+}
+
+const revealArrow = arrow => {
+    const animation = arrow.animate([
+        {opacity: 0},
+        {opacity: 0.7}
+    ], {
+        duration: 1500,
+        delay : 2000,
+        fill: "forwards"
+    });
+    animation.play();
+    return animation;
+}
+export const revealDownArrow = () => revealArrow(downArrow())
+
+export const revealUpArrow = () => revealArrow(upArrow())
+
+export const decreaseYashTextOpacity = () => {
+    const text = yashText()
+    const animation = text.animate([
+        {opacity: 1},
+        {opacity: 0.7}
+    ], {
+        duration: 500,
+        delay : 2000,
+        fill: "forwards"
+    });
+    animation.play();
+    return animation;
 }

@@ -6,17 +6,19 @@ import {route} from "preact-router";
 import Logo from "../logo";
 import {getPageNo, homeVideoForwardSlots, homeVideoReverseSlots, setPageNo} from "../../dataSource/home";
 import {
-    animateDownArrowInfinitely,
     animateDownArrowOnClick,
-    animateUpArrowInfinitely,
     animateUpArrowOnClick,
     cancelAnimation,
+    decreaseYashTextOpacity,
     hideDownArrow,
-    hideUpArrow, revealHome,
+    hideUpArrow,
+    revealDownArrow,
+    revealHome,
+    revealUpArrow,
     showDownArrow,
     showUpArrow
 } from "./animationController";
-import {downArrow, upArrow} from "./utils";
+import {downArrow, homeBody, upArrow} from "./utils";
 
 const useIsMobileView = () => {
     const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 701);
@@ -180,9 +182,16 @@ const SlotMachine = (props) => {
     </div>
 }
 
-const Yash = () => <div class={style["yash-text-wrapper"]}>
-    <div class={style["yash-text"]}>yash</div>
-</div>
+const Yash = () => {
+
+    useEffect(() => {
+        decreaseYashTextOpacity()
+    }, [])
+
+    return <div className={style["yash-text-wrapper"]}>
+        <div className={style["yash-text"]} id={'yash-text'}>yash</div>
+    </div>
+}
 
 const YashVideo = (props) => {
     const videoRef = createRef()
@@ -282,13 +291,12 @@ const Home = () => {
     useEffect(() => {
         const pageNo = getPageNo();
         revealHome();
+        decreaseYashTextOpacity();
         setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
-        const promises = [animateDownArrowInfinitely().finished, animateUpArrowInfinitely().finished];
+        const promises = [revealUpArrow().finished, revealDownArrow().finished];
         Promise
             .all(promises)
             .then(() => {
-                upArrow().style.pointerEvents = "auto";
-                downArrow().style.pointerEvents = "auto";
                 if (pageNo === 0) {
                     hideUpArrow(300);
                 }
