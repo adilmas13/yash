@@ -11,6 +11,7 @@ const Back = (props) => {
         </div>
     )
 }
+
 const LoadableImage = (props) => {
 
     const [isImageLoaded, setImageLoaded] = useState(false);
@@ -75,34 +76,36 @@ const Preview = (props) => {
         pointerEvents: 'none'
     }
 
-    return (<div class={style.preview}>
-        <div class={style.cancel}>
-            <Back onCancel={() => props.handleBackClick()} />
-        </div>
-        <div class={style["body-wrapper"]}>
-            <div
-                style={pageNo > 0 ? enableArrow : disableArrow}
-                class={style["prev-wrapper"]}
-                onClick={onPrevClicked}>
-                <img src={"assets/arrow_blunt.svg"}
-                     class={style.arrow} />
-                <div class={style.text}>prev</div>
+    return (<div class={style.parent}>
+        <div className={style['container']}>
+            <div className={style.cancel}>
+                <Back onCancel={() => props.handleBackClick()} />
             </div>
-            <div class={style.body}>
-                {media.video
-                    ? <iframe
-                        width={width}
-                        height={height}
-                        src={media.video.src} />
-                    : <LoadableImage src={media.image.src} />
-                }
-            </div>
-            <div
-                style={pageNo < (group.length - 1) ? enableArrow : disableArrow}
-                class={style["next-wrapper"]}
-                onClick={onNextClicked}>
-                <div class={style.text}>next</div>
-                <img src={"assets/arrow_blunt.svg"} class={style.arrow} />
+            <div className={style["body-wrapper"]}>
+                <div
+                    style={pageNo > 0 ? enableArrow : disableArrow}
+                    className={style["prev-wrapper"]}
+                    onClick={onPrevClicked}>
+                    <img src={"assets/arrow_blunt.svg"}
+                         className={style.arrow} />
+                    <div className={style.text}>prev</div>
+                </div>
+                <div className={style.body}>
+                    {media.video
+                        ? <iframe
+                            width={width}
+                            height={height}
+                            src={media.video.src} />
+                        : <LoadableImage src={media.image.src} />
+                    }
+                </div>
+                <div
+                    style={pageNo < (group.length - 1) ? enableArrow : disableArrow}
+                    className={style["next-wrapper"]}
+                    onClick={onNextClicked}>
+                    <div className={style.text}>next</div>
+                    <img src={"assets/arrow_blunt.svg"} className={style.arrow} />
+                </div>
             </div>
         </div>
     </div>)
