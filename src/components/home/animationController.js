@@ -1,4 +1,4 @@
-import {downArrow, upArrow} from "./utils";
+import {downArrow, homeBody, upArrow} from "./utils";
 
 const downArrowAnimationKeyFrames = [
     {transform: 'translateY(0px) rotate(180deg)'},
@@ -99,3 +99,16 @@ export const showDownArrow = () => {
 };
 
 export const cancelAnimation = animation => animation?.cancel();
+
+export const revealHome = () => {
+    let body = homeBody();
+    const animation = body.animate([
+        {opacity: 0},
+        {opacity: 1}
+    ], {
+        duration: 1500,
+        fill: "forwards"
+    })
+    animation.play()
+    return animation
+}

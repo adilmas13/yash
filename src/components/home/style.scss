@@ -7,6 +7,8 @@
   justify-content: center;
   min-width: 100vw;
   padding-top: 25vh;
+  opacity: 0;
+  transition: 0.3s ease-in-out opacity;
 
   .body {
     display: flex;

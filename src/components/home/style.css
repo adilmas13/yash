@@ -4,7 +4,9 @@
   height: 100vh;
   justify-content: center;
   min-width: 100vw;
-  padding-top: 25vh; }
+  padding-top: 25vh;
+  opacity: 0;
+  transition: 0.3s ease-in-out opacity; }
   .parent .body {
     display: flex;
     flex-direction: column;

@@ -12,7 +12,7 @@ import {
     animateUpArrowOnClick,
     cancelAnimation,
     hideDownArrow,
-    hideUpArrow,
+    hideUpArrow, revealHome,
     showDownArrow,
     showUpArrow
 } from "./animationController";
@@ -213,7 +213,7 @@ const YashVideo = (props) => {
     return <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoPlay={true} />
 }
 
-const DesktopView = (props) => <div class={style.parent}>
+const DesktopView = (props) => <div class={style.parent} id={'home_body'}>
     <div class={style.body}>
         <div class={style["three-layer"]}>
             <Yash />
@@ -231,7 +231,7 @@ const DesktopView = (props) => <div class={style.parent}>
     </div>
 </div>
 
-const MobileView = (props) => <div className={style.parent}>
+const MobileView = (props) => <div className={style.parent} id={'home_body'}>
     <div className={style["logo-wrapper"]}>
         <Logo />
     </div>
@@ -281,6 +281,7 @@ const Home = () => {
 
     useEffect(() => {
         const pageNo = getPageNo();
+        revealHome();
         setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
         const promises = [animateDownArrowInfinitely().finished, animateUpArrowInfinitely().finished];
         Promise
