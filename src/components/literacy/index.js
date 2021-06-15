@@ -46,9 +46,8 @@ const MobileView = () => {
 }
 const DesktopView = () => <div className={style.parent}>
     <div className={style["image-wrapper"]}>
-        <img src={aboutMeImg("literacy_shadow")} alt="yash-shadow" className={style['main-image']} />
-        <img src={aboutMeImg("literacy")} alt="yash" className={style['main-image']}
-             style="position: absolute; right: 10px" />
+        <img src={aboutMeImg("literacy_shadow")} alt="yash-shadow" className={style['main-image-shadow']} />
+        <img src={aboutMeImg("literacy")} alt="yash" className={style['main-image']} />
     </div>
     <div className={style['details-wrapper']}>
         <div className={style.wrapper}>
