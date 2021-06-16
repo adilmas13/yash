@@ -18,18 +18,8 @@ import {
     showDownArrow,
     showUpArrow
 } from "./animationController";
-import {downArrow, homeBody, upArrow} from "./utils";
-
-const useIsMobileView = () => {
-    const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 701);
-    const breakPoint = 700;
-    useEffect(() => {
-        const handleWindowResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleWindowResize);
-        return () => window.removeEventListener("resize", handleWindowResize);
-    }, [])
-    return width <= breakPoint;
-}
+import {downArrow, upArrow} from "./utils";
+import {useIsMobileView} from "../../hooks/mobileViewHook";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>ASSOCIATE</div>
@@ -258,7 +248,7 @@ const MobileView = (props) => <div className={style.parent} id={'home_body'}>
 </div>;
 
 const Home = () => {
-    const isMobileView = useIsMobileView();
+    const isMobileView = useIsMobileView(700);
 
     const [action, setAction] = useState({
         position: 4,

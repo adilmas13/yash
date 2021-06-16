@@ -1,0 +1,133 @@
+@import "../../assets/styles/colors";
+
+.parent {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+
+    .top {
+      width: 100%;
+      height: 30%;
+
+      .main-image-wrapper {
+        background: linear-gradient(270deg, #dcdcdc, #ffffff);
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .main-image-shadow {
+          height: 95%;
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+        }
+
+        .main-image {
+          height: 95%;
+          position: absolute;
+          bottom: 0;
+          left: 15%;
+        }
+
+        .smoke {
+          position: absolute;
+          left: 11.3%;
+          top: 13%;
+          width: 22vh;
+        }
+      }
+    }
+
+    .middle {
+      height: 28%;
+      padding: 0 15px;
+
+      .middle-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #ccc;
+        height: 100%;
+
+        .header {
+          font-size: 12vw;
+          text-transform: capitalize;
+          font-family: Yfx, serif;
+          word-spacing: 20px;
+          color: $secondary-text-color;
+          text-align: center;
+        }
+      }
+    }
+
+    .bottom {
+      flex: 1;
+      padding: 0 15px;
+      overflow: hidden;
+
+      .details {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+        .titles {
+          font-family: b-light, serif;
+          font-size: 5vw;
+          text-align: end;
+          list-style: none;
+          color: $text-primary-color;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          span {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            span {
+              opacity: 0.2;
+              margin: 0 0.6rem;
+            }
+          }
+        }
+
+        .desc {
+          list-style: none;
+          color: $text-primary-color;
+          font-family: b-bold, sans-serif;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+
+          span {
+            flex: 1;
+            display: flex;
+            font-size: 3vw;
+            align-items: center;
+
+            .designation {
+              font-family: b-regular-italics, sans-serif;
+
+              &::before {
+                content: '|';
+                font-family: b-light, sans-serif;
+                font-size: 3vw;
+                margin: 0 14px;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

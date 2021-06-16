@@ -4,17 +4,21 @@ import MyInfo from "../my-info";
 import Experience from "../experience";
 import Literacy from "../literacy";
 import Logo from "../logo";
+import {useIsMobileView} from "../../hooks/mobileViewHook";
+import MyInfoMobile from "../my-info-mobile";
+import ExperienceMobile from "../experience-mobile";
+import LiteracyMobile from "../literacy-mobile";
+import {createRef} from "preact";
 
 const MobileView = (props) => {
+    const scrollerRef = createRef();
 
     useEffect(() => {
-        const element = document.getElementById("scroller");
+        const element = scrollerRef.current;
         element.scroll({
             top: (element.clientHeight) * props.pageNo,
             behavior: "smooth"
-        })
-        return () => {
-        };
+        });
     }, [props.pageNo]);
 
     const hideIcon = {
@@ -29,10 +33,10 @@ const MobileView = (props) => {
     }
 
     return <div className={style.parent}>
-        <div className={style['scroll-container']} id="scroller">
-            <MyInfo />
-            <Experience />
-            <Literacy />
+        <div className={style['scroll-container']} ref={scrollerRef}>
+            <MyInfoMobile />
+            <ExperienceMobile />
+            <LiteracyMobile />
         </div>
         <div className={style['top-arrow-container']}>
             {props.pageNo === 0 ? <Logo /> : <div />}
@@ -59,24 +63,25 @@ const MobileView = (props) => {
 }
 
 const DesktopView = (props) => {
+    const scrollerRef = createRef();
 
-    useEffect(() => {
-        const element = document.getElementById("scroller1");
-        element.scroll({
-            left: element.clientWidth * props.pageNo,
-            behavior: "smooth"
-        })
-        return () => {
-        };
-    }, [props.pageNo]);
+    // useEffect(() => {
+    //     const element = scrollerRef.current;
+    //     element.scroll({
+    //         left: element.clientWidth * props.pageNo,
+    //         behavior: "smooth"
+    //     })
+    //     return () => {
+    //     };
+    // }, [props.pageNo]);
 
     return <div className={style['parent']}>
         <div className={style['container']}>
             <div className={style.wrapper}>
-                <div className={style["scroll-container"]} id="scroller1">
-                    {/*<MyInfo />*/}
-                    <Experience />
-                    {/*<Literacy />*/}
+                <div className={style["scroll-container"]} ref={scrollerRef}>
+                    {props.pageNo === 0 &&  <MyInfo />}
+                    {props.pageNo === 1 &&  <Experience />}
+                    {props.pageNo === 2 &&  <Literacy />}
                 </div>
                 {props.pageNo > 0 && <div className={style.left} onClick={() => props.onPrevClicked()}>prev</div>}
                 {props.pageNo < 2 && <div className={style.right} onClick={() => props.onNextClicked()}>next</div>}
@@ -87,27 +92,21 @@ const DesktopView = (props) => {
 }
 
 const AboutMe = () => {
+    const isMobileView = useIsMobileView(700);
     const [pageNo, setPageNo] = useState(0);
 
     const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
     const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
 
-    return <div>
-        <div className={style.mobile}>
-            <MobileView
-                pageNo={pageNo}
-                onPrevClicked={onPrevClicked}
-                onNextClicked={onNextClicked}
-            />
-        </div>
-        <div className={style.desktop}>
-            <DesktopView
-                pageNo={pageNo}
-                onPrevClicked={onPrevClicked}
-                onNextClicked={onNextClicked}
-            />
-        </div>
-    </div>
+    return isMobileView ?
+        <MobileView
+            pageNo={pageNo}
+            onPrevClicked={onPrevClicked}
+            onNextClicked={onNextClicked} />
+        : <DesktopView
+            pageNo={pageNo}
+            onPrevClicked={onPrevClicked}
+            onNextClicked={onNextClicked} />
 }
 
 export default AboutMe;
