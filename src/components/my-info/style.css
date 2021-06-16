@@ -91,8 +91,7 @@
       .desktop .parent .main-image {
         position: absolute;
         bottom: 0;
-        width: 100%;
-        height: auto; }
+        height: 98%; }
       .desktop .parent .image-shadow {
         position: absolute;
         bottom: 0;
@@ -124,7 +123,31 @@
           margin-left: 2rem; }
         .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
           font-size: 1.5vw; } }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1100px) {
+  .desktop .parent .image-wrapper {
+    right: -25%; } }
+@media only screen and (max-width: 900px) {
+  .desktop .parent .details-wrapper {
+    position: relative;
+    flex: 0.3;
+    padding-left: 3vw; }
+    .desktop .parent .details-wrapper .top-wrapper {
+      color: #353335; }
+      .desktop .parent .details-wrapper .top-wrapper .gender-age {
+        font-size: 6vw; }
+      .desktop .parent .details-wrapper .top-wrapper .designation {
+        font-size: 4vw; }
+    .desktop .parent .details-wrapper .middle-wrapper .name {
+      font-size: 5vw; }
+    .desktop .parent .details-wrapper .middle-wrapper .noun-success {
+      font-size: 3vw; }
+    .desktop .parent .details-wrapper .middle-wrapper .description {
+      font-size: 1.8vw; }
+    .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
+      margin-left: 2rem; }
+    .desktop .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
+      font-size: 1.6vw; } }
+@media only screen and (max-width: 700px) {
   .desktop {
     display: none; }
 
