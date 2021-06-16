@@ -105,7 +105,10 @@ const DesktopView = () => {
         </div>
     </div>
 }
-const Experience = () => <div>
+const Experience = () => <div style={{
+    width: '100%',
+    height: '100%'
+}}>
     <div className={style.desktop}>
         <DesktopView />
     </div>
