@@ -1,27 +1,21 @@
 import style from './style.css';
-import {useEffect, useRef, useState} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import MyInfo from "../my-info";
 import Experience from "../experience";
 import Literacy from "../literacy";
 import Logo from "../logo";
 
-const MobileView = () => {
-    const [pageNo, setPageNo] = useState(0);
-    const nextArrowRef = useRef(null);
-    const previousArrowRef = useRef(null);
+const MobileView = (props) => {
 
     useEffect(() => {
         const element = document.getElementById("scroller");
         element.scroll({
-            top: (element.clientHeight) * pageNo,
+            top: (element.clientHeight) * props.pageNo,
             behavior: "smooth"
         })
         return () => {
         };
-    }, [pageNo]);
-
-    const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
-    const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+    }, [props.pageNo]);
 
     const hideIcon = {
         opacity: 0,
@@ -41,22 +35,22 @@ const MobileView = () => {
             <Literacy />
         </div>
         <div className={style['top-arrow-container']}>
-            {pageNo === 0 ? <Logo /> : <div />}
+            {props.pageNo === 0 ? <Logo /> : <div />}
             <div
-                style={pageNo > 0 ? showIcon : hideIcon}
+                style={props.pageNo > 0 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}
-                onClick={onPrevClicked}
-                ref={previousArrowRef}>
+                onClick={() => props.onPrevClicked()}
+            >
                 <img src={'assets/arrow_blunt.svg'} />
                 <div>previous</div>
             </div>
         </div>
         <div className={style['bottom-arrow-container']}>
             <div
-                style={pageNo < 2 ? showIcon : hideIcon}
+                style={props.pageNo < 2 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}
-                onClick={onNextClicked}
-                ref={nextArrowRef}>
+                onClick={() => props.onNextClicked()}
+            >
                 <div>next</div>
                 <img src={'assets/arrow_blunt.svg'} />
             </div>
@@ -64,42 +58,56 @@ const MobileView = () => {
     </div>
 }
 
-const DesktopView = () => {
-    const [pageNo, setPageNo] = useState(0);
+const DesktopView = (props) => {
 
     useEffect(() => {
-        const element = document.getElementById("scroller");
+        const element = document.getElementById("scroller1");
         element.scroll({
-            left: document.body.clientWidth * pageNo,
+            left: element.clientWidth * props.pageNo,
             behavior: "smooth"
         })
         return () => {
         };
-    }, [pageNo]);
+    }, [props.pageNo]);
+
+    return <div className={style['parent']}>
+        <div className={style['container']}>
+            <div className={style.wrapper}>
+                <div className={style["scroll-container"]} id="scroller1">
+                    {/*<MyInfo />*/}
+                    <Experience />
+                    {/*<Literacy />*/}
+                </div>
+                {props.pageNo > 0 && <div className={style.left} onClick={() => props.onPrevClicked()}>prev</div>}
+                {props.pageNo < 2 && <div className={style.right} onClick={() => props.onNextClicked()}>next</div>}
+            </div>
+        </div>
+
+    </div>
+}
+
+const AboutMe = () => {
+    const [pageNo, setPageNo] = useState(0);
 
     const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
     const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
 
-    return <div id="app">
-        <div class={style.wrapper}>
-            <div class={style["scroll-container"]} id="scroller">
-                <MyInfo />
-                <Experience />
-                <Literacy />
-            </div>
-            {pageNo > 0 && <div class={style.left} onClick={onPrevClicked}>prev</div>}
-            {pageNo < 2 && <div class={style.right} onClick={onNextClicked}>next</div>}
+    return <div>
+        <div className={style.mobile}>
+            <MobileView
+                pageNo={pageNo}
+                onPrevClicked={onPrevClicked}
+                onNextClicked={onNextClicked}
+            />
+        </div>
+        <div className={style.desktop}>
+            <DesktopView
+                pageNo={pageNo}
+                onPrevClicked={onPrevClicked}
+                onNextClicked={onNextClicked}
+            />
         </div>
     </div>
 }
-
-const AboutMe = () => <div>
-    <div className={style.mobile}>
-        <MobileView />
-    </div>
-    <div className={style.desktop}>
-        <DesktopView />
-    </div>
-</div>
 
 export default AboutMe;
