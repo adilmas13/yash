@@ -1,4 +1,4 @@
-import {awardsOriginal, awardsLogo, awardsThumbnail, advertsThumbnail, advertsOriginal} from "../service/imgService";
+import {awardsLogo, awardsOriginal, awardsThumbnail} from "../service/imgService";
 
 export const awardsThumbnails = [
     {id: 1, image: "1jugnooH", color: "#f2fc75"},

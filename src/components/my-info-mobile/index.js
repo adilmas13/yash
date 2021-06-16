@@ -2,6 +2,7 @@
 import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {details} from "../../dataSource/aboutMe";
+
 const MyInfoMobile = () => {
     return <div className={style.parent}>
         <div className={style.container}>

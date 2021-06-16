@@ -2,8 +2,6 @@
 import React from "preact";
 import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
-import {useEffect, useState} from "preact/hooks";
-import {getExperience} from "../../service/calculationService";
 import {experience as data} from "../../dataSource/aboutMe";
 import ExperienceCounter from "../experience-counter";
 

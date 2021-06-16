@@ -79,9 +79,9 @@ const DesktopView = (props) => {
         <div className={style['container']}>
             <div className={style.wrapper}>
                 <div className={style["scroll-container"]} ref={scrollerRef}>
-                    {props.pageNo === 0 &&  <MyInfo />}
-                    {props.pageNo === 1 &&  <Experience />}
-                    {props.pageNo === 2 &&  <Literacy />}
+                    {props.pageNo === 0 && <MyInfo />}
+                    {props.pageNo === 1 && <Experience />}
+                    {props.pageNo === 2 && <Literacy />}
                 </div>
                 {props.pageNo > 0 && <div className={style.left} onClick={() => props.onPrevClicked()}>prev</div>}
                 {props.pageNo < 2 && <div className={style.right} onClick={() => props.onNextClicked()}>next</div>}
