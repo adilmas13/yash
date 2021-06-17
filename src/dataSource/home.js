@@ -18,3 +18,5 @@ export const homeVideoReverseSlots = [
 export const setPageNo = (pageNo) => localStorage.setItem(PAGE_NO_KEY, pageNo);
 
 export const getPageNo = () => parseInt(localStorage.getItem(PAGE_NO_KEY) || "0", 10);
+
+export const cvUrl = 'https://firebasestorage.googleapis.com/v0/b/yash-portfolio-79bbe.appspot.com/o/about-me%2Fyash-cv.pdf?alt=media&token=d38804bc-469f-4ab2-a3c5-213d24f49f1f';

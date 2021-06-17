@@ -3,7 +3,23 @@ import React from "preact";
 import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {literacy as data} from "../../dataSource/aboutMe";
+import {cvUrl} from "../../dataSource/home";
 
+const downloadCv = () => {
+    fetch(cvUrl)
+        .then(resp => resp.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'yash-ambre.pdf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch((e) => console.error('Download CV FAILED -- ', e));
+}
 
 const Literacy = () => <div className={style.parent}>
     <div className={style["image-wrapper"]}>
@@ -24,7 +40,8 @@ const Literacy = () => <div className={style.parent}>
                             {it.degree && <span className={style.degree}>{it.degree}</span>}
                                 </span>)
                     )}
-                    <span><span className={style['download-cv']}>download CV</span></span>
+                    <span><span className={style['download-cv']}
+                                onClick={() => downloadCv()}>download CV</span></span>
                 </div>
             </div>
         </div>
