@@ -18,8 +18,8 @@ import {
     showDownArrow,
     showUpArrow
 } from "./animationController";
-import {downArrow, upArrow} from "./utils";
 import {useIsMobileView} from "../../hooks/mobileViewHook";
+import {downArrow, upArrow} from "./utils";
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>ASSOCIATE</div>
@@ -29,6 +29,9 @@ const Designation = () => <div class={style.designation}>
 
 const SlotMachine = (props) => {
     const slotsRef = createRef()
+    const upArrowRef = createRef()
+    const downArrowRef = createRef()
+
     const slots = [
         "mbre--",
         "bout--",
@@ -45,6 +48,7 @@ const SlotMachine = (props) => {
         "-arts--"
     ]
 
+    // to create the slot machine columns and cells when component renders
     useEffect(() => {
         const noOfColumns = Math.max(
             ...props.isMobileView
@@ -71,6 +75,7 @@ const SlotMachine = (props) => {
             })
     }, [])
 
+    // to animate the slot machine when position changes
     useEffect(() => {
         let position = props.action.position;
         let cellHeight = document.getElementsByClassName("cell")[0].clientHeight;
@@ -85,6 +90,7 @@ const SlotMachine = (props) => {
         })
     }, [props.action.position])
 
+    // hide or show arrow based on position
     useEffect(() => {
         const action = props.action;
         if (action.isFirst) {
@@ -94,11 +100,8 @@ const SlotMachine = (props) => {
         const position = action.position;
         switch (action.direction) {
             case "next": {
-                const arrow = downArrow()
-                arrow.style.pointerEvents = "none";
                 animation = animateDownArrowOnClick();
                 animation.onfinish = () => {
-                    arrow.style.pointerEvents = "auto";
                     if (position === 1) {
                         showUpArrow();
                     }
@@ -109,11 +112,8 @@ const SlotMachine = (props) => {
                 break;
             }
             case "previous": {
-                const arrow = upArrow()
-                arrow.style.pointerEvents = "none";
                 animation = animateUpArrowOnClick();
                 animation.onfinish = () => {
-                    arrow.style.pointerEvents = "auto";
                     if (position === 0) {
                         hideUpArrow();
                     }
@@ -127,6 +127,13 @@ const SlotMachine = (props) => {
         return () => {
             cancelAnimation(animation);
         }
+    }, [props.action])
+
+    // to enable or disable arrow click based on position
+    useEffect(() => {
+        const position = props.action.position;
+        upArrowRef.current.style.pointerEvents = position > 0 ? 'auto' : 'none';
+        downArrowRef.current.style.pointerEvents = position < slots.length - 1 ? 'auto' : 'none';
     }, [props.action])
 
     const redirect = () => {
@@ -152,6 +159,7 @@ const SlotMachine = (props) => {
         <div class={style["slot-parent"]}>
             <img
                 id="up_arrow"
+                ref={upArrowRef}
                 class={style.arrow}
                 src={"assets/arrow.svg"}
                 onClick={() => props.onPreviousClick()} />
@@ -165,6 +173,7 @@ const SlotMachine = (props) => {
 
             <img
                 id="down_arrow"
+                ref={downArrowRef}
                 class={style["down-arrow"]}
                 src={"assets/arrow.svg"}
                 onClick={() => props.onNextClicked()} />
