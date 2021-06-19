@@ -11,6 +11,7 @@ const breakpoints = [
     {
         point: 400,
         noOfColumns: 2,
+        containerWidth: "100%",
         data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
@@ -18,17 +19,43 @@ const breakpoints = [
     {
         point: 700,
         noOfColumns: 3,
+        containerWidth: "100%",
         data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
         point: 900,
         noOfColumns: 4,
+        containerWidth: "100%",
         data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
+        point: 1000,
+        containerWidth: "900px",
+        noOfColumns: 5,
+        data: arts
+    },
+    {
         point: 1200,
+        containerWidth: "1100px",
+        noOfColumns: 5,
+        data: arts
+    },
+    {
+        point: 1300,
+        containerWidth: "1200px",
+        noOfColumns: 5,
+        data: arts
+    }, {
+        point: 3000,
+        containerWidth: "2200px",
+        noOfColumns: 5,
+        data: arts
+    },
+    {
+        point: 5000,
+        containerWidth: "3500px",
         noOfColumns: 5,
         data: arts
     }];

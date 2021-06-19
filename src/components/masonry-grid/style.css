@@ -1,56 +1,44 @@
 .parent {
-    height: 100vh;
-    min-width: 100vw;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.parent .scroll-container {
+  height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; }
+  .parent .scroll-container {
     display: flex;
     height: 100%;
     position: relative;
     justify-content: center;
     padding-top: 20px;
-    max-width: 1200px;
-    width: 100%;
-}
-
-.parent .scroll-container .media-wrapper {
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s ease-out all;
-    height: 100%;
-}
-
-.parent .scroll-container .media-wrapper img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: 0.8s ease-out all;
-}
-
-.parent .scroll-container .media-wrapper video {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+    width: 100%; }
+    .parent .scroll-container .media-wrapper {
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease-out all;
+      height: 100%; }
+      .parent .scroll-container .media-wrapper img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: 0.8s ease-out all; }
+      .parent .scroll-container .media-wrapper video {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0; }
 
 .hidden {
-    opacity: 0;
-    filter: blur(5px);
-}
+  opacity: 0;
+  filter: blur(5px); }
 
 .visible {
-    opacity: 1;
-    filter: blur(0);
-}
+  opacity: 1;
+  filter: blur(0); }
 
 /*# sourceMappingURL=style.css.map */

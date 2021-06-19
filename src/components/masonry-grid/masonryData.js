@@ -3,7 +3,7 @@ import {useEffect, useState} from "preact/hooks";
 const getDataBasedOnBreakPoint = (breakpoints) => {
     const width = window.innerWidth;
     return breakpoints.reduce((acc, value) => {
-        if (width > value.point)
+        if (width >= value.point)
             return value;
         return acc;
     }, breakpoints[0]);
@@ -29,7 +29,10 @@ export const useMasonryData = (breakpoints) => {
     }, [])
 
     useEffect(() => {
-        const containerWidth = document.getElementById('scroll-container').offsetWidth;
+        const container = document.getElementById('scroll-container');
+        container.style.maxWidth = breakPoint.containerWidth;
+        const containerWidth = container.offsetWidth;
+        // alert(containerWidth);
         const noOfColumns = breakPoint.noOfColumns;
         const gap = 10;
         const columnWidth = ((containerWidth - (gap * (noOfColumns + 1))) / noOfColumns);

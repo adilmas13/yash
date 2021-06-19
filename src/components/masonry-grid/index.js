@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import {createRef, Fragment, React} from "preact";
+import {createRef, Fragment} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
@@ -68,7 +67,7 @@ const MediaCell = (props) => {
                  }}>
         {(!media.video || (media.video && !media.video.always_play_thumbnail)) && <img
             className={isImageLoaded ? style["visible"] : style["hidden"]}
-            alt="adverts" src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />}
+            src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />}
         <div style={overlayStyle} />
         {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
         <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop muted />}

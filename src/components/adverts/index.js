@@ -10,21 +10,49 @@ import Description from "../description";
 const breakpoints = [
     {
         point: 400,
+        containerWidth: "100%",
         noOfColumns: 2,
         data: adverts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
     }, {
         point: 800,
+        containerWidth: "100%",
         noOfColumns: 3,
         data: adverts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
-    }, {
-        point: 1200,
+    },
+    {
+        point: 1000,
+        containerWidth: "900px",
         noOfColumns: 4,
         data: adverts
-    }]
+    },
+    {
+        point: 1200,
+        containerWidth: "1100px",
+        noOfColumns: 4,
+        data: adverts
+    },
+    {
+        point: 1300,
+        containerWidth: "1200px",
+        noOfColumns: 4,
+        data: adverts
+    },{
+        point: 3000,
+        containerWidth: "2200px",
+        noOfColumns: 4,
+        data: adverts
+    },
+    {
+        point: 5000,
+        containerWidth: "3500px",
+        noOfColumns: 4,
+        data: adverts
+    }
+]
 
 const Adverts = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
