@@ -115,7 +115,7 @@ export const decreaseYashTextOpacity = () => {
     const text = yashText()
     const animation = text.animate([
         {opacity: 1},
-        {opacity: 0.7}
+        {opacity: 0.3}
     ], {
         duration: 500,
         delay: 2000,
