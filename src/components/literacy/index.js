@@ -18,7 +18,10 @@ const downloadCv = () => {
             a.click();
             window.URL.revokeObjectURL(url);
         })
-        .catch((e) => console.error('Download CV FAILED -- ', e));
+        .catch((e) => {
+            alert('OOPS... Something went wrong, unable to download resume at the moment');
+            console.error('Download CV FAILED -- ', e);
+        });
 }
 
 const Literacy = () => <div className={style.parent}>
