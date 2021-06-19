@@ -1,149 +1,108 @@
 .parent {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    justify-content: center;
-    min-width: 100vw;
-    padding-top: 25vh;
-    opacity: 0;
-    transition: 0.3s ease-in-out opacity;
-}
-
-.parent .body {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+  min-width: 100vw;
+  padding-top: 25vh;
+  opacity: 0;
+  transition: 0.3s ease-in-out opacity; }
+  .parent .body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.parent .body .three-layer {
-    height: 270px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.parent .body .three-layer .yash-text-wrapper {
-    position: absolute;
-    right: calc(50% + 60px);
-    padding-bottom: 40px;
-}
-
-.parent .body .three-layer .yash-text-wrapper .yash-text {
-    font-size: var(--cell-font-size);
-    font-family: Yfx, serif;
-    letter-spacing: 4px;
-    height: var(--cell-height);
-}
-
-.parent .body .three-layer video {
-    width: 250px;
-    height: 250px;
-}
-
-.parent .body .three-layer .slot-wrapper {
-    position: absolute;
-    left: calc(50% + 60px);
-    padding-bottom: 40px;
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent {
-    display: flex;
-    flex-direction: column;
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
-    display: flex;
-    font-size: var(--cell-font-size);
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
-    display: flex;
-    font-family: Yfx, serif;
-    width: var(--cell-width);
-    height: var(--cell-height);
-    padding-top: var(--cell-padding);
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-    height: var(--cell-height);
-    overflow: hidden;
-    font-family: Yfx, serif;
-    display: flex;
-    cursor: pointer;
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent .arrow {
-    width: 30px;
-    opacity: 0;
-    cursor: pointer;
-    margin-left: 32%;
-    pointer-events: none;
-    margin-bottom: 50px;
-}
-
-.parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
-    width: 30px;
-    opacity: 0;
-    transform: rotate(180deg);
-    cursor: pointer;
-    margin-left: 32%;
-    pointer-events: none;
-    margin-top: 50px;
-}
-
-.parent .body .designation {
-    font-family: Yfx, serif;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2px;
-    width: 250px;
-}
-
-.parent .body .designation .text {
-    letter-spacing: 1.5px;
-    font-size: 11px;
-}
-
-.parent .logo-wrapper {
+    align-items: center; }
+    .parent .body .three-layer {
+      height: 270px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .parent .body .three-layer .yash-text-wrapper {
+        position: absolute;
+        right: calc(50% + 60px);
+        padding-bottom: 40px; }
+        .parent .body .three-layer .yash-text-wrapper .yash-text {
+          font-size: var(--cell-font-size);
+          font-family: Yfx, serif;
+          letter-spacing: 4px;
+          height: var(--cell-height); }
+      .parent .body .three-layer video {
+        width: 250px;
+        height: 250px; }
+      .parent .body .three-layer .slot-wrapper {
+        position: absolute;
+        left: calc(50% + 60px);
+        padding-bottom: 40px; }
+        .parent .body .three-layer .slot-wrapper .slot-parent {
+          display: flex;
+          flex-direction: column; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
+            display: flex;
+            font-size: var(--cell-font-size); }
+            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
+              display: flex;
+              font-family: Yfx, serif;
+              width: var(--cell-width);
+              height: var(--cell-height);
+              padding-top: var(--cell-padding); }
+            .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
+              height: var(--cell-height);
+              overflow: hidden;
+              font-family: Yfx, serif;
+              display: flex;
+              cursor: pointer; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
+            width: 30px;
+            opacity: 0;
+            cursor: pointer;
+            margin-left: 32%;
+            pointer-events: none;
+            margin-bottom: 25px; }
+          .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
+            width: 30px;
+            opacity: 0;
+            transform: rotate(180deg);
+            cursor: pointer;
+            margin-left: 32%;
+            pointer-events: none;
+            margin-top: 25px; }
+    .parent .body .designation {
+      font-family: Yfx, serif;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2px;
+      width: 250px; }
+      .parent .body .designation .text {
+        letter-spacing: 1.5px;
+        font-size: 11px; }
+  .parent .logo-wrapper {
     position: absolute;
     top: 0;
-    left: calc(50% - 25px);
-}
+    left: calc(50% - 25px); }
 
 @media only screen and (max-width: 700px) {
-    .parent {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 0;
-    }
-
+  .parent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0; }
     .parent .logo-wrapper {
-        position: absolute;
-        top: 0;
-        left: calc(50% - 25px);
-    }
-
+      position: absolute;
+      top: 0;
+      left: calc(50% - 25px); }
     .parent .three-layer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 70vh;
-    }
-
-    .parent .three-layer .yash-text-wrapper .yash-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 70vh; }
+      .parent .three-layer .yash-text-wrapper .yash-text {
         font-size: 8vh;
         font-family: Yfx, serif;
-        letter-spacing: 4px;
-    }
-
-    .parent .three-layer video {
-        width: 45%;
-    }
-
-    .parent .three-layer .designation {
+        letter-spacing: 4px; }
+      .parent .three-layer video {
+        width: 45%; }
+      .parent .three-layer .designation {
         font-family: Yfx, serif;
         display: flex;
         justify-content: space-between;
@@ -151,53 +110,37 @@
         width: 250px;
         border-bottom: 1px solid #000000;
         border-top: 1px solid #000000;
-        margin-top: 30px;
-    }
-
-    .parent .three-layer .designation .text {
-        letter-spacing: 1.5px;
-        font-size: 11px;
-        padding: 10px 0;
-    }
-
-    .parent .three-layer .slot-wrapper {
-        margin-top: 10px;
-    }
-
-    .parent .three-layer .slot-wrapper .slot-parent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .parent .three-layer .slot-wrapper .slot-parent .slot-container {
-        display: flex;
-    }
-
-    .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-        height: var(--cell-height-responsive);
-        overflow: hidden;
-        font-family: Yfx, serif;
-        display: flex;
-        cursor: pointer;
-    }
-
-    .parent .three-layer .slot-wrapper .slot-parent .arrow {
-        width: 30px;
-        opacity: 0;
-        cursor: pointer;
-        pointer-events: none;
-        margin-bottom: 0;
-    }
-
-    .parent .three-layer .slot-wrapper .slot-parent .down-arrow {
-        width: 30px;
-        opacity: 0;
-        transform: rotate(180deg);
-        cursor: pointer;
-        pointer-events: none;
-        margin-top: 0;
-    }
-}
+        margin-top: 30px; }
+        .parent .three-layer .designation .text {
+          letter-spacing: 1.5px;
+          font-size: 11px;
+          padding: 10px 0; }
+      .parent .three-layer .slot-wrapper {
+        margin-top: 10px; }
+        .parent .three-layer .slot-wrapper .slot-parent {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .parent .three-layer .slot-wrapper .slot-parent .slot-container {
+            display: flex; }
+            .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
+              height: var(--cell-height-responsive);
+              overflow: hidden;
+              font-family: Yfx, serif;
+              display: flex;
+              cursor: pointer; }
+          .parent .three-layer .slot-wrapper .slot-parent .arrow {
+            width: 30px;
+            opacity: 0;
+            cursor: pointer;
+            pointer-events: none;
+            margin-bottom: 0; }
+          .parent .three-layer .slot-wrapper .slot-parent .down-arrow {
+            width: 30px;
+            opacity: 0;
+            transform: rotate(180deg);
+            cursor: pointer;
+            pointer-events: none;
+            margin-top: 0; } }
 
 /*# sourceMappingURL=style.css.map */
