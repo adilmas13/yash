@@ -1,12 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import {createRef, React} from "preact";
 import style from './style.css';
-import {awardsDescription, awardsDetails, awardsOriginal, awardsThumbnails} from "../../dataSource/awards";
+import {awardsDescription, awardsDetails, awardsThumbnails} from "../../dataSource/awards";
 import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
-import Preview from "../preview";
 import Description from "../description";
 
+const AwardsPreview = (props) => {
+    const group = props.data.group;
+    return <div className={style['description-parent']}>
+        <div className={style['desc-container']}>
+            <div className={style['scroll-container']}>
+                {group.map(it => {
+                    return <div className={style['media-wrapper']}>
+                        <img src={it.image.src} key={it.id} />
+                    </div>
+                })}
+            </div>
+        </div>
+
+    </div>
+}
 const MediaCell = (props) => {
     const media = props.media;
 
@@ -60,7 +74,7 @@ const Awards = () => {
                 </div>
             </div>
             {preview &&
-            <Preview
+            <AwardsPreview
                 data={preview}
                 handleBackClick={() => setPreview(undefined)} />}
             {description &&
