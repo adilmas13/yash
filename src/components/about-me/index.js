@@ -83,8 +83,15 @@ const DesktopView = (props) => {
                     {props.pageNo === 1 && <Experience />}
                     {props.pageNo === 2 && <Literacy />}
                 </div>
-                {props.pageNo > 0 && <div className={style.left} onClick={() => props.onPrevClicked()}>prev</div>}
-                {props.pageNo < 2 && <div className={style.right} onClick={() => props.onNextClicked()}>next</div>}
+                {props.pageNo > 0 && <div className={style['prev-wrapper']} onClick={() => props.onPrevClicked()}>
+                    <img src={"assets/arrow_blunt.svg"}
+                         className={style.arrow} />
+                    <div className={style.text}>prev</div>
+                </div>}
+                {props.pageNo < 2 && <div className={style['next-wrapper']} onClick={() => props.onNextClicked()}>
+                    <div className={style.text}>next</div>
+                    <img src={"assets/arrow_blunt.svg"} className={style.arrow} />
+                </div>}
             </div>
         </div>
 
