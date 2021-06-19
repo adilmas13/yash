@@ -57,7 +57,7 @@
             cursor: pointer;
             margin-left: 32%;
             pointer-events: none;
-            margin-bottom: 25px; }
+            margin-bottom: 20px; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
             width: 30px;
             opacity: 0;
@@ -65,7 +65,7 @@
             cursor: pointer;
             margin-left: 32%;
             pointer-events: none;
-            margin-top: 25px; }
+            margin-top: 20px; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;
