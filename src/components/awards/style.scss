@@ -9,6 +9,7 @@
 
   .container {
     max-width: 2500px;
+    margin-top: 30px;
 
     .grid {
       display: grid;
@@ -70,6 +71,7 @@
   .parent {
     .container {
       max-width: 100%;
+      margin-top: 20px;
 
       .grid {
         grid-template-columns: 47% 47%;

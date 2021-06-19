@@ -5,7 +5,8 @@
   position: relative;
   height: 100%; }
   .parent .container {
-    max-width: 2500px; }
+    max-width: 2500px;
+    margin-top: 30px; }
     .parent .container .grid {
       display: grid;
       grid-template-columns: 32% 32% 32%;
@@ -43,7 +44,8 @@
     max-width: 100%; } }
 @media only screen and (max-width: 900px) {
   .parent .container {
-    max-width: 100%; }
+    max-width: 100%;
+    margin-top: 20px; }
     .parent .container .grid {
       grid-template-columns: 47% 47%; }
       .parent .container .grid .image-wrapper .cell {
