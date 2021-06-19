@@ -6,6 +6,7 @@ import {useState} from "preact/hooks";
 import style from './style.css'
 import Preview from "../preview";
 import Description from "../description";
+import Logo from "../logo";
 
 const breakpoints = [
     {
@@ -40,7 +41,7 @@ const breakpoints = [
         containerWidth: "1200px",
         noOfColumns: 4,
         data: adverts
-    },{
+    }, {
         point: 3000,
         containerWidth: "2200px",
         noOfColumns: 4,
@@ -70,11 +71,11 @@ const Adverts = () => {
     const handleDescriptionBackClick = () => setSelectedDescription(undefined);
 
     return <div className={style.parent}>
+        <Logo />
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}
-            disableScroll={previewMedia}
-        />
+            disableScroll={previewMedia} />
         {previewMedia &&
         <Preview
             data={previewMedia}

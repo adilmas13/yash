@@ -6,6 +6,7 @@ import {useState} from "preact/hooks";
 import style from "./style.css"
 import Preview from "../preview";
 import Description from "../description";
+import Logo from "../logo";
 
 const breakpoints = [
     {
@@ -75,6 +76,7 @@ const Arts = () => {
     const handleDescriptionBackClick = () => setDescription(undefined);
 
     return <div className={style.parent}>
+        <Logo/>
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}

@@ -14,9 +14,8 @@
     height: 100%;
     position: relative;
     justify-content: center;
-    padding-top: 20px;
-    //max-width: 1200px;
     width: 100%;
+    margin-top: 30px;
 
     .media-wrapper {
       border-radius: 10px;
@@ -53,4 +52,13 @@
 .visible {
   opacity: 1;
   filter: blur(0);
+}
+
+@media only screen and (max-width: 900px) {
+  .parent {
+    .scroll-container {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  }
 }

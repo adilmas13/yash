@@ -103,7 +103,6 @@ const MasonryGrid = (props) => {
     }, [props.disableScroll])
 
     return <div class={style.parent}>
-        <Logo />
         <div id='scroll-container' class={style['scroll-container']} ref={scrollerRef}>
             {data.map(it =>
                 <div style={positionStyle(it)}>

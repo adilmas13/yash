@@ -11,8 +11,8 @@
     height: 100%;
     position: relative;
     justify-content: center;
-    padding-top: 20px;
-    width: 100%; }
+    width: 100%;
+    margin-top: 30px; }
     .parent .scroll-container .media-wrapper {
       border-radius: 10px;
       cursor: pointer;
@@ -40,5 +40,10 @@
 .visible {
   opacity: 1;
   filter: blur(0); }
+
+@media only screen and (max-width: 900px) {
+  .parent .scroll-container {
+    max-width: 100%;
+    margin-top: 20px; } }
 
 /*# sourceMappingURL=style.css.map */
