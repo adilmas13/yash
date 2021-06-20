@@ -25,11 +25,11 @@ const ExperienceMobile = () => {
             <div className={style.bottom}>
                 <div className={style.details}>
                     <div className={style.titles}>
-                        {data.map(it => <span>{it.place}<span>&#8250;</span></span>)}
+                        {data.map(it => <div>{it.place}<div>&#8250;</div></div>)}
                     </div>
                     <div className={style.desc}>
-                        {data.map(it => <span>{it.experience}<span
-                            className={style.designation}>{it.designation}</span></span>)}
+                        {data.map(it => <div>{it.experience}<div
+                            className={style.designation}>{it.designation}</div></div>)}
                     </div>
                 </div>
             </div>
