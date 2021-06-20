@@ -124,7 +124,7 @@
           align-items: center; }
           .parent .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
-            margin-top: 14px; }
+            margin-top: 15px; }
             .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
               height: var(--cell-height-responsive);
               overflow: hidden;
