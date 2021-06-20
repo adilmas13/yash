@@ -98,11 +98,15 @@
   .top-arrow-container {
     position: absolute;
     top: 0;
-    height: 12.5vh;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .logo-container {
+      padding-top: 20px;
+    }
 
     .icon-wrapper {
       display: flex;
@@ -115,14 +119,14 @@
       transform: translateX(-50%);
 
       img {
-        width: 20px;
+        width: 15px;
       }
 
       div {
         font-family: Yfx, serif;
         color: $text-primary-color;
-        font-size: 16px;
-        letter-spacing: 4px;
+        font-size: 12px;
+        letter-spacing: 3px;
         text-transform: capitalize;
         margin-top: 5px;
       }
@@ -132,7 +136,7 @@
   .bottom-arrow-container {
     position: absolute;
     bottom: 0;
-    height: 12.5vh;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -147,17 +151,16 @@
       transition: 0.3s opacity ease-out;
 
       img {
-        width: 20px;
+        width: 15px;
         transform: rotate(180deg);
       }
 
       div {
         font-family: Yfx, serif;
         color: $text-primary-color;
-        font-size: 16px;
-        letter-spacing: 4px;
+        font-size: 12px;
+        letter-spacing: 3px;
         text-transform: capitalize;
-        margin-bottom: 5px;
       }
     }
   }

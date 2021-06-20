@@ -39,7 +39,7 @@ const MobileView = (props) => {
             <LiteracyMobile />
         </div>
         <div className={style['top-arrow-container']}>
-            {props.pageNo === 0 ? <Logo /> : <div />}
+            {props.pageNo === 0 && <div className={style['logo-container']}><Logo /></div>}
             <div
                 style={props.pageNo > 0 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}

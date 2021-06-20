@@ -74,11 +74,13 @@
   .top-arrow-container {
     position: absolute;
     top: 0;
-    height: 12.5vh;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center; }
+    .top-arrow-container .logo-container {
+      padding-top: 20px; }
     .top-arrow-container .icon-wrapper {
       display: flex;
       align-items: center;
@@ -89,19 +91,19 @@
       transition: 0.3s opacity ease-out;
       transform: translateX(-50%); }
       .top-arrow-container .icon-wrapper img {
-        width: 20px; }
+        width: 15px; }
       .top-arrow-container .icon-wrapper div {
         font-family: Yfx, serif;
         color: #000000;
-        font-size: 16px;
-        letter-spacing: 4px;
+        font-size: 12px;
+        letter-spacing: 3px;
         text-transform: capitalize;
         margin-top: 5px; }
 
   .bottom-arrow-container {
     position: absolute;
     bottom: 0;
-    height: 12.5vh;
+    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -114,14 +116,13 @@
       flex-direction: column;
       transition: 0.3s opacity ease-out; }
       .bottom-arrow-container .icon-wrapper img {
-        width: 20px;
+        width: 15px;
         transform: rotate(180deg); }
       .bottom-arrow-container .icon-wrapper div {
         font-family: Yfx, serif;
         color: #000000;
-        font-size: 16px;
-        letter-spacing: 4px;
-        text-transform: capitalize;
-        margin-bottom: 5px; } }
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: capitalize; } }
 
 /*# sourceMappingURL=style.css.map */
