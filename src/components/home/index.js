@@ -19,7 +19,24 @@ import {
     showUpArrow
 } from "./animationController";
 import {useIsMobileView} from "../../hooks/mobileViewHook";
-import {downArrow, upArrow} from "./utils";
+
+const redirect = (position) => {
+    switch (position) {
+        case 1 :
+            route("/about-me")
+            break;
+        case 2 :
+            route("/awards")
+            break;
+        case 3 :
+            route("/adverts")
+            break;
+        case 4 :
+            route("/arts")
+            break;
+    }
+    setPageNo(position);
+}
 
 const Designation = () => <div class={style.designation}>
     <div class={style.text}>ASSOCIATE</div>
@@ -136,25 +153,6 @@ const SlotMachine = (props) => {
         downArrowRef.current.style.pointerEvents = position < slots.length - 1 ? 'auto' : 'none';
     }, [props.action])
 
-    const redirect = () => {
-        const position = props.action.position;
-        switch (position) {
-            case 1 :
-                route("/about-me")
-                break;
-            case 2 :
-                route("/awards")
-                break;
-            case 3 :
-                route("/adverts")
-                break;
-            case 4 :
-                route("/arts")
-                break;
-        }
-        setPageNo(position);
-    }
-
     return <div class={style["slot-wrapper"]}>
         <div class={style["slot-parent"]}>
             <img
@@ -166,9 +164,10 @@ const SlotMachine = (props) => {
 
             <div class={style["slot-container"]}>
                 {!props.isMobileView && <div className={style["a-text"]}>A</div>}
-                <div class={style.slot}
+                <div style={{cursor: props.action.position === 0 ? "auto" : "pointer"}}
+                     class={style.slot}
                      ref={slotsRef}
-                     onClick={() => redirect()} />
+                     onClick={() => props.onOptionSelected()} />
             </div>
 
             <img
@@ -218,19 +217,23 @@ const YashVideo = (props) => {
         return () => video.removeEventListener('timeupdate', progressListener);
     }, [props.action])
 
-    return <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoPlay={true} />
+    return <video ref={videoRef} src={"assets/videos/video.mp4"} preload autoPlay={true}
+                  onClick={() => props.onClick()} />
 }
 
 const DesktopView = (props) => <div class={style.parent} id={'home_body'}>
     <div class={style.body}>
         <div class={style["three-layer"]}>
             <Yash />
-            <YashVideo action={props.action} />
+            <YashVideo action={props.action} onClick={() => {
+            }} />
             <SlotMachine
                 isMobileView={props.isMobileView}
                 action={props.action}
                 onNextClicked={() => props.onNextClicked()}
-                onPreviousClick={() => props.onPreviousClick()} />
+                onPreviousClick={() => props.onPreviousClick()}
+                onOptionSelected={() => props.onOptionSelected()}
+            />
         </div>
         <Designation />
     </div>
@@ -245,12 +248,14 @@ const MobileView = (props) => <div className={style.parent} id={'home_body'}>
     </div>
     <div className={style["three-layer"]}>
         <Yash />
-        <YashVideo action={props.action} />
+        <YashVideo action={props.action} onClick={() => props.onOptionSelected()} />
         <SlotMachine
             isMobileView={props.isMobileView}
             action={props.action}
             onNextClicked={() => props.onNextClicked()}
-            onPreviousClick={() => props.onPreviousClick()} />
+            onPreviousClick={() => props.onPreviousClick()}
+            onOptionSelected={() => props.onOptionSelected()}
+        />
         <Designation />
     </div>
 
@@ -311,12 +316,14 @@ const Home = () => {
             onNextClicked={onNextClicked}
             onPreviousClick={onPreviousClick}
             isMobileView={isMobileView}
+            onOptionSelected={() => redirect(action.position)}
         />
         : <DesktopView
             action={action}
             onNextClicked={onNextClicked}
             onPreviousClick={onPreviousClick}
             isMobileView={isMobileView}
+            onOptionSelected={() => redirect(action.position)}
         />
 }
 

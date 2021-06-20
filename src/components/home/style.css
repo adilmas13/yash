@@ -101,7 +101,8 @@
         font-family: Yfx, serif;
         letter-spacing: 4px; }
       .parent .three-layer video {
-        width: 45%; }
+        width: 45%;
+        cursor: pointer; }
       .parent .three-layer .designation {
         font-family: Yfx, serif;
         display: flex;
@@ -123,13 +124,12 @@
           align-items: center; }
           .parent .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
-            margin-top: 10px; }
+            margin-top: 14px; }
             .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
               height: var(--cell-height-responsive);
               overflow: hidden;
               font-family: Yfx, serif;
-              display: flex;
-              cursor: pointer; }
+              display: flex; }
           .parent .three-layer .slot-wrapper .slot-parent .arrow {
             width: 30px;
             opacity: 0;

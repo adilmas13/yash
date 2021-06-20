@@ -146,6 +146,7 @@
 
       video {
         width: 45%;
+        cursor: pointer;
       }
 
       .designation {
@@ -175,14 +176,13 @@
 
           .slot-container {
             display: flex;
-            margin-top: 10px;
+            margin-top: 14px;
 
             .slot {
               height: var(--cell-height-responsive);
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
-              cursor: pointer;
             }
           }
 
