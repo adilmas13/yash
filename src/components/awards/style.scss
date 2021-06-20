@@ -76,15 +76,23 @@
       width: 90%;
       height: 100%;
       overflow: scroll;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       .media-wrapper {
-        //min-height: 350px;
-        //background: #cccccc;
         margin: 5px 0;
+        height: 500px;
+        width: 100%;
 
         img {
+          height: 100%;
           width: 100%;
-          //min-height: 300px;
+        }
+
+        iframe {
+          width: 100%;
+          border: none;
         }
       }
     }
