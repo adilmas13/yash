@@ -3,6 +3,7 @@ import {createRef, React} from "preact";
 import Logo from "../logo";
 import Back from "../back";
 import {useEffect, useState} from "preact/hooks";
+import LazyImage from "../lazy-image";
 
 const getHeight = (containerWidth, ratio) => {
     const [ratioWidth, ratioHeight] = ratio.split(":").map(it => parseInt(it));
@@ -35,7 +36,7 @@ const VerticalPreview = (props) => {
                             {it.video ? <iframe src={it.video.src} style={{
                                     height: getHeight(parentWidth, it.ratio)
                                 }} /> :
-                                <img src={it.image.src} />}
+                                <LazyImage src={it.image.src} />}
                         </div>
                     )
                 })}

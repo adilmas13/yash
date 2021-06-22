@@ -9,7 +9,7 @@ import style from './style.css'
 * }
 * */
 const LazyImage = (props) => {
-    const url = props.url || "";
+    const src = props.src || "";
     const color = props.color || "lightgrey";
     const borderRadius = props.borderRadius || "0"
 
@@ -28,7 +28,7 @@ const LazyImage = (props) => {
         <img
             style={imageStyle}
             className={isImageLoaded ? style["visible"] : style["hidden"]}
-            src={url} onLoad={() => setImageLoaded(true)} />
+            src={src} onLoad={() => setImageLoaded(true)} />
     </div>;
 };
 

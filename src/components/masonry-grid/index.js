@@ -60,7 +60,7 @@ const MediaCell = (props) => {
                      setVideoVisibility(false);
                  }}>
         {(!media.video || (media.video && !media.video.always_play_thumbnail)) &&
-        <LazyImage url={media.image.thumbnail} borderRadius={'10px'} />}
+        <LazyImage src={media.image.thumbnail} borderRadius={'10px'} />}
         <div style={overlayStyle} />
         {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
         <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop muted />}
