@@ -1,0 +1,36 @@
+.back-parent {
+  transition: 0.3s ease-out transform;
+  display: flex;
+  align-items: center; }
+  .back-parent .icon-wrapper {
+    border-radius: 5px;
+    background: #353335;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .back-parent .icon-wrapper img {
+      height: 10px;
+      width: 10px; }
+  .back-parent .text {
+    font-family: Yfx, serif;
+    font-size: 14px;
+    margin-left: 10px;
+    padding-top: 2px;
+    letter-spacing: 1.5px; }
+  .back-parent:hover {
+    transform: scale(1.1);
+    opacity: 1; }
+
+@media only screen and (max-width: 600px) {
+  .back-parent .icon-wrapper {
+    height: 18px;
+    width: 18px; }
+    .back-parent .icon-wrapper img {
+      height: 8px;
+      width: 8px; }
+  .back-parent .text {
+    font-size: 12px; } }
+
+/*# sourceMappingURL=style.css.map */
