@@ -4,7 +4,7 @@ import MasonryGrid from "../masonry-grid";
 import {arts, artsDescription} from "../../dataSource/arts";
 import {useState} from "preact/hooks";
 import style from "./style.css"
-import Preview from "../preview";
+import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 
@@ -83,7 +83,7 @@ const Arts = () => {
             breakpoints={breakpoints}
             handleClick={handleClick}
             disableScroll={previewMedia} />
-        {previewMedia && <Preview data={previewMedia} handleBackClick={handlePreviewBackClick} />}
+        {previewMedia && <HorizontalPreview data={previewMedia} handleBackClick={handlePreviewBackClick} />}
         {description && <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
     </div>
 }

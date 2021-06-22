@@ -1,48 +1,9 @@
 import {useEffect, useRef, useState} from "preact/hooks";
 import style from "./style.css";
+import Back from "../back";
+import LoadableImage from "../loadable-image";
 
-const Back = (props) => {
-    return (
-        <div class={style["back-parent"]} onClick={() => props.onCancel()}>
-            <div class={style["icon-wrapper"]}>
-                <img src={'assets/cross.svg'} />
-            </div>
-            <div class={style.text}>BACK</div>
-        </div>
-    )
-}
-
-const LoadableImage = (props) => {
-
-    const [isImageLoaded, setImageLoaded] = useState(false);
-    const imgRef = useRef(null);
-
-    useEffect(() => {
-        let timeoutId = setTimeout(() => setImageLoaded(false), 800)
-        const img = imgRef.current;
-        const loadedListener = () => {
-            clearTimeout(timeoutId);
-            setImageLoaded(true);
-        };
-        img.addEventListener("load", loadedListener)
-        img.src = props.src;
-        return () => {
-            clearTimeout(timeoutId)
-            img.removeEventListener("load", loadedListener)
-        }
-    }, [props.src]);
-
-    return <div class={style["image-wrapper"]}>
-        <img
-            class={isImageLoaded ? style["visible"] : style["hidden"]}
-            ref={imgRef}
-            alt="preview"
-        />
-        {!isImageLoaded && <div class={style["loader"]}>Loading</div>}
-    </div>
-}
-
-const Preview = (props) => {
+const HorizontalPreview = (props) => {
     const group = props.data.group;
     const [pageNo, setPageNo] = useState(props.data.selected);
 
@@ -111,4 +72,4 @@ const Preview = (props) => {
     </div>)
 };
 
-export default Preview;
+export default HorizontalPreview;

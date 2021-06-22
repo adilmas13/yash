@@ -4,7 +4,7 @@ import MasonryGrid from "../masonry-grid";
 import {adverts, advertsDescription} from "../../dataSource/adverts";
 import {useState} from "preact/hooks";
 import style from './style.css'
-import Preview from "../preview";
+import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 
@@ -79,7 +79,7 @@ const Adverts = () => {
             handleClick={handleClick}
             disableScroll={previewMedia} />
         {previewMedia &&
-        <Preview
+        <HorizontalPreview
             data={previewMedia}
             handleBackClick={() => setPreviewMedia(undefined)} />}
         {selectedDescription &&
