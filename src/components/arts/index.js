@@ -76,7 +76,9 @@ const Arts = () => {
     const handleDescriptionBackClick = () => setDescription(undefined);
 
     return <div className={style.parent}>
-        <Logo/>
+        <div className={style["logo-wrapper"]}>
+            <Logo />
+        </div>
         <MasonryGrid
             breakpoints={breakpoints}
             handleClick={handleClick}

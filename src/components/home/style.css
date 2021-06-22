@@ -78,7 +78,8 @@
   .parent .logo-wrapper {
     position: absolute;
     top: 0;
-    left: calc(50% - 25px); }
+    left: calc(50% - 25px);
+    margin-top: 20px; }
 
 @media only screen and (max-width: 700px) {
   .parent {
@@ -88,7 +89,6 @@
     padding-top: 0; }
     .parent .logo-wrapper {
       position: absolute;
-      top: 0;
       left: calc(50% - 25px); }
     .parent .three-layer {
       display: flex;

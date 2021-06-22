@@ -85,7 +85,9 @@ const Awards = () => {
         }, [preview])
 
         return <div class={style.parent}>
-            <Logo />
+           <div className={style['logo-wrapper']}>
+               <Logo />
+           </div>
             <div className={style.container} ref={containerRef}>
                 <div className={style.grid}>
                     {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}

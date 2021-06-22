@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
-  padding: 20px 0;
   align-items: center;
   cursor: pointer;
   transition: 0.3s ease-out transform; }
@@ -21,12 +20,10 @@
     transform: scale(1.1); }
 
 @media only screen and (max-width: 600px) {
-  .logo-parent {
-    padding: 0; }
-    .logo-parent .logo {
-      height: 35px;
-      width: 35px; }
-    .logo-parent .logo-text {
-      font-size: 10px; } }
+  .logo-parent .logo {
+    height: 35px;
+    width: 35px; }
+  .logo-parent .logo-text {
+    font-size: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

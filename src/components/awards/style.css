@@ -4,6 +4,8 @@
   flex-direction: column;
   position: relative;
   height: 100%; }
+  .parent .logo-wrapper {
+    margin-top: 20px; }
   .parent .container {
     max-width: 2500px;
     margin-top: 30px; }
