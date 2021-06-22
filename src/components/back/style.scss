@@ -33,3 +33,22 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .back-parent {
+
+    .icon-wrapper {
+      height: 18px;
+      width: 18px;
+
+      img {
+        height: 8px;
+        width: 8px;
+      }
+    }
+
+    .text {
+      font-size: 12px;
+    }
+  }
+}

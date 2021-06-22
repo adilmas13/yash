@@ -52,3 +52,25 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+
+  .preview-parent {
+
+    .preview-container {
+
+      .scroll-container {
+
+        .media-wrapper {
+          width: 100%;
+          margin-bottom: 5px;
+          
+          // for android chrome mobile extra spacing required at the bottom
+          &:last-child {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+  }
+}
