@@ -6,29 +6,20 @@ import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
 import Description from "../description";
 import VerticalPreview from "../vertical-preview";
+import LazyImage from "../lazy-image";
 
 const MediaCell = (props) => {
     const media = props.media;
 
-    const [isImageLoaded, setImageLoaded] = useState(false);
-
-    let cellStyle = {
-        opacity: isImageLoaded ? 1 : 0,
-    }
-
-    let imageWrapperStyle = {
-        backgroundColor: `${media.color}33` || "lightgrey"
-    }
-
-    return <div class={style["image-wrapper"]} style={imageWrapperStyle}>
-        <img
-            class={style.cell}
-            style={cellStyle}
-            src={media.thumbnail}
-            alt="image"
-            onLoad={() => setImageLoaded(true)}
-            onClick={() => props.onClicked()}
-        />
+    return <div class={style["image-wrapper"]} onClick={() => props.onClicked()}>
+        <div className={style.cell}>
+            <LazyImage
+                class={style.cell}
+                src={media.thumbnail}
+                color={`media.color}33`}
+                borderRadius={'10px'}
+            />
+        </div>
     </div>
 };
 
@@ -53,9 +44,9 @@ const Awards = () => {
         }, [preview])
 
         return <div class={style.parent}>
-           <div className={style['logo-wrapper']}>
-               <Logo />
-           </div>
+            <div className={style['logo-wrapper']}>
+                <Logo />
+            </div>
             <div className={style.container} ref={containerRef}>
                 <div className={style.grid}>
                     {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
