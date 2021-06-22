@@ -2,12 +2,13 @@
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
 import {arts, artsDescription} from "../../dataSource/arts";
-import {useState} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import style from "./style.css"
 import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 import VerticalPreview from "../vertical-preview";
+import {awardsDescription} from "../../dataSource/awards";
 
 const breakpoints = [
     {
@@ -62,14 +63,23 @@ const breakpoints = [
         data: arts
     }];
 
+let viewedDescription = [];
+
 const Arts = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined)
     const [description, setDescription] = useState(undefined)
 
+    useEffect(() => {
+        viewedDescription = [];
+    }, [])
+
     const handleClick = media => {
         const group = arts.filter(it => it.groupId === media.groupId);
         setPreviewMedia({group, selected: group.indexOf(media)})
-        setDescription(artsDescription.find(it => it.id === media.groupId))
+        if (!viewedDescription.includes(media.id)) {
+            setDescription(awardsDescription.find(it => it.id === media.id));
+            viewedDescription.push(media.id);
+        }
     }
 
     const handlePreviewBackClick = () => setPreviewMedia(undefined);
