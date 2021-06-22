@@ -1,15 +1,14 @@
 import {createRef, Fragment} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
-import Logo from "../logo";
 import {useMasonryData} from "./masonryData";
+import LazyImage from "../lazy-image";
 
 
 const MediaCell = (props) => {
     const media = props.media;
 
     const [isVideoVisible, setVideoVisibility] = useState(false);
-    const [isImageLoaded, setImageLoaded] = useState(false);
 
     const onHover = (evt) => {
         evt.stopPropagation();
@@ -34,10 +33,6 @@ const MediaCell = (props) => {
         userSelect: 'none'
     }
 
-    let cellStyle = {
-        backgroundColor: props.media.color || "lightgrey"
-    }
-
     if (props.isActive) {
         overlayStyle = {...overlayStyle, ...{opacity: 0.35}}
     }
@@ -58,23 +53,23 @@ const MediaCell = (props) => {
     }, [props.activeMedia])
 
     return (<div class={style['media-wrapper']}
-                 style={cellStyle}
                  onMouseEnter={onHover}
                  onMouseLeave={onLeave}
                  onClick={() => {
                      props.handleClick(media);
                      setVideoVisibility(false);
                  }}>
-        {(!media.video || (media.video && !media.video.always_play_thumbnail)) && <img
-            className={isImageLoaded ? style["visible"] : style["hidden"]}
-            src={media.image.thumbnail} onLoad={() => setImageLoaded(true)} />}
+        {(!media.video || (media.video && !media.video.always_play_thumbnail)) &&
+        <LazyImage url={media.image.thumbnail} borderRadius={'10px'} />}
         <div style={overlayStyle} />
         {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
         <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop muted />}
     </div>)
-};
+}
+;
 
-const MasonryGrid = (props) => {
+const MasonryGrid = (props) =>
+{
 
     const scrollerRef = createRef()
 
@@ -120,6 +115,7 @@ const MasonryGrid = (props) => {
             )}
         </div>
     </div>
-};
+}
+;
 
 export default MasonryGrid;
