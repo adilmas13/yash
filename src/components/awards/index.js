@@ -8,6 +8,8 @@ import Description from "../description";
 import VerticalPreview from "../vertical-preview";
 import LazyImage from "../lazy-image";
 
+let viewedDescription = [];
+
 const MediaCell = (props) => {
     const media = props.media;
 
@@ -33,7 +35,10 @@ const Awards = () => {
                 group: awardsDetails.filter(it => it.groupId === media.id),
                 selected: 0,
             });
-            setDescription(awardsDescription.find(it => it.id === media.id));
+            if (!viewedDescription.includes(media.id)) {
+                setDescription(awardsDescription.find(it => it.id === media.id));
+                viewedDescription.push(media.id);
+            }
         };
 
         const handleDescriptionBackClick = () => setDescription(undefined);
@@ -42,6 +47,10 @@ const Awards = () => {
             const container = containerRef.current;
             container.style.overflow = preview ? 'hidden' : 'inherit';
         }, [preview])
+
+        useEffect(() => {
+            viewedDescription = [];
+        }, [])
 
         return <div class={style.parent}>
             <div className={style['logo-wrapper']}>
