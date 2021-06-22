@@ -2,12 +2,13 @@
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
 import {adverts, advertsDescription} from "../../dataSource/adverts";
-import {useState} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import style from './style.css'
 import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 import VerticalPreview from "../vertical-preview";
+import {awardsDescription} from "../../dataSource/awards";
 
 const breakpoints = [
     {
@@ -56,10 +57,11 @@ const breakpoints = [
     }
 ]
 
+let viewedDescription = [];
 
 const Adverts = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
-    const [selectedDescription, setSelectedDescription] = useState(undefined);
+    const [description, setDescription] = useState(undefined);
 
     const handleClick = (media) => {
         const group = adverts.filter(it => it.groupId === media.groupId);
@@ -67,10 +69,17 @@ const Adverts = () => {
             group,
             selected: group.indexOf(media),
         })
-        setSelectedDescription(advertsDescription.find(it => it.id === media.groupId));
+        if (!viewedDescription.includes(media.id)) {
+            setDescription(awardsDescription.find(it => it.id === media.id));
+            viewedDescription.push(media.id);
+        }
     };
 
-    const handleDescriptionBackClick = () => setSelectedDescription(undefined);
+    useEffect(() => {
+        viewedDescription = [];
+    }, [])
+
+    const handleDescriptionBackClick = () => setDescription(undefined);
 
     const handlePreviewBackClick = () => setPreviewMedia(undefined)
 
@@ -91,8 +100,8 @@ const Adverts = () => {
                     data={previewMedia}
                     handleBackClick={handlePreviewBackClick} />
         )}
-        {selectedDescription &&
-        <Description data={selectedDescription} onCloseClicked={handleDescriptionBackClick} />}
+        {description &&
+        <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
     </div>
 };
 
