@@ -1,30 +1,40 @@
 import style from "./style.css";
-import {React} from "preact";
+import {createRef, React} from "preact";
+import Logo from "../logo";
+import Back from "../back";
+import {useEffect, useState} from "preact/hooks";
 
+const getHeight = (containerWidth, ratio) => {
+    const [ratioWidth, ratioHeight] = ratio.split(":").map(it => parseInt(it));
+    return containerWidth / (ratioWidth / ratioHeight)
+};
 const VerticalPreview = (props) => {
+    const scrollContainerRef = createRef();
+    const [parentWidth, setParenWidth] = useState(0);
+
     const group = props.data.group;
-    console.log(group);
 
-    // const getHeight = (media) =>{
-    //     const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
-    //     if (ratioWidth > ratioHeight) {
-    //         height = width * (ratioHeight / ratioWidth);
-    //     } else {
-    //         height = parentHeight * 0.80;
-    //         width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
-    //     }
-    // }
+    useEffect(() => {
+        const containerWidth = scrollContainerRef.current.clientWidth;
+        setParenWidth(containerWidth);
+        if (group.length === 1){
+            scrollContainerRef.current.style.justifyContent = "center";
+            scrollContainerRef.current.style.marginTop = "0";
+        }
+    },[])
 
-    const onIframeLoaded = (event) => {
-        console.log(event.target.contentDocument);
-    };
-    return <div className={style['description-parent']}>
-        <div className={style['desc-container']}>
-            <div className={style['scroll-container']}>
+    return <div className={style['preview-parent']}>
+        <div className={style.cancel}>
+            <Back onCancel={() => props.handleBackClick()} />
+        </div>
+        <div className={style['preview-container']}>
+            <div className={style['scroll-container']} ref={scrollContainerRef}>
                 {group.map(it => {
                     return (
                         <div className={style['media-wrapper']}>
-                            {it.video ? <iframe src={it.video.src} onLoad={evt => onIframeLoaded(evt)} /> :
+                            {it.video ? <iframe src={it.video.src} style={{
+                                    height: getHeight(parentWidth, it.ratio)
+                                }} /> :
                                 <img src={it.image.src} />}
                         </div>
                     )

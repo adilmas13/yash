@@ -5,6 +5,7 @@ import {awardsDescription, awardsDetails, awardsThumbnails} from "../../dataSour
 import {useEffect, useState} from "preact/hooks";
 import Logo from "../logo";
 import Description from "../description";
+import VerticalPreview from "../vertical-preview";
 
 const MediaCell = (props) => {
     const media = props.media;
@@ -61,7 +62,7 @@ const Awards = () => {
                 </div>
             </div>
             {preview &&
-            <AwardsPreview
+            <VerticalPreview
                 data={preview}
                 handleBackClick={() => setPreview(undefined)} />}
             {description &&

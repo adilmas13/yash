@@ -1,4 +1,3 @@
-import {useEffect, useRef, useState} from "preact/hooks";
 import style from "./style.css";
 
 const Back = (props) => {
