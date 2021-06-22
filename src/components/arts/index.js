@@ -7,6 +7,7 @@ import style from "./style.css"
 import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
+import VerticalPreview from "../vertical-preview";
 
 const breakpoints = [
     {
@@ -83,7 +84,15 @@ const Arts = () => {
             breakpoints={breakpoints}
             handleClick={handleClick}
             disableScroll={previewMedia} />
-        {previewMedia && <HorizontalPreview data={previewMedia} handleBackClick={handlePreviewBackClick} />}
+        {previewMedia && (
+            window.innerWidth <= 1000 ?
+                <VerticalPreview
+                    data={previewMedia}
+                    handleBackClick={handlePreviewBackClick} /> :
+                <HorizontalPreview
+                    data={previewMedia}
+                    handleBackClick={handlePreviewBackClick} />
+        )}
         {description && <Description data={description} onCloseClicked={handleDescriptionBackClick} />}
     </div>
 }

@@ -7,6 +7,7 @@ import style from './style.css'
 import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
+import VerticalPreview from "../vertical-preview";
 
 const breakpoints = [
     {
@@ -55,6 +56,7 @@ const breakpoints = [
     }
 ]
 
+
 const Adverts = () => {
     const [previewMedia, setPreviewMedia] = useState(undefined);
     const [selectedDescription, setSelectedDescription] = useState(undefined);
@@ -70,6 +72,8 @@ const Adverts = () => {
 
     const handleDescriptionBackClick = () => setSelectedDescription(undefined);
 
+    const handlePreviewBackClick = () => setPreviewMedia(undefined)
+
     return <div className={style.parent}>
         <div className={style["logo-wrapper"]}>
             <Logo />
@@ -78,10 +82,15 @@ const Adverts = () => {
             breakpoints={breakpoints}
             handleClick={handleClick}
             disableScroll={previewMedia} />
-        {previewMedia &&
-        <HorizontalPreview
-            data={previewMedia}
-            handleBackClick={() => setPreviewMedia(undefined)} />}
+        {previewMedia && (
+            window.innerWidth <= 1000 ?
+                <VerticalPreview
+                    data={previewMedia}
+                    handleBackClick={handlePreviewBackClick} /> :
+                <HorizontalPreview
+                    data={previewMedia}
+                    handleBackClick={handlePreviewBackClick} />
+        )}
         {selectedDescription &&
         <Description data={selectedDescription} onCloseClicked={handleDescriptionBackClick} />}
     </div>
