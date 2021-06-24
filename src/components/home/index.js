@@ -225,8 +225,7 @@ const DesktopView = (props) => <div class={style.parent} id={'home_body'}>
     <div class={style.body}>
         <div class={style["three-layer"]}>
             <Yash />
-            <YashVideo action={props.action} onClick={() => {
-            }} />
+            <YashVideo action={props.action} onClick={() => props.onOptionSelected()} />
             <SlotMachine
                 isMobileView={props.isMobileView}
                 action={props.action}
