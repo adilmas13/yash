@@ -1,14 +1,12 @@
 import {useEffect, useRef, useState} from "preact/hooks";
 import style from "./style.css";
 import Back from "../back";
-import LoadableImage from "../loadable-image";
 import {createRef} from "preact";
 import LazyImage from "../lazy-image";
 
 
 const Page = (props) => {
     const media = props.data;
-    console.log(props);
     const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
 
     const parentHeight = document.body.clientHeight;
@@ -25,7 +23,7 @@ const Page = (props) => {
     }
 
     return <div className={style['page-container']}>
-        { media.video
+        {media.video
             ? <iframe
                 width={width}
                 height={height}
@@ -48,12 +46,12 @@ const HorizontalPreview = (props) => {
     const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
 
     useEffect(() => {
-            const element = scrollRef.current;
-            element.scroll({
-                left: element.clientWidth * pageNo,
-                behavior: isInitialLoad.current ? 'auto' : 'smooth'
-            })
-            isInitialLoad.current = false;
+        const element = scrollRef.current;
+        element.scroll({
+            left: element.clientWidth * pageNo,
+            behavior: isInitialLoad.current ? 'auto' : 'smooth'
+        })
+        isInitialLoad.current = false;
     }, [pageNo])
 
     const enableArrow = {
