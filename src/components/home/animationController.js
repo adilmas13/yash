@@ -118,7 +118,7 @@ export const decreaseYashTextOpacity = () => {
         {opacity: 0.3}
     ], {
         duration: 500,
-        delay: 2000,
+        delay: 3000,
         fill: "forwards"
     });
     animation.play();
