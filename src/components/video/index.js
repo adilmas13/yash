@@ -14,7 +14,7 @@ const Video = (props) => {
         width,
         height
     };
-    
+
     return <div style={iFrameStyle}>
         <iframe src={src}
                 height={height}
