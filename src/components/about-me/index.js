@@ -78,16 +78,16 @@ const DesktopView = (props) => {
     return <div className={style['parent']}>
         <div className={style['container']}>
             <div className={style.wrapper}>
-                <div className={style["scroll-container"]} ref={scrollerRef}>
-                    {props.pageNo === 0 && <MyInfo />}
-                    {props.pageNo === 1 && <Experience />}
-                    {props.pageNo === 2 && <Literacy />}
-                </div>
                 {props.pageNo > 0 && <div className={style['prev-wrapper']} onClick={() => props.onPrevClicked()}>
                     <img src={"assets/arrow_blunt.svg"}
                          className={style.arrow} />
                     <div className={style.text}>prev</div>
                 </div>}
+                <div className={style["scroll-container"]} ref={scrollerRef}>
+                    {props.pageNo === 0 && <MyInfo />}
+                    {props.pageNo === 1 && <Experience />}
+                    {props.pageNo === 2 && <Literacy />}
+                </div>
                 {props.pageNo < 2 && <div className={style['next-wrapper']} onClick={() => props.onNextClicked()}>
                     <div className={style.text}>next</div>
                     <img src={"assets/arrow_blunt.svg"} className={style.arrow} />

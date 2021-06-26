@@ -27,7 +27,8 @@
         font-size: 18px;
         letter-spacing: 1px;
         cursor: pointer;
-        display: flex; }
+        display: flex;
+        z-index: 1; }
         .parent .container .wrapper .prev-wrapper .text {
           font-size: 18px;
           letter-spacing: 1px;
@@ -46,7 +47,8 @@
         color: #000000;
         font-size: 18px;
         letter-spacing: 1px;
-        cursor: pointer; }
+        cursor: pointer;
+        z-index: 1; }
         .parent .container .wrapper .next-wrapper .text {
           font-size: 18px;
           letter-spacing: 1px;
@@ -57,6 +59,19 @@
           width: 20px;
           transform: rotate(90deg); }
 
+@media only screen and (max-width: 1300px) {
+  .parent .container .wrapper {
+    display: flex; }
+    .parent .container .wrapper .prev-wrapper {
+      position: initial;
+      padding: 0 5px; }
+      .parent .container .wrapper .prev-wrapper .text {
+        display: none; }
+    .parent .container .wrapper .next-wrapper {
+      position: initial;
+      padding: 0 5px; }
+      .parent .container .wrapper .next-wrapper .text {
+        display: none; } }
 @media only screen and (max-width: 700px) {
   .parent {
     width: 100vw;
