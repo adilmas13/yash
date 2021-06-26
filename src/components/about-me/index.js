@@ -9,6 +9,8 @@ import MyInfoMobile from "../my-info-mobile";
 import ExperienceMobile from "../experience-mobile";
 import LiteracyMobile from "../literacy-mobile";
 import {createRef} from "preact";
+import Back from "../back";
+import {route} from "preact-router";
 
 const MobileView = (props) => {
     const scrollerRef = createRef();
@@ -78,6 +80,9 @@ const DesktopView = (props) => {
     return <div className={style['parent']}>
         <div className={style['container']}>
             <div className={style.wrapper}>
+                <div className={style.cancel}>
+                    <Back onCancel={() => route("/")} />
+                </div>
                 {props.pageNo > 0 && <div className={style['prev-wrapper']} onClick={() => props.onPrevClicked()}>
                     <img src={"assets/arrow_blunt.svg"}
                          className={style.arrow} />
