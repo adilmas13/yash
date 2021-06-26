@@ -21,21 +21,21 @@ const breakpoints = [
     },
     {
         point: 700,
-        noOfColumns: 3,
+        noOfColumns: 2,
         containerWidth: "100%",
         data: arts
             .filter(it => it.id !== "blank")
             .sort((a, b) => a.id - b.id)
-    }, {
+    },
+    {
         point: 900,
-        noOfColumns: 4,
+        noOfColumns: 5,
         containerWidth: "100%",
         data: arts
-            .filter(it => it.id !== "blank")
-            .sort((a, b) => a.id - b.id)
-    }, {
+    },
+    {
         point: 1000,
-        containerWidth: "900px",
+        containerWidth: "100%",
         noOfColumns: 5,
         data: arts
     },
