@@ -2,14 +2,13 @@ import {useEffect, useRef, useState} from "preact/hooks";
 import style from "./style.css";
 import Back from "../back";
 import LoadableImage from "../loadable-image";
+import {createRef} from "preact";
 
-const HorizontalPreview = (props) => {
-    const group = props.data.group;
-    const [pageNo, setPageNo] = useState(props.data.selected);
 
-    const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
-
-    const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+const Page = (props) => {
+    const media = props.data;
+    console.log(props);
+    const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
 
     const parentHeight = document.body.clientHeight;
     const parentWidth = document.body.clientWidth;
@@ -17,15 +16,41 @@ const HorizontalPreview = (props) => {
     let width = parentWidth * 0.75;
     let height;
 
-    const media = group[pageNo];
-    const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
-
     if (ratioWidth > ratioHeight) {
         height = width * (ratioHeight / ratioWidth);
     } else {
         height = parentHeight * 0.80;
         width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
     }
+
+    return <div className={style['page-container']}>
+        { media.video
+            ? <iframe
+                width={width}
+                height={height}
+                src={media.video.src} />
+            : <LoadableImage src={media.image.src} />}
+    </div>
+};
+
+const HorizontalPreview = (props) => {
+    const scrollRef = createRef();
+    const isInitialLoad = useRef(true)
+    const group = props.data.group;
+    const [pageNo, setPageNo] = useState(props.data.selected);
+
+    const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
+
+    const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+
+    useEffect(() => {
+            const element = scrollRef.current;
+            element.scroll({
+                left: element.clientWidth * pageNo,
+                behavior: isInitialLoad.current ? 'auto' : 'smooth'
+            })
+            isInitialLoad.current = false;
+    }, [pageNo])
 
     const enableArrow = {
         visibility: 'visible',
@@ -51,14 +76,8 @@ const HorizontalPreview = (props) => {
                          className={style.arrow} />
                     <div className={style.text}>prev</div>
                 </div>
-                <div className={style.body}>
-                    {media.video
-                        ? <iframe
-                            width={width}
-                            height={height}
-                            src={media.video.src} />
-                        : <LoadableImage src={media.image.src} />
-                    }
+                <div className={style.body} ref={scrollRef}>
+                    {group.map((data, index) => <Page key={index} data={data} />)}
                 </div>
                 <div
                     style={pageNo < (group.length - 1) ? enableArrow : disableArrow}

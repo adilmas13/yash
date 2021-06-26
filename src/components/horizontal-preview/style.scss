@@ -34,14 +34,11 @@
 
       .body {
         display: flex;
-        justify-content: center;
-        align-items: center;
         height: 100%;
         flex: 1;
-
-        iframe {
-          border: none;
-        }
+        flex-wrap: nowrap;
+        overflow: hidden;
+        width: 100%;
       }
 
       .prev-wrapper {
@@ -98,4 +95,18 @@
 .visible {
   opacity: 1;
   filter: blur(0);
+}
+
+.page-container {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  iframe {
+    border: none;
+  }
 }

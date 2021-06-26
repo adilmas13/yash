@@ -27,12 +27,11 @@
       font-family: Yfx, serif; }
       .parent .container .body-wrapper .body {
         display: flex;
-        justify-content: center;
-        align-items: center;
         height: 100%;
-        flex: 1; }
-        .parent .container .body-wrapper .body iframe {
-          border: none; }
+        flex: 1;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        width: 100%; }
       .parent .container .body-wrapper .prev-wrapper {
         width: 120px;
         display: flex;
@@ -71,5 +70,16 @@
 .visible {
   opacity: 1;
   filter: blur(0); }
+
+.page-container {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto; }
+  .page-container iframe {
+    border: none; }
 
 /*# sourceMappingURL=style.css.map */
