@@ -3,6 +3,7 @@ import style from "./style.css";
 import Back from "../back";
 import LoadableImage from "../loadable-image";
 import {createRef} from "preact";
+import LazyImage from "../lazy-image";
 
 
 const Page = (props) => {
@@ -29,7 +30,10 @@ const Page = (props) => {
                 width={width}
                 height={height}
                 src={media.video.src} />
-            : <LoadableImage src={media.image.src} />}
+            : <LazyImage src={media.image.src} css={{
+                maxHeight: '100%',
+                width: 'auto'
+            }} />}
     </div>
 };
 

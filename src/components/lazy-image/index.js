@@ -5,13 +5,15 @@ import style from './style.css'
 * props = {
 *      url: string,
 *      color: string,
-*       borderRadius : string
+*       borderRadius : string,
+*       css : {}
 * }
 * */
 const LazyImage = (props) => {
     const src = props.src || "";
     const color = props.color || "lightgrey";
     const borderRadius = props.borderRadius || "0"
+    const css = props.css || {}
 
     const [isImageLoaded, setImageLoaded] = useState(false);
 
@@ -21,7 +23,8 @@ const LazyImage = (props) => {
     }
 
     let imageStyle = {
-        borderRadius
+        ...css,
+        ...{borderRadius}
     }
 
     return <div style={wrapperStyle} className={style['lazy-image-wrapper']}>
