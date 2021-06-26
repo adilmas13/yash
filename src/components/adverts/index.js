@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
-import {adverts, advertsDescription} from "../../dataSource/adverts";
+import {adverts} from "../../dataSource/adverts";
 import {useEffect, useState} from "preact/hooks";
 import style from './style.css'
 import HorizontalPreview from "../horizontal-preview";
@@ -21,14 +21,12 @@ const breakpoints = [
     }, {
         point: 800,
         containerWidth: "100%",
-        noOfColumns: 3,
+        noOfColumns: 4,
         data: adverts
-            .filter(it => it.id !== "blank")
-            .sort((a, b) => a.id - b.id)
     },
     {
         point: 1000,
-        containerWidth: "900px",
+        containerWidth: "100%",
         noOfColumns: 4,
         data: adverts
     },
