@@ -1,6 +1,5 @@
 import style from "./style.css";
 import {createRef, React} from "preact";
-import Logo from "../logo";
 import Back from "../back";
 import {useEffect, useState} from "preact/hooks";
 import LazyImage from "../lazy-image";
