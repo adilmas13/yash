@@ -3,6 +3,7 @@ import style from "./style.css";
 import Back from "../back";
 import {createRef} from "preact";
 import LazyImage from "../lazy-image";
+import Video from "../video";
 
 
 const Page = (props) => {
@@ -24,10 +25,11 @@ const Page = (props) => {
 
     return <div className={style['page-container']}>
         {media.video
-            ? <iframe
+            ? <Video
                 width={width}
                 height={height}
-                src={media.video.src} />
+                src={media.video.src}
+            />
             : <LazyImage src={media.image.src} css={{
                 maxHeight: '100%',
                 width: 'auto'

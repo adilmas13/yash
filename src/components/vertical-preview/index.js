@@ -3,6 +3,7 @@ import {createRef, React} from "preact";
 import Back from "../back";
 import {useEffect, useState} from "preact/hooks";
 import LazyImage from "../lazy-image";
+import Video from "../video";
 
 const getHeight = (containerWidth, ratio) => {
     const [ratioWidth, ratioHeight] = ratio.split(":").map(it => parseInt(it));
@@ -17,11 +18,11 @@ const VerticalPreview = (props) => {
     useEffect(() => {
         const containerWidth = scrollContainerRef.current.clientWidth;
         setParenWidth(containerWidth);
-        if (group.length === 1){
+        if (group.length === 1) {
             scrollContainerRef.current.style.justifyContent = "center";
             scrollContainerRef.current.style.marginTop = "0";
         }
-    },[])
+    }, [])
 
     return <div className={style['preview-parent']}>
         <div className={style.cancel}>
@@ -32,10 +33,9 @@ const VerticalPreview = (props) => {
                 {group.map((it, index) => {
                     return (
                         <div className={style['media-wrapper']} key={index}>
-                            {it.video ? <iframe src={it.video.src} style={{
-                                    height: getHeight(parentWidth, it.ratio)
-                                }} /> :
-                                <LazyImage src={it.image.src} />}
+                            {it.video
+                                ? <Video src={it.video.src} height={getHeight(parentWidth, it.ratio)} />
+                                : <LazyImage src={it.image.src} />}
                         </div>
                     )
                 })}

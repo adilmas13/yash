@@ -35,8 +35,7 @@
         .preview-parent .preview-container .scroll-container .media-wrapper img {
           width: 100%; }
         .preview-parent .preview-container .scroll-container .media-wrapper iframe {
-          width: 100%;
-          border: none; }
+          width: 100%; }
 
 @media only screen and (max-width: 600px) {
   .preview-parent .preview-container .scroll-container .media-wrapper {
