@@ -23,7 +23,8 @@
       width: 35%;
       text-align: center;
       border-radius: 10px;
-      position: relative; }
+      position: relative;
+      transform: scale(0); }
       .description-body .description-container .description-center-piece .description {
         font-size: 18px;
         color: #353335;
