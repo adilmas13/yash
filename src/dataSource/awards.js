@@ -284,7 +284,7 @@ export const awardsDetails = [
     },
     {
         id: "7-11",
-        image_name: "10loveinside",
+        image_name: "11loveinside",
         ratio: "16:9",
         groupId: 7
     },

@@ -29,9 +29,9 @@ const VerticalPreview = (props) => {
         </div>
         <div className={style['preview-container']}>
             <div className={style['scroll-container']} ref={scrollContainerRef}>
-                {group.map(it => {
+                {group.map((it, index) => {
                     return (
-                        <div className={style['media-wrapper']}>
+                        <div className={style['media-wrapper']} key={index}>
                             {it.video ? <iframe src={it.video.src} style={{
                                     height: getHeight(parentWidth, it.ratio)
                                 }} /> :
