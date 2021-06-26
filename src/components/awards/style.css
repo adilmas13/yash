@@ -7,14 +7,14 @@
   .parent .logo-wrapper {
     margin-top: 20px; }
   .parent .container {
-    max-width: 2500px;
+    max-width: 2100px;
     margin-top: 30px; }
     .parent .container .grid {
       display: grid;
       grid-template-columns: 32% 32% 32%;
       justify-content: space-evenly;
       padding-bottom: 10px;
-      grid-row-gap: 10px; }
+      grid-row-gap: 20px; }
       .parent .container .grid .image-wrapper {
         border-radius: 10px;
         transition: 0.3s ease-out all;
@@ -50,7 +50,9 @@
 
 @media only screen and (max-width: 1680px) {
   .parent .container {
-    max-width: 1240px; } }
+    max-width: 1240px; }
+    .parent .container .grid {
+      grid-row-gap: 15px; } }
 @media only screen and (max-width: 1240px) {
   .parent .container {
     max-width: 100%; } }
@@ -59,7 +61,8 @@
     max-width: 100%;
     margin-top: 20px; }
     .parent .container .grid {
-      grid-template-columns: 47% 47%; }
+      grid-template-columns: 47% 47%;
+      grid-row-gap: 2vw; }
       .parent .container .grid .image-wrapper .cell {
         filter: grayscale(0); } }
 @media only screen and (max-width: 500px) {

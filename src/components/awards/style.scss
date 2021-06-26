@@ -12,7 +12,7 @@
   }
 
   .container {
-    max-width: 2500px;
+    max-width: 2100px;
     margin-top: 30px;
 
     .grid {
@@ -20,7 +20,7 @@
       grid-template-columns: 32% 32% 32%;
       justify-content: space-evenly;
       padding-bottom: 10px;
-      grid-row-gap: 10px;
+      grid-row-gap: 20px;
 
       .image-wrapper {
         border-radius: 10px;
@@ -69,6 +69,10 @@
   .parent {
     .container {
       max-width: 1240px;
+
+      .grid{
+        grid-row-gap: 15px;
+      }
     }
   }
 }
@@ -89,6 +93,7 @@
 
       .grid {
         grid-template-columns: 47% 47%;
+        grid-row-gap: 2vw;
 
         .image-wrapper {
 
