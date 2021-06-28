@@ -4,7 +4,13 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";
-import {getPageNo, homeVideoForwardSlots, homeVideoReverseSlots, setPageNo} from "../../dataSource/home";
+import {
+    getPageNo,
+    homeVideoForwardSlots,
+    homeVideoReverseSlots,
+    setPageNo,
+    videoPlaceholder
+} from "../../dataSource/home";
 import {
     animateDownArrowOnClick,
     animateUpArrowOnClick,
@@ -217,21 +223,30 @@ const YashVideo = (props) => {
         return () => video.removeEventListener('timeupdate', progressListener);
     }, [props.action])
 
-    return <video ref={videoRef}
-                  src={"assets/videos/video.mp4"}
-                  onClick={() => props.onClick()}
-                  autoPlay={true}
-                  style={{cursor: props.action.position > 0 ? 'pointer' : 'auto'}}
-                  preload
-    />
+    return <div className={style['video-container']}>
+        <video ref={videoRef}
+               src={"assets/videos/video.mp4"}
+               onClick={() => props.onClick()}
+               autoPlay={true}
+               style={{cursor: props.action.position > 0 ? 'pointer' : 'auto'}}
+               preload
+               placeholder={videoPlaceholder}
+               onLoadedData={() => props.onVideoLoaded()}
+        />
+        {!props.isReady && <img src={videoPlaceholder} />}
+    </div>
 }
 
-const DesktopView = (props) => <div class={style.parent} id={'home_body'}>
+const DesktopView = (props) => <div class={style.parent} id={'home_body'} style={{ filter: `blur(${props.isReady ? 0 : 10}px)`}}>
     <div class={style.body}>
         <div class={style["three-layer"]}>
             <Yash />
-            <YashVideo action={props.action}
-                       onClick={() => props.onOptionSelected()} />
+            <YashVideo
+                action={props.action}
+                onClick={() => props.onOptionSelected()}
+                onVideoLoaded={() => props.onReady()}
+                isReady={props.isReady}
+            />
             <SlotMachine
                 isMobileView={props.isMobileView}
                 action={props.action}
@@ -275,6 +290,8 @@ const Home = () => {
         isFirst: true
     })
 
+    const [isReady, setReady] = useState(false);
+
     const onNextClicked = () => {
         setAction(action => {
             return {
@@ -298,22 +315,24 @@ const Home = () => {
     const setActionWithDelay = (action, delay) => setTimeout(() => setAction(action), delay);
 
     useEffect(() => {
-        const pageNo = getPageNo();
-        revealHome();
-        decreaseYashTextOpacity();
-        setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
-        const promises = [revealUpArrow().finished, revealDownArrow().finished];
-        Promise
-            .all(promises)
-            .then(() => {
-                if (pageNo === 0) {
-                    hideUpArrow(300);
-                }
-                if (pageNo === 4) {
-                    hideDownArrow(300)
-                }
-            })
-    }, [])
+        if (isReady) {
+            const pageNo = getPageNo();
+            revealHome();
+            decreaseYashTextOpacity();
+            setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
+            const promises = [revealUpArrow().finished, revealDownArrow().finished];
+            Promise
+                .all(promises)
+                .then(() => {
+                    if (pageNo === 0) {
+                        hideUpArrow(300);
+                    }
+                    if (pageNo === 4) {
+                        hideDownArrow(300)
+                    }
+                })
+        }
+    }, [isReady])
 
     return isMobileView
         ? <MobileView
@@ -322,6 +341,7 @@ const Home = () => {
             onPreviousClick={onPreviousClick}
             isMobileView={isMobileView}
             onOptionSelected={() => redirect(action.position)}
+            onReady={() => setReady(true)}
         />
         : <DesktopView
             action={action}
@@ -329,6 +349,8 @@ const Home = () => {
             onPreviousClick={onPreviousClick}
             isMobileView={isMobileView}
             onOptionSelected={() => redirect(action.position)}
+            isReady={isReady}
+            onReady={() => setReady(true)}
         />
 }
 

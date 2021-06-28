@@ -10,7 +10,8 @@
   .parent .body {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    transition: 0.3s ease-out filter; }
     .parent .body .three-layer {
       height: 270px;
       position: relative;
@@ -20,15 +21,26 @@
       .parent .body .three-layer .yash-text-wrapper {
         position: absolute;
         right: calc(50% + 60px);
-        padding-bottom: 40px; }
+        padding-bottom: 40px;
+        z-index: 1; }
         .parent .body .three-layer .yash-text-wrapper .yash-text {
           font-size: var(--cell-font-size);
           font-family: Yfx, serif;
           letter-spacing: 4px;
           height: var(--cell-height); }
-      .parent .body .three-layer video {
+      .parent .body .three-layer .video-container {
         width: 250px;
-        height: 250px; }
+        height: 250px;
+        position: relative;
+        background: #F1F1F1; }
+        .parent .body .three-layer .video-container video {
+          position: absolute;
+          width: 100%;
+          height: 100%; }
+        .parent .body .three-layer .video-container img {
+          position: absolute;
+          width: 100%;
+          height: 100%; }
       .parent .body .three-layer .slot-wrapper {
         position: absolute;
         left: calc(50% + 60px);
