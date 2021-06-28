@@ -112,9 +112,19 @@
         font-size: 8vh;
         font-family: Yfx, serif;
         letter-spacing: 4px; }
-      .parent .three-layer video {
-        width: 45%;
-        cursor: pointer; }
+      .parent .three-layer .video-container {
+        width: 45vw;
+        height: 45vw;
+        position: relative;
+        background: #F1F1F1; }
+        .parent .three-layer .video-container video {
+          position: absolute;
+          width: 100%;
+          height: 100%; }
+        .parent .three-layer .video-container img {
+          position: absolute;
+          width: 100%;
+          height: 100%; }
       .parent .three-layer .designation {
         font-family: Yfx, serif;
         display: flex;

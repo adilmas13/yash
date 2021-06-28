@@ -237,7 +237,7 @@ const YashVideo = (props) => {
     </div>
 }
 
-const DesktopView = (props) => <div class={style.parent} id={'home_body'} style={{ filter: `blur(${props.isReady ? 0 : 10}px)`}}>
+const DesktopView = (props) => <>
     <div class={style.body}>
         <div class={style["three-layer"]}>
             <Yash />
@@ -260,15 +260,20 @@ const DesktopView = (props) => <div class={style.parent} id={'home_body'} style=
     <div class={style["logo-wrapper"]}>
         <Logo />
     </div>
-</div>
+</>
 
-const MobileView = (props) => <div className={style.parent} id={'home_body'}>
+const MobileView = (props) => <>
     <div className={style["logo-wrapper"]}>
         <Logo />
     </div>
     <div className={style["three-layer"]}>
         <Yash />
-        <YashVideo action={props.action} onClick={() => props.onOptionSelected()} />
+        <YashVideo
+            action={props.action}
+            onClick={() => props.onOptionSelected()}
+            onVideoLoaded={() => props.onReady()}
+            isReady={props.isReady}
+        />
         <SlotMachine
             isMobileView={props.isMobileView}
             action={props.action}
@@ -278,8 +283,7 @@ const MobileView = (props) => <div className={style.parent} id={'home_body'}>
         />
         <Designation />
     </div>
-
-</div>;
+</>;
 
 const Home = () => {
     const isMobileView = useIsMobileView(700);
@@ -316,6 +320,7 @@ const Home = () => {
 
     useEffect(() => {
         if (isReady) {
+            alert('Show time')
             const pageNo = getPageNo();
             revealHome();
             decreaseYashTextOpacity();
@@ -334,24 +339,27 @@ const Home = () => {
         }
     }, [isReady])
 
-    return isMobileView
-        ? <MobileView
-            action={action}
-            onNextClicked={onNextClicked}
-            onPreviousClick={onPreviousClick}
-            isMobileView={isMobileView}
-            onOptionSelected={() => redirect(action.position)}
-            onReady={() => setReady(true)}
-        />
-        : <DesktopView
-            action={action}
-            onNextClicked={onNextClicked}
-            onPreviousClick={onPreviousClick}
-            isMobileView={isMobileView}
-            onOptionSelected={() => redirect(action.position)}
-            isReady={isReady}
-            onReady={() => setReady(true)}
-        />
+    return <div className={style.parent} id={'home_body'} style={{filter: `blur(${isReady ? 0 : 10}px)`}}>
+        {isMobileView
+            ? <MobileView
+                action={action}
+                onNextClicked={onNextClicked}
+                onPreviousClick={onPreviousClick}
+                isMobileView={isMobileView}
+                onOptionSelected={() => redirect(action.position)}
+                isReady={isReady}
+                onReady={() => setReady(true)}
+            />
+            : <DesktopView
+                action={action}
+                onNextClicked={onNextClicked}
+                onPreviousClick={onPreviousClick}
+                isMobileView={isMobileView}
+                onOptionSelected={() => redirect(action.position)}
+                isReady={isReady}
+                onReady={() => setReady(true)}
+            />}
+    </div>
 }
 
 export default Home;
