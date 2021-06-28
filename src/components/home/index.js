@@ -320,7 +320,6 @@ const Home = () => {
 
     useEffect(() => {
         if (isReady) {
-            alert('Show time')
             const pageNo = getPageNo();
             revealHome();
             decreaseYashTextOpacity();
