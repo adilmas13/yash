@@ -9,10 +9,10 @@ export const homeVideoForwardSlots = [
 ];
 
 export const homeVideoReverseSlots = [
-    {start: 65, end: 75.2},
-    {start: 75.2, end: 79.5},
-    {start: 79.5, end: 86.2},
-    {start: 86.2, end: 108},
+    {start: 61, end: 75},
+    {start: 75, end: 79.5},
+    {start: 79.5, end: 86},
+    {start: 86, end: 108},
 ]
 
 export const setPageNo = (pageNo) => localStorage.setItem(PAGE_NO_KEY, pageNo);
