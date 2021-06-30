@@ -1,5 +1,26 @@
 @import "../../assets/styles/colors";
 
+$cell-width: 65px;
+$cell-height: 72px;
+$cell-font-size: 80px;
+$cell-padding: 5px;
+
+:global {
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: $cell-width;
+  }
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: $cell-padding;
+    min-height: $cell-height;
+  }
+}
+
 .parent {
   display: flex;
   position: relative;
@@ -30,10 +51,10 @@
         z-index: 1;
 
         .yash-text {
-          font-size: var(--cell-font-size);
+          font-size: $cell-font-size;
           font-family: Yfx, serif;
           letter-spacing: 4px;
-          height: var(--cell-height);
+          height: $cell-height;
         }
       }
 
@@ -67,18 +88,18 @@
 
           .slot-container {
             display: flex;
-            font-size: var(--cell-font-size);
+            font-size: $cell-font-size;
 
             .a-text {
               display: flex;
               font-family: Yfx, serif;
-              width: var(--cell-width);
-              height: var(--cell-height);
-              padding-top: var(--cell-padding);
+              width: $cell-width;
+              height: $cell-height;
+              padding-top: $cell-padding;
             }
 
             .slot {
-              height: var(--cell-height);
+              height: $cell-height;
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
@@ -133,6 +154,24 @@
 }
 
 @media only screen and (max-width: 700px) {
+
+  :global {
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 56px;
+    }
+
+    .cell {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding-top: $cell-padding;
+      min-height: $cell-height;
+      font-size: 8vh;
+    }
+  }
+
   .parent {
     display: flex;
     align-items: center;
@@ -160,7 +199,7 @@
         }
       }
 
-      .video-container{
+      .video-container {
         width: 46vw;
         height: 46vw;
         position: relative;
@@ -209,7 +248,7 @@
             margin-top: 15px;
 
             .slot {
-              height: var(--cell-height-responsive);
+              height: $cell-height;
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
@@ -238,3 +277,12 @@
   }
 }
 
+@media only screen and (max-width: 450px) {
+  :global {
+    .column {
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+    }
+  }
+}

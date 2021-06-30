@@ -1,3 +1,14 @@
+:global .column {
+  display: flex;
+  flex-direction: column;
+  width: 65px; }
+:global .cell {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 5px;
+  min-height: 72px; }
+
 .parent {
   display: flex;
   position: relative;
@@ -24,10 +35,10 @@
         padding-bottom: 40px;
         z-index: 1; }
         .parent .body .three-layer .yash-text-wrapper .yash-text {
-          font-size: var(--cell-font-size);
+          font-size: 80px;
           font-family: Yfx, serif;
           letter-spacing: 4px;
-          height: var(--cell-height); }
+          height: 72px; }
       .parent .body .three-layer .video-container {
         width: 250px;
         height: 250px;
@@ -50,15 +61,15 @@
           flex-direction: column; }
           .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
-            font-size: var(--cell-font-size); }
+            font-size: 80px; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
               display: flex;
               font-family: Yfx, serif;
-              width: var(--cell-width);
-              height: var(--cell-height);
-              padding-top: var(--cell-padding); }
+              width: 65px;
+              height: 72px;
+              padding-top: 5px; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-              height: var(--cell-height);
+              height: 72px;
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex;
@@ -94,6 +105,18 @@
     margin-top: 20px; }
 
 @media only screen and (max-width: 700px) {
+  :global .column {
+    display: flex;
+    flex-direction: column;
+    width: 56px; }
+  :global .cell {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5px;
+    min-height: 72px;
+    font-size: 8vh; }
+
   .parent {
     display: flex;
     align-items: center;
@@ -148,7 +171,7 @@
             display: flex;
             margin-top: 15px; }
             .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
-              height: var(--cell-height-responsive);
+              height: 72px;
               overflow: hidden;
               font-family: Yfx, serif;
               display: flex; }
@@ -165,5 +188,10 @@
             cursor: pointer;
             pointer-events: none;
             margin-top: 0; } }
+@media only screen and (max-width: 450px) {
+  :global .column {
+    display: flex;
+    flex-direction: column;
+    width: 50px; } }
 
 /*# sourceMappingURL=style.css.map */
