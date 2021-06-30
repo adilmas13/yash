@@ -286,7 +286,7 @@ const MobileView = (props) => <>
 </>;
 
 const Home = () => {
-    const isMobileView = useIsMobileView(700);
+    const isMobileView = useIsMobileView(900);
 
     const [action, setAction] = useState({
         position: 4,
