@@ -177,137 +177,6 @@ $cell-padding: 5px;
     }
   }
 
-  .parent {
-    display: flex;
-    position: relative;
-    height: 100vh;
-    justify-content: center;
-    min-width: 100vw;
-    padding-top: 25vh;
-    opacity: 0;
-    transition: 0.3s ease-in-out opacity;
-
-    .body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: 0.3s ease-out filter;
-
-      .three-layer {
-        height: 270px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .yash-text-wrapper {
-          position: absolute;
-          right: calc(50% + 60px);
-          padding-bottom: 40px;
-          z-index: 1;
-
-          .yash-text {
-            font-size: $cell-font-size;
-            font-family: Yfx, serif;
-            letter-spacing: 4px;
-            height: $cell-height;
-          }
-        }
-
-        .video-container {
-          width: 250px;
-          height: 250px;
-          position: relative;
-          background: #F1F1F1;
-
-          video {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-          }
-
-          img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .slot-wrapper {
-          position: absolute;
-          left: calc(50% + 60px);
-          padding-bottom: 40px;
-
-          .slot-parent {
-            display: flex;
-            flex-direction: column;
-
-            .slot-container {
-              display: flex;
-              font-size: $cell-font-size;
-
-              .a-text {
-                display: flex;
-                font-family: Yfx, serif;
-                width: $cell-width;
-                height: $cell-height;
-                padding-top: $cell-padding;
-              }
-
-              .slot {
-                height: $cell-height;
-                overflow: hidden;
-                font-family: Yfx, serif;
-                display: flex;
-                cursor: pointer;
-              }
-            }
-
-            .arrow {
-              width: 30px;
-              opacity: 0;
-              cursor: pointer;
-              margin-left: 32%;
-              pointer-events: none;
-              margin-bottom: 20px;
-            }
-
-            .down-arrow {
-              width: 30px;
-              opacity: 0;
-              transform: rotate(180deg);
-              cursor: pointer;
-              margin-left: 32%;
-              pointer-events: none;
-              margin-top: 20px;
-            }
-          }
-        }
-
-      }
-
-      .designation {
-        font-family: Yfx, serif;
-        display: flex;
-        justify-content: space-between;
-        padding-top: 2px;
-        width: 250px;
-
-        .text {
-          letter-spacing: 1.2px;
-          font-size: 12px;
-        }
-      }
-    }
-
-    .logo-wrapper {
-      position: absolute;
-      top: 0;
-      left: calc(50% - 25px);
-      margin-top: 20px;
-    }
-
-  }
 }
 
 
@@ -367,12 +236,14 @@ $cell-padding: 5px;
           position: absolute;
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
 
         img {
           position: absolute;
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
 
