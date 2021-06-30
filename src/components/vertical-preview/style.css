@@ -1,47 +1,64 @@
 .preview-parent {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(220, 220, 220, 0.97);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: scroll; }
-  .preview-parent .cancel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(220, 220, 220, 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.preview-parent .cancel {
     position: absolute;
     top: 20px;
     left: 20px;
-    cursor: pointer; }
-  .preview-parent .preview-container {
+    cursor: pointer;
+}
+
+.preview-parent .preview-container {
     display: flex;
     flex-direction: column;
     max-width: 1300px;
     width: 100%;
     height: 100%;
-    align-items: center; }
-    .preview-parent .preview-container .scroll-container {
-      width: 90%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      margin-top: 60px; }
-      .preview-parent .preview-container .scroll-container .media-wrapper {
-        width: 100%;
-        margin-bottom: 20px; }
-        .preview-parent .preview-container .scroll-container .media-wrapper img {
-          width: 100%; }
-        .preview-parent .preview-container .scroll-container .media-wrapper iframe {
-          width: 100%; }
+    align-items: center;
+}
+
+.preview-parent .preview-container .scroll-container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.preview-parent .preview-container .scroll-container .media-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.preview-parent .preview-container .scroll-container .media-wrapper img {
+    width: 100%;
+}
+
+.preview-parent .preview-container .scroll-container .media-wrapper iframe {
+    width: 100%;
+}
 
 @media only screen and (max-width: 600px) {
-  .preview-parent .preview-container .scroll-container .media-wrapper {
-    width: 100%;
-    margin-bottom: 5px; }
+    .preview-parent .preview-container .scroll-container .media-wrapper {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
     .preview-parent .preview-container .scroll-container .media-wrapper:last-child {
-      margin-bottom: 60px; } }
+        margin-bottom: 60px;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */

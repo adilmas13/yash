@@ -10,7 +10,7 @@ const Video = (props) => {
     const width = props.width || 'auto';
     const height = props.height || 'auto';
 
-    const iFrameStyle={
+    const iFrameStyle = {
         width,
         height
     };

@@ -1,58 +1,80 @@
 .time-parent {
-  display: flex;
-  height: 60px;
-  font-family: Yfx, serif;
-  color: #353335;
-  justify-content: space-between;
-  opacity: 0.4; }
-  .time-parent .number {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 30px; }
-    .time-parent .number:after {
-      content: attr(value);
-      margin-top: 10px;
-      font-size: 12px; }
-  .time-parent .colon {
-    font-size: 30px;
-    padding-top: 6px;
-    font-weight: bolder; }
-
-@media only screen and (max-width: 1420px) {
-  .time-parent .number {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 30px; }
-    .time-parent .number:after {
-      content: attr(value);
-      margin-top: 10px;
-      font-size: 12px; }
-  .time-parent .colon {
-    font-size: 30px;
-    padding-top: 6px;
-    font-weight: bolder; } }
-@media only screen and (max-width: 700px) {
-  .time-parent {
     display: flex;
     height: 60px;
     font-family: Yfx, serif;
     color: #353335;
     justify-content: space-between;
-    opacity: 0.4; }
+    opacity: 0.4;
+}
+
+.time-parent .number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+}
+
+.time-parent .number:after {
+    content: attr(value);
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.time-parent .colon {
+    font-size: 30px;
+    padding-top: 6px;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 1420px) {
     .time-parent .number {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 6vw; }
-      .time-parent .number:after {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .time-parent .number:after {
         content: attr(value);
         margin-top: 10px;
-        font-size: 2.5vw; }
+        font-size: 12px;
+    }
+
     .time-parent .colon {
-      font-size: 6vw;
-      padding-top: 6px;
-      font-weight: bolder; } }
+        font-size: 30px;
+        padding-top: 6px;
+        font-weight: bolder;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .time-parent {
+        display: flex;
+        height: 60px;
+        font-family: Yfx, serif;
+        color: #353335;
+        justify-content: space-between;
+        opacity: 0.4;
+    }
+
+    .time-parent .number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 6vw;
+    }
+
+    .time-parent .number:after {
+        content: attr(value);
+        margin-top: 10px;
+        font-size: 2.5vw;
+    }
+
+    .time-parent .colon {
+        font-size: 6vw;
+        padding-top: 6px;
+        font-weight: bolder;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */
