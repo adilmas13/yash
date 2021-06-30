@@ -116,7 +116,33 @@
     justify-content: center;
     width: 100%;
     padding-top: 5px;
-    min-height: 62px; } }
+    min-height: 62px; }
+
+  .parent .body .three-layer {
+    height: 250px; }
+    .parent .body .three-layer .yash-text-wrapper .yash-text {
+      font-size: 65px;
+      height: 62px; }
+    .parent .body .three-layer .video-container {
+      width: 230px;
+      height: 230px; }
+    .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
+      font-size: 65px; }
+      .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
+        width: 55px;
+        height: 62px;
+        padding-top: 5px; }
+      .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
+        height: 62px; }
+  .parent .body .designation {
+    width: 230px; }
+    .parent .body .designation .text {
+      font-size: 11px; }
+  .parent .logo-wrapper {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 25px);
+    margin-top: 20px; } }
 @media only screen and (max-width: 900px) {
   :global .column {
     display: flex;

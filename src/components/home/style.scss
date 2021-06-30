@@ -177,6 +177,65 @@ $cell-padding: 5px;
     }
   }
 
+  .parent {
+
+    .body {
+
+      .three-layer {
+        height: 250px;
+
+        .yash-text-wrapper {
+
+          .yash-text {
+            font-size: $cell-font-size;
+            height: $cell-height;
+          }
+        }
+
+        .video-container {
+          width: 230px;
+          height: 230px;
+        }
+
+        .slot-wrapper {
+
+          .slot-parent {
+
+            .slot-container {
+              font-size: $cell-font-size;
+
+              .a-text {
+                width: $cell-width;
+                height: $cell-height;
+                padding-top: $cell-padding;
+              }
+
+              .slot {
+                height: $cell-height;
+              }
+            }
+          }
+        }
+      }
+
+      .designation {
+        width: 230px;
+
+        .text {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .logo-wrapper {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 25px);
+      margin-top: 20px;
+    }
+
+  }
+
 }
 
 
