@@ -12,7 +12,7 @@ const MyInfo = () => {
         <div class={style['details-wrapper']}>
             <div class={style['top-wrapper']}>
                 <div class={style['gender-age']}>{details.gender}. {details.age}.</div>
-                <div class={style['designation']}>{details.designation}</div>
+                <div class={style['designation']}>{details.designation.split(' ').map(it => (<span>{it}</span>))}</div>
             </div>
             <div class={style['middle-wrapper']}>
                 <div class={style.name}>{details.name}</div>
