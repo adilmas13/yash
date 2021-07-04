@@ -1,11 +1,11 @@
 {
-  "name": "yash-portfolio",
-  "short_name": "yash-portfolio",
+  "name": "Yash",
+  "short_name": "Yash",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#fbfbfb",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
