@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
-import {arts, arts_mobile} from "../../dataSource/arts";
+import {arts, arts_mobile, artsDescription} from "../../dataSource/arts";
 import {useEffect, useState} from "preact/hooks";
 import style from "./style.css"
 import HorizontalPreview from "../horizontal-preview";
@@ -73,7 +73,7 @@ const Arts = () => {
         const group = arts.filter(it => it.groupId === media.groupId);
         setPreviewMedia({group, selected: group.indexOf(media)})
         if (!viewedDescription.includes(media.id)) {
-            setDescription(awardsDescription.find(it => it.id === media.id));
+            setDescription(artsDescription.find(it => it.id === media.id));
             viewedDescription.push(media.id);
         }
     }

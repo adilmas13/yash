@@ -874,7 +874,7 @@ function mapTo(media) {
 
 export const artsDescription = [
     {
-        id: 2,
+        id: 10,
         logo: null,
         layout: {paddingTop: "50px"},
         description: "How often do we get to “CREATE” something in art with your own hands and not use any Shutterstock or Getty?\n" +

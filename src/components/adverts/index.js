@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
 import MasonryGrid from "../masonry-grid";
-import {adverts, adverts_mobile} from "../../dataSource/adverts";
+import {adverts, adverts_mobile, advertsDescription} from "../../dataSource/adverts";
 import {useEffect, useState} from "preact/hooks";
 import style from './style.css'
 import HorizontalPreview from "../horizontal-preview";
@@ -66,7 +66,7 @@ const Adverts = () => {
             selected: group.indexOf(media),
         })
         if (!viewedDescription.includes(media.id)) {
-            setDescription(awardsDescription.find(it => it.id === media.id));
+            setDescription(advertsDescription.find(it => it.id === media.groupId));
             viewedDescription.push(media.id);
         }
     };
