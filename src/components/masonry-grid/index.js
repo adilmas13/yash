@@ -3,6 +3,7 @@ import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {useMasonryData} from "./masonryData";
 import LazyImage from "../lazy-image";
+import VideoCell from "../video-cell";
 
 
 const MediaCell = (props) => {
@@ -62,7 +63,7 @@ const MediaCell = (props) => {
             {(!media.video || (media.video && !media.video.always_play_thumbnail)) &&
             <LazyImage src={media.image.thumbnail} borderRadius={'10px'} />}
             {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
-            <video src={media.video.thumbnail_video} poster={media.image.thumbnail} autoplay loop muted />}
+            <VideoCell src={media.video.thumbnail_video} poster={media.image.thumbnail} borderRadius={'10px'} />}
             <div style={overlayStyle} />
         </div>)
     }
