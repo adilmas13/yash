@@ -40,7 +40,7 @@ const breakpoints = [
         data: adverts
     }, {
         point: 2500,
-        containerWidth: "2100px",
+        containerWidth: "2000px",
         noOfColumns: 4,
         data: adverts
     },
