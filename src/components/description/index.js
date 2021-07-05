@@ -7,6 +7,7 @@ const Description = (props) => {
     const data = props.data;
     const logo = data.logo?.src || "";
     const descCenterPieceRef = createRef();
+    const logoRef = createRef();
 
     const logoStyle = {
         transform: `translateX(-50%) translateY(${data.logo?.top || 0})`,
@@ -18,14 +19,26 @@ const Description = (props) => {
     }
 
     useEffect(() => {
-        const animation = descCenterPieceRef.current.animate([
-            {transform: 'scale(0.5)', opacity: 0.5},
-            {transform: 'scale(1.0)', opacity: 1},
-        ], {
-            duration: 250,
-            fill: "forwards"
-        });
-        animation.play();
+        const timeoutId = setTimeout(() => show(), 2000)
+        const logo = logoRef.current;
+        const show = () => {
+            clearTimeout(timeoutId);
+            const animation = descCenterPieceRef.current.animate([
+                {transform: 'scale(0.5)', opacity: 0.5},
+                {transform: 'scale(1.0)', opacity: 1},
+            ], {
+                duration: 250,
+                fill: "forwards"
+            });
+            animation.play();
+        }
+
+        if (logo) {
+            logo.onload = () => show()
+            logo.onerror = () => show();
+        } else {
+            show()
+        }
     }, [])
 
     return <div className={style['description-body']}>
@@ -35,7 +48,7 @@ const Description = (props) => {
                 <div className={style['bottom-line']} />
                 <img className={style['close']} src={'assets/cross.svg'} onClick={props.onCloseClicked} />
                 <div className={style['close-message']}>{data.closeText}</div>
-                {data.logo && <img className={style['logo']} style={logoStyle} src={logo} />}
+                {data.logo && <img className={style['logo']} style={logoStyle} src={logo} ref={logoRef} />}
             </div>
         </div>
     </div>
