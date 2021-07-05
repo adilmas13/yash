@@ -47,8 +47,8 @@ const breakpoints = [
         noOfColumns: 5,
         data: arts
     }, {
-        point: 3000,
-        containerWidth: "2200px",
+        point: 2500,
+        containerWidth: "2000px",
         noOfColumns: 5,
         data: arts
     },
