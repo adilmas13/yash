@@ -8,7 +8,6 @@ import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 import VerticalPreview from "../vertical-preview";
-import {awardsDescription} from "../../dataSource/awards";
 
 const breakpoints = [
     {
@@ -40,8 +39,8 @@ const breakpoints = [
         noOfColumns: 4,
         data: adverts
     }, {
-        point: 3000,
-        containerWidth: "2200px",
+        point: 2500,
+        containerWidth: "2100px",
         noOfColumns: 4,
         data: adverts
     },
