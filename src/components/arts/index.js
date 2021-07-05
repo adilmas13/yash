@@ -72,9 +72,9 @@ const Arts = () => {
     const handleClick = media => {
         const group = arts.filter(it => it.groupId === media.groupId);
         setPreviewMedia({group, selected: group.indexOf(media)})
-        if (!viewedDescription.includes(media.id)) {
-            setDescription(artsDescription.find(it => it.id === media.id));
-            viewedDescription.push(media.id);
+        if (!viewedDescription.includes(media.groupId)) {
+            setDescription(artsDescription.find(it => it.id === media.groupId));
+            viewedDescription.push(media.groupId);
         }
     }
 

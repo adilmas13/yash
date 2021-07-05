@@ -65,9 +65,9 @@ const Adverts = () => {
             group,
             selected: group.indexOf(media),
         })
-        if (!viewedDescription.includes(media.id)) {
+        if (!viewedDescription.includes(media.groupId)) {
             setDescription(advertsDescription.find(it => it.id === media.groupId));
-            viewedDescription.push(media.id);
+            viewedDescription.push(media.groupId);
         }
     };
 
