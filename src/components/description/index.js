@@ -41,6 +41,7 @@ const Description = (props) => {
         } else {
             show()
         }
+        return () => clearTimeout(timeoutId);
     }, [])
 
     return <div className={style['description-body']}>
