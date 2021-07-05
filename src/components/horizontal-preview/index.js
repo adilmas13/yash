@@ -30,10 +30,12 @@ const Page = (props) => {
                 height={height}
                 src={media.video.src}
             />
-            : <LazyImage src={media.image.src} css={{
-                maxHeight: '100%',
-                width: 'auto'
-            }} />}
+            : <LazyImage
+                src={media.image.src}
+                css={{
+                    width: ratioWidth > ratioHeight ? '100%' : 'auto',
+                    height: ratioWidth > ratioHeight ? 'auto' : '100%'
+                }} />}
     </div>
 };
 

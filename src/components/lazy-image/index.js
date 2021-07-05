@@ -18,8 +18,9 @@ const LazyImage = (props) => {
     const [isImageLoaded, setImageLoaded] = useState(false);
 
     let wrapperStyle = {
-        backgroundColor: color,
-        borderRadius
+        ...css,
+        ...{backgroundColor: color},
+        ...{borderRadius}
     }
 
     let imageStyle = {
@@ -27,7 +28,9 @@ const LazyImage = (props) => {
         ...{borderRadius}
     }
 
-    return <div style={wrapperStyle} className={style['lazy-image-wrapper']}>
+    return <div
+        style={wrapperStyle}
+        className={style['lazy-image-wrapper']}>
         <img
             style={imageStyle}
             className={isImageLoaded ? style["visible"] : style["hidden"]}

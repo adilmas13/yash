@@ -1,23 +1,19 @@
 .lazy-image-wrapper {
-    height: 100%;
-    overflow: hidden;
-}
-
-.lazy-image-wrapper img {
+  overflow: hidden;
+  height: 100%; }
+  .lazy-image-wrapper img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.8s ease-out all;
-}
+    transition: 0.8s ease-out all; }
 
 .hidden {
-    opacity: 0;
-    filter: blur(5px);
-}
+  opacity: 0;
+  filter: blur(5px); }
 
 .visible {
-    opacity: 1;
-    filter: blur(0);
-}
+  opacity: 1;
+  filter: blur(0); }
 
 /*# sourceMappingURL=style.css.map */
