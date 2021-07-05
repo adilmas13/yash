@@ -23,6 +23,8 @@ const Description = (props) => {
         const logo = logoRef.current;
         const show = () => {
             clearTimeout(timeoutId);
+            if (logo) logo.onload = null;
+            if (logo) logo.onerror = null;
             const animation = descCenterPieceRef.current.animate([
                 {transform: 'scale(0.5)', opacity: 0.5},
                 {transform: 'scale(1.0)', opacity: 1},
@@ -34,7 +36,7 @@ const Description = (props) => {
         }
 
         if (logo) {
-            logo.onload = () => show()
+            logo.onload = () => show();
             logo.onerror = () => show();
         } else {
             show()
