@@ -67,15 +67,15 @@ const MobileView = (props) => {
 const DesktopView = (props) => {
     const scrollerRef = createRef();
 
-    // useEffect(() => {
-    //     const element = scrollerRef.current;
-    //     element.scroll({
-    //         left: element.clientWidth * props.pageNo,
-    //         behavior: "smooth"
-    //     })
-    //     return () => {
-    //     };
-    // }, [props.pageNo]);
+    useEffect(() => {
+        const element = scrollerRef.current;
+        element.scroll({
+            left: element.clientWidth * props.pageNo,
+            behavior: "smooth"
+        })
+        return () => {
+        };
+    }, [props.pageNo]);
 
     return <div className={style['parent']}>
         <div className={style['container']}>
@@ -89,9 +89,9 @@ const DesktopView = (props) => {
                     <div className={style.text}>prev</div>
                 </div>}
                 <div className={style["scroll-container"]} ref={scrollerRef}>
-                    {props.pageNo === 0 && <MyInfo />}
-                    {props.pageNo === 1 && <Experience />}
-                    {props.pageNo === 2 && <Literacy />}
+                     <MyInfo />
+                    <Experience />
+                    <Literacy />
                 </div>
                 {props.pageNo < 2 && <div className={style['next-wrapper']} onClick={() => props.onNextClicked()}>
                     <div className={style.text}>next</div>
