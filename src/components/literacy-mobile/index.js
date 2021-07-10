@@ -22,13 +22,13 @@ const LiteracyMobile = () => {
             <div className={style.bottom}>
                 <div className={style.details}>
                     <div className={style.titles}>
-                        {data.map(it => <span>{it.field} <span>&#8250;</span></span>)}
+                        {data.map(it => <span>{it.text1} <span>&#8250;</span></span>)}
                         <span><span>&#8250;</span></span>
                     </div>
                     <div className={style.desc}>
                         {data.map(it => (
-                            <span>{it.place}
-                                {it.degree && <span className={style.degree}>{it.degree}</span>}
+                            <span>{it.text2}
+                                {it.text3 && <span className={style.degree}>{it.text3}</span>}
                                 </span>)
                         )}
                         <span><div className={style['download-cv']}>download CV</div></span>
