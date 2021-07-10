@@ -16,17 +16,18 @@ export const details = {
 };
 
 export const experience = [
-    {place: 'ddb mudra', experience: '1.7 YEARS', designation: 'senior art director'},
-    {place: 'leo burnett', experience: '3.8 YEARS', designation: 'art director'},
-    {place: 'witty arts', experience: '2.0 YEARS', designation: 'graphic designer'},
-    {place: 'percept art', experience: '1.0 YEARS', designation: 'freelance designer'}
+    {text1: 'ddb mudra', text2: '1.7 YEARS', text3: 'senior art director'},
+    {text1: 'leo burnett', text2: '3.8 YEARS', text3: 'art director'},
+    {text1: 'witty arts', text2: '2.0 YEARS', text3: 'graphic designer'},
+    {text1: 'percept art', text2: '1.0 YEARS', text3: 'freelance designer'}
 ];
 
 export const literacy = [
-    {field: 'applied arts', place: 'RACHANA SANSAD', degree: 'Diploma'},
-    {field: 'advertising', place: 'MUMBAI UNIVERSITY', degree: 'BMM Degree'},
-    {field: 'graphics', place: 'FRAMEBOXX VISUAL EFFECTS'},
-    {field: 'commerce', place: 'MUMBAI UNIVERSITY', degree: 'Junior Degree'},
-    {field: 'dco', place: 'A+ COMPUTER INSTITUTE'},
-    {field: 'ssc', place: 'MAHARASHTRA STATE BOARD'},
+    {text1: 'applied arts', text2: 'RACHANA SANSAD', text3: 'Diploma'},
+    {text1: 'advertising', text2: 'MUMBAI UNIVERSITY', text3: 'BMM Degree'},
+    {text1: 'graphics', text2: 'FRAMEBOXX VISUAL EFFECTS'},
+    {text1: 'commerce', text2: 'MUMBAI UNIVERSITY', text3: 'Junior Degree'},
+    {text1: 'dco', text2: 'A+ COMPUTER INSTITUTE'},
+    {text1: 'ssc', text2: 'MAHARASHTRA STATE BOARD'},
+    {text1: ''},
 ];

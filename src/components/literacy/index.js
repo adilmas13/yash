@@ -4,7 +4,7 @@ import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {literacy as data} from "../../dataSource/aboutMe";
 import {cvUrl} from "../../dataSource/home";
-import Header from "../about-me-common-components";
+import {Details, Header} from "../about-me-common-components";
 
 const downloadCv = () => {
     fetch(cvUrl)
@@ -25,34 +25,21 @@ const downloadCv = () => {
         });
 }
 
+const DownloadRow = () =>
+    <div className={style['download-cv']} onClick={() => downloadCv()}>download</div>
+
 const Literacy = () => <div className={style.parent}>
     <div className={style["image-wrapper"]}>
         <img src={aboutMeImg("literacy_shadow")} alt="yash-shadow" className={style['main-image-shadow']} />
         <img src={aboutMeImg("literacy")} alt="yash" className={style['main-image']} />
     </div>
-    <div className={style['details-wrapper']}>
+    <div className={style['details-container']}>
         <div className={style.wrapper}>
             <Header header={'literacy'} />
-            <div className={style.details}>
-                <div className={style['title-container']}>
-                    {data.map(it => <div className={style['title-wrapper']}>
-                        <div className={style['title']}>{it.field}</div>
-                        <div className={style['symbol']}>&#8250;</div>
-                    </div>)}
-                    <div className={style['title-wrapper']}>
-                        <div className={style['title']} />
-                        <div className={style['symbol']}>&#8250;</div>
-                    </div>
-                </div>
-                <div className={style.desc}>
-                    {data.map(it => (
-                        <span>{it.place}
-                            {it.degree && <span className={style.degree}>{it.degree}</span>}
-                                </span>)
-                    )}
-                    <span><span className={style['download-cv']}
-                                onClick={() => downloadCv()}>download CV</span></span>
-                </div>
+            <div className={style['details-wrapper']}>
+                <Details data={data}>
+                    <DownloadRow />
+                </Details>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {experience as data} from "../../dataSource/aboutMe";
 import ExperienceCounter from "../experience-counter";
-import Header from "../about-me-common-components";
+import {Details, Header} from "../about-me-common-components";
 
 const Experience = () => {
     return <div className={style.parent}>
@@ -19,15 +19,7 @@ const Experience = () => {
                     <ExperienceCounter />
                 </div>
                 <div className={style['middle-wrapper']}>
-                    <div className={style.details}>
-                        <div className={style.titles}>
-                            {data.map(it => <span>{it.place}<span>&#8250;</span></span>)}
-                        </div>
-                        <div className={style.desc}>
-                            {data.map(it => <span>{it.experience}<span
-                                className={style.designation}>{it.designation}</span></span>)}
-                        </div>
-                    </div>
+                    <Details data={data} />
                 </div>
             </div>
         </div>

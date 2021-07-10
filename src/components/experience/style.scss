@@ -43,35 +43,6 @@
       .top-wrapper {
         color: #353335;
         width: fit-content;
-
-        .time-parent {
-          display: flex;
-          height: 60px;
-          font-family: Yfx, serif;
-          color: $secondary-text-color;
-          justify-content: space-between;
-          opacity: 0.4;
-          margin-top: 2.4rem;
-
-          .number {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 30px;
-
-            &:after {
-              content: attr(value);
-              margin-top: 10px;
-              font-size: 12px;
-            }
-          }
-
-          .colon {
-            font-size: 30px;
-            padding-top: 6px;
-            font-weight: bolder;
-          }
-        }
       }
 
       .middle-wrapper {
