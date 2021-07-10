@@ -44,14 +44,6 @@
         color: #353335;
         width: fit-content;
 
-        .header {
-          font-size: 6rem;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px;
-          color: $secondary-text-color;
-        }
-
         .time-parent {
           display: flex;
           height: 60px;
@@ -175,10 +167,6 @@
 
         .top-wrapper {
 
-          .header {
-            font-size: 6vw;
-          }
-
           .time-parent {
 
             .number {
@@ -276,7 +264,7 @@
         .top-wrapper {
 
           .header {
-            font-size: 6vw;
+            //font-size: 6vw;
             margin-bottom: 20px;
           }
 

@@ -32,12 +32,6 @@
       .parent .right-content .details-wrapper .top-wrapper {
         color: #353335;
         width: fit-content; }
-        .parent .right-content .details-wrapper .top-wrapper .header {
-          font-size: 6rem;
-          text-transform: capitalize;
-          font-family: Yfx, serif;
-          word-spacing: 20px;
-          color: #353335; }
         .parent .right-content .details-wrapper .top-wrapper .time-parent {
           display: flex;
           height: 60px;
@@ -118,8 +112,6 @@
       height: 90%;
       right: 0;
       bottom: 0; }
-  .parent .right-content .details-wrapper .top-wrapper .header {
-    font-size: 6vw; }
   .parent .right-content .details-wrapper .top-wrapper .time-parent .number {
     display: flex;
     flex-direction: column;
@@ -178,7 +170,6 @@
   .parent .right-content {
     width: 60%; }
     .parent .right-content .details-wrapper .top-wrapper .header {
-      font-size: 6vw;
       margin-bottom: 20px; }
     .parent .right-content .details-wrapper .top-wrapper .time-parent .number {
       display: flex;

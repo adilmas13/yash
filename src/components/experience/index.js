@@ -4,6 +4,7 @@ import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {experience as data} from "../../dataSource/aboutMe";
 import ExperienceCounter from "../experience-counter";
+import Header from "../about-me-common-components";
 
 const Experience = () => {
     return <div className={style.parent}>
@@ -14,7 +15,7 @@ const Experience = () => {
         <div className={style['right-content']}>
             <div className={style['details-wrapper']}>
                 <div className={style['top-wrapper']}>
-                    <div className={style.header}>experience</div>
+                    <Header header={'experience'} />
                     <ExperienceCounter />
                 </div>
                 <div className={style['middle-wrapper']}>

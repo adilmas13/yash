@@ -4,6 +4,7 @@ import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {literacy as data} from "../../dataSource/aboutMe";
 import {cvUrl} from "../../dataSource/home";
+import Header from "../about-me-common-components";
 
 const downloadCv = () => {
     fetch(cvUrl)
@@ -31,14 +32,17 @@ const Literacy = () => <div className={style.parent}>
     </div>
     <div className={style['details-wrapper']}>
         <div className={style.wrapper}>
-            <div className={style.header}>literacy</div>
+            <Header header={'literacy'} />
             <div className={style.details}>
                 <div className={style['title-container']}>
                     {data.map(it => <div className={style['title-wrapper']}>
                         <div className={style['title']}>{it.field}</div>
                         <div className={style['symbol']}>&#8250;</div>
                     </div>)}
-                    {/*<span><span>&#8250;</span></span>*/}
+                    <div className={style['title-wrapper']}>
+                        <div className={style['title']} />
+                        <div className={style['symbol']}>&#8250;</div>
+                    </div>
                 </div>
                 <div className={style.desc}>
                     {data.map(it => (

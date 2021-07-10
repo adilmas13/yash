@@ -1,0 +1,18 @@
+.header {
+  font-size: 5.5rem;
+  text-transform: capitalize;
+  font-family: Yfx, serif;
+  word-spacing: 20px;
+  color: #353335; }
+
+@media only screen and (max-width: 1350px) {
+  .header {
+    font-size: 6vw; } }
+@media only screen and (max-width: 950px) {
+  .header {
+    font-size: 6vw; } }
+@media only screen and (max-width: 810px) {
+  .header {
+    font-size: 7vw; } }
+
+/*# sourceMappingURL=style.css.map */
