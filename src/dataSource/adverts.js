@@ -521,7 +521,7 @@ export const adverts = [
 
 ].map(mapTo);
 
-export const adverts_mobile= [
+export const adverts_mobile = [
     {
         image_name: "kwality",
         ratio: "1000:562",
@@ -849,7 +849,7 @@ export const adverts_mobile= [
     },
 ].map(mapTo);
 
-function mapTo(media){
+function mapTo(media) {
     media['image'] = {
         thumbnail: advertsThumbnail(media.image_name, media.extension),
         src: advertsOriginal(media.image_name, media.extension)

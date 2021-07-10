@@ -1,24 +1,32 @@
 .parent {
-  display: flex;
-  position: relative;
-  height: 100vh;
-  justify-content: flex-end;
-  min-width: 100%; }
-  .parent .image-wrapper {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    justify-content: flex-end;
+    min-width: 100%;
+}
+
+.parent .image-wrapper {
     position: relative;
     height: 100%;
-    width: 60%; }
-    .parent .image-wrapper .main-image-shadow {
-      height: 100%;
-      position: absolute;
-      left: 20px;
-      bottom: 0; }
-    .parent .image-wrapper .main-image {
-      height: 100%;
-      position: absolute;
-      left: 100px;
-      bottom: 0; }
-  .parent .details-container {
+    width: 60%;
+}
+
+.parent .image-wrapper .main-image-shadow {
+    height: 100%;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+}
+
+.parent .image-wrapper .main-image {
+    height: 100%;
+    position: absolute;
+    left: 100px;
+    bottom: 0;
+}
+
+.parent .details-container {
     position: absolute;
     left: 0;
     top: 0;
@@ -28,27 +36,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    padding-right: 4rem; }
-    .parent .details-container .wrapper .details-wrapper {
-      margin-top: 4rem; }
+    padding-right: 4rem;
+}
+
+.parent .details-container .wrapper .details-wrapper {
+    margin-top: 4rem;
+}
 
 .download-cv {
-  height: fit-content;
-  font-family: b-light, sans-serif;
-  font-size: 14px;
-  border-radius: 5px;
-  background: black;
-  cursor: pointer;
-  color: white;
-  padding: 0 4px;
-  transition: 0.3s ease-out transform; }
-  .download-cv:hover {
-    transform: scale(1.1); }
+    height: fit-content;
+    font-family: b-light, sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+    background: black;
+    cursor: pointer;
+    color: white;
+    padding: 0 4px;
+    transition: 0.3s ease-out transform;
+}
+
+.download-cv:hover {
+    transform: scale(1.1);
+}
 
 @media only screen and (max-width: 950px) {
-  .parent .details-wrapper {
-    padding-right: 0;
-    align-items: center;
-    width: 60%; } }
+    .parent .details-wrapper {
+        padding-right: 0;
+        align-items: center;
+        width: 60%;
+    }
+}
 
 /*# sourceMappingURL=style.css.map */

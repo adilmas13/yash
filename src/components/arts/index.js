@@ -8,7 +8,6 @@ import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";
 import VerticalPreview from "../vertical-preview";
-import {awardsDescription} from "../../dataSource/awards";
 
 const breakpoints = [
     {
