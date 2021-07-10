@@ -33,9 +33,12 @@ const Literacy = () => <div className={style.parent}>
         <div className={style.wrapper}>
             <div className={style.header}>literacy</div>
             <div className={style.details}>
-                <div className={style.titles}>
-                    {data.map(it => <span>{it.field} <span>&#8250;</span></span>)}
-                    <span><span>&#8250;</span></span>
+                <div className={style['title-container']}>
+                    {data.map(it => <div className={style['title-wrapper']}>
+                        <div className={style['title']}>{it.field}</div>
+                        <div className={style['symbol']}>&#8250;</div>
+                    </div>)}
+                    {/*<span><span>&#8250;</span></span>*/}
                 </div>
                 <div className={style.desc}>
                     {data.map(it => (
