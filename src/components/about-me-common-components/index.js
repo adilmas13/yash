@@ -14,7 +14,7 @@ export const Details = (props) => {
             </div>)}
         </div>
         <div className={style.desc}>
-            {data.map(it => (
+            {props.data.map(it => (
                     it.text2 ? <span>{it.text2}{it.text3 && <span className={style.info}>{it.text3}</span>}</span> :
                         <span>{props.children}</span>
                 )
