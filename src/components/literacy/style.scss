@@ -11,6 +11,20 @@
     position: relative;
     height: 100%;
     width: 60%;
+
+    .main-image-shadow {
+      height: 100%;
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+    }
+
+    .main-image {
+      height: 100%;
+      position: absolute;
+      left: 100px;
+      bottom: 0;
+    }
   }
 
   .details-wrapper {
@@ -38,7 +52,7 @@
         display: flex;
         margin-top: 4rem;
 
-        .titles {
+        .title-container {
           font-family: b-light, serif;
           font-size: 30px;
           text-align: end;
@@ -47,12 +61,22 @@
           display: flex;
           flex-direction: column;
 
-          span {
+          .title-wrapper {
             height: 50px;
+            display: flex;
 
-            span {
+            .title {
+              flex: 1;
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+            }
+
+            .symbol {
               opacity: 0.2;
               margin: 0 0.6rem;
+              display: flex;
+              align-items: center;
             }
           }
         }
@@ -103,22 +127,9 @@
       }
     }
   }
-
-  .main-image-shadow {
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-  }
-
-  .main-image {
-    height: 100%;
-    position: absolute;
-    right: 10px;
-    bottom: 0;
-  }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1250px) {
   .parent {
     .details-wrapper {
       padding-right: 0;
@@ -126,136 +137,61 @@
 
       .wrapper {
         .header {
-          font-size: 6vw;
-        }
-
-        .details {
-          display: flex;
-          margin-top: 4rem;
-
-          .titles {
-            font-size: 30px;
-          }
-
-          .desc {
-            font-size: 18px;
-
-            span {
-
-              .degree {
-
-                &::before {
-                  content: '|';
-                  font-family: b-light, sans-serif;
-                  font-size: 20px;
-                  margin: 0 14px;
-                }
-              }
-            }
-          }
+          font-size: 7vw;
         }
       }
     }
   }
 }
 
-@media only screen and (max-width: 1300px) {
-  .desktop {
-    .parent {
-      .image-wrapper {
-        transform: translateX(50px);
-
-        .main-image {
-          height: 95%;
-        }
-
-        .main-image-shadow {
-          height: 95%;
-        }
-      }
-
-      .details-wrapper {
-        padding-right: 0;
-        align-items: flex-start;
-        padding-left: 30px;
-
-        .wrapper {
-          .header {
-            font-size: 6vw;
-          }
-
-          .details {
-            display: flex;
-            margin-top: 4rem;
-
-            .titles {
-              font-size: 30px;
-            }
-
-            .desc {
-              font-size: 18px;
-
-              span {
-
-                .degree {
-
-                  &::before {
-                    content: '|';
-                    font-family: b-light, sans-serif;
-                    font-size: 20px;
-                    margin: 0 14px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 950px) {
   .parent {
-    .image-wrapper {
-      .main-image {
-        height: auto;
-        width: 100%;
-      }
-
-      .main-image-shadow {
-        height: auto;
-        width: 100%;
-      }
-    }
-
     .details-wrapper {
       padding-right: 0;
       align-items: center;
+      width: 60%;
 
       .wrapper {
+        .header {
+          font-size: 9vw;
+        }
 
         .details {
           display: flex;
           margin-top: 4rem;
 
-          .titles {
-            font-size: 3vw;
+          .title-container {
+            font-size: 25px;
           }
 
           .desc {
-            font-size: 2vw;
+            font-size: 16px;
 
             span {
+              font-size: 14px;
 
               .degree {
+                font-family: b-regular-italics, sans-serif;
 
                 &::before {
-                  content: '|';
-                  font-family: b-light, sans-serif;
-                  font-size: 2vw;
-                  margin: 0 14px;
+                  font-size: 20px;
                 }
+              }
+            }
+
+            span .download-cv {
+              height: fit-content;
+              font-family: b-light, sans-serif;
+              font-size: 14px;
+              border-radius: 5px;
+              background: black;
+              cursor: pointer;
+              color: white;
+              padding: 0 4px;
+              transition: 0.3s ease-out transform;
+
+              &:hover {
+                transform: scale(1.1);
               }
             }
           }
