@@ -1,6 +1,5 @@
 import style from './style.css'
 import React from "preact";
-import {literacy as data} from "../../dataSource/aboutMe";
 
 export const Header = (props) => <div className={style.header}>{props.header}</div>;
 
