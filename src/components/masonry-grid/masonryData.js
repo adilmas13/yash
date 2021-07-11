@@ -29,10 +29,9 @@ export const useMasonryData = (breakpoints) => {
     }, [])
 
     useEffect(() => {
-        const container = document.getElementById('scroll-container');
+        const container = document.getElementById('container');
         container.style.maxWidth = breakPoint.containerWidth;
         const containerWidth = container.offsetWidth;
-        // alert(containerWidth);
         const noOfColumns = breakPoint.noOfColumns;
         const gap = 10;
         const columnWidth = ((containerWidth - (gap * (noOfColumns + 1))) / noOfColumns);

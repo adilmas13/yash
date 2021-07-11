@@ -94,7 +94,7 @@ const MasonryGrid = (props) => {
         }, [props.disableScroll])
 
         return <div class={style.parent}>
-            <div id='scroll-container' class={style['scroll-container']}>
+            <div id='container' class={style['container']}>
                 {data.map(it =>
                     <div style={positionStyle(it)}>
                         {it.media.id !== "blank" ?
