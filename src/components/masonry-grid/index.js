@@ -71,8 +71,6 @@ const MediaCell = (props) => {
 
 const MasonryGrid = (props) => {
 
-        const scrollerRef = createRef()
-
         const data = useMasonryData(props.breakpoints);
 
         const [activeMedia, setActiveMedia] = useState(undefined);
@@ -92,13 +90,11 @@ const MasonryGrid = (props) => {
         }
 
         useEffect(() => {
-            const isScrollDisable = props.disableScroll;
-            const scroller = scrollerRef.current;
-            scroller.style.overflow = isScrollDisable ? 'hidden' : 'inherit';
+            document.body.style.overflow = props.disableScroll ? 'hidden' : 'inherit';
         }, [props.disableScroll])
 
         return <div class={style.parent}>
-            <div id='scroll-container' class={style['scroll-container']} ref={scrollerRef}>
+            <div id='scroll-container' class={style['scroll-container']}>
                 {data.map(it =>
                     <div style={positionStyle(it)}>
                         {it.media.id !== "blank" ?
