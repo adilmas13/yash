@@ -12,7 +12,7 @@ import {setPageNo} from "../dataSource/home";
 const App = () => {
 
     useEffect(() => {
-        window.onbeforeunload = () => setPageNo(0);
+        setPageNo(0);
     }, [])
 
     return <Router>
