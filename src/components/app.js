@@ -11,9 +11,7 @@ import {setPageNo} from "../dataSource/home";
 
 const App = () => {
 
-    useEffect(() => {
-        setPageNo(0);
-    }, [])
+    useEffect(() => setPageNo(0), [])
 
     return <Router>
         <Home default path="home" />
