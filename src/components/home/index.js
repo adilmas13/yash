@@ -186,11 +186,13 @@ const SlotMachine = (props) => {
     </div>
 }
 
-const Yash = () => {
+const Yash = (props) => {
 
     useEffect(() => {
-        decreaseYashTextOpacity()
-    }, [])
+        if (props.isReady) {
+            decreaseYashTextOpacity()
+        }
+    }, [props.isReady])
 
     return <div className={style["yash-text-wrapper"]}>
         <div className={style["yash-text"]} id={'yash-text'}>yash</div>
@@ -240,7 +242,7 @@ const YashVideo = (props) => {
 const DesktopView = (props) => <>
     <div class={style.body}>
         <div class={style["three-layer"]}>
-            <Yash />
+            <Yash isReady={props.isReady} />
             <YashVideo
                 action={props.action}
                 onClick={() => props.onOptionSelected()}
@@ -267,7 +269,7 @@ const MobileView = (props) => <>
         <Logo hideText={true} />
     </div>
     <div className={style["three-layer"]}>
-        <Yash />
+        <Yash isReady={props.isReady} />
         <YashVideo
             action={props.action}
             onClick={() => props.onOptionSelected()}
@@ -322,7 +324,6 @@ const Home = () => {
         if (isReady) {
             const pageNo = getPageNo();
             revealHome();
-            decreaseYashTextOpacity();
             setActionWithDelay({...action, position: pageNo, isFirst: false}, 500);
             const promises = [revealUpArrow().finished, revealDownArrow().finished];
             Promise
