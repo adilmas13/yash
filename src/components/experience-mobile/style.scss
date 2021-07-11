@@ -74,61 +74,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
-      .details {
-        display: flex;
-        justify-content: center;
-
-        .titles {
-          font-family: b-light, serif;
-          font-size: 5vw;
-          text-align: end;
-          list-style: none;
-          color: $text-primary-color;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-
-          div {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 35px;
-
-            div {
-              opacity: 0.2;
-              margin: 0 10px;
-            }
-          }
-        }
-
-        .desc {
-          list-style: none;
-          color: $text-primary-color;
-          font-family: b-bold, sans-serif;
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-
-          div {
-            display: flex;
-            font-size: 3vw;
-            height: 35px;
-            align-items: center;
-
-            .designation {
-              font-family: b-regular-italics, sans-serif;
-
-              &::before {
-                content: '|';
-                font-family: b-light, sans-serif;
-                font-size: 3vw;
-                margin: 0 14px;
-              }
-            }
-          }
-        }
-      }
     }
   }
 }

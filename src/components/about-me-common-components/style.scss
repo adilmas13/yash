@@ -107,3 +107,44 @@
     }
   }
 }
+
+// MOBILE
+@media only screen and (max-width: 700px) {
+  .details{
+    .title-container {
+      font-family: b-light, serif;
+      font-size: 5vw;
+
+      .title-wrapper {
+        height: 35px;
+        display: flex;
+
+        .symbol {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .desc {
+
+      span {
+        height: 35px;
+        display: flex;
+        font-size: 3vw;
+        align-items: center;
+        padding-top: 0;
+
+        .info {
+          font-family: b-regular-italics, sans-serif;
+
+          &::before {
+            content: '|';
+            font-family: b-light, sans-serif;
+            font-size: 3vw;
+            margin: 0 14px;
+          }
+        }
+      }
+    }
+  }
+}

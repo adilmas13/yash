@@ -4,6 +4,7 @@ import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {experience as data} from "../../dataSource/aboutMe";
 import ExperienceCounter from "../experience-counter";
+import {Details} from "../about-me-common-components";
 
 const ExperienceMobile = () => {
     return <div className={style.parent}>
@@ -23,19 +24,7 @@ const ExperienceMobile = () => {
                 </div>
             </div>
             <div className={style.bottom}>
-                <div className={style.details}>
-                    <div className={style.titles}>
-                        {data.map(it => <div>{it.text1}
-                            <div>&#8250;</div>
-                        </div>)}
-                    </div>
-                    <div className={style.desc}>
-                        {data.map(it => <div>{it.text2}
-                            <div
-                                className={style.designation}>{it.text3}</div>
-                        </div>)}
-                    </div>
-                </div>
+                <Details data={data} />
             </div>
         </div>
     </div>

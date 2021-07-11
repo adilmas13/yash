@@ -45,8 +45,7 @@ const MobileView = (props) => {
             <div
                 style={props.pageNo > 0 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}
-                onClick={() => props.onPrevClicked()}
-            >
+                onClick={() => props.onPrevClicked()}>
                 <img src={'assets/arrow_blunt.svg'} />
                 <div>previous</div>
             </div>
@@ -55,8 +54,7 @@ const MobileView = (props) => {
             <div
                 style={props.pageNo < 2 ? showIcon : hideIcon}
                 className={style['icon-wrapper']}
-                onClick={() => props.onNextClicked()}
-            >
+                onClick={() => props.onNextClicked()}>
                 <div>next</div>
                 <img src={'assets/arrow_blunt.svg'} />
             </div>
@@ -89,7 +87,7 @@ const DesktopView = (props) => {
                     <div className={style.text}>prev</div>
                 </div>}
                 <div className={style["scroll-container"]} ref={scrollerRef}>
-                     <MyInfo />
+                    <MyInfo />
                     <Experience />
                     <Literacy />
                 </div>
