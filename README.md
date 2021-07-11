@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6778e376-947f-433b-b39a-0657d60a3877/deploy-status)](https://app.netlify.com/sites/yash-portfolio/deploys)
 # yash-portfolio
 
 ## CLI Commands
