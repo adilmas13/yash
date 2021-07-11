@@ -4,7 +4,6 @@ import AboutMe from "./about-me";
 import Adverts from "./adverts";
 import Arts from "./arts";
 import Awards from "./awards";
-import Loader from "./loader";
 import {useEffect} from "preact/hooks";
 import {setPageNo} from "../dataSource/home";
 
@@ -19,7 +18,6 @@ const App = () => {
         <Adverts path="adverts" />
         <Arts path="arts" />
         <Awards path="awards" />
-        <Loader path="loader" />
     </Router>
 }
 
