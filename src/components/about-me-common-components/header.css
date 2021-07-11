@@ -1,0 +1,12 @@
+.header {
+  font-size: 5.5rem;
+  text-transform: capitalize;
+  font-family: Yfx, serif;
+  word-spacing: 20px;
+  color: #353335; }
+
+@media only screen and (max-width: 1350px) {
+  .header {
+    font-size: 6vw; } }
+
+/*# sourceMappingURL=header.css.map */
