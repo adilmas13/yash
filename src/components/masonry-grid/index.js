@@ -39,18 +39,10 @@ const MediaCell = (props) => {
         }
 
         useEffect(() => {
-            let timeOutId;
             if (props.activeMedia && props.media.id === props.activeMedia.id) {
-                timeOutId = setTimeout(() => {
-                    setVideoVisibility(true);
-                }, 400)
+                setVideoVisibility(true);
             }
-            return () => {
-                if (timeOutId) {
-                    clearTimeout(timeOutId);
-                }
-                setVideoVisibility(false);
-            }
+            return () => setVideoVisibility(false);
         }, [props.activeMedia])
 
         return (<div class={style['media-wrapper']}
