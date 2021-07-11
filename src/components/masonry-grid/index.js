@@ -1,4 +1,4 @@
-import {createRef, Fragment} from "preact";
+import {Fragment} from "preact";
 import style from './style.css';
 import {useEffect, useState} from "preact/hooks";
 import {useMasonryData} from "./masonryData";
@@ -55,7 +55,10 @@ const MediaCell = (props) => {
             {(!media.video || (media.video && !media.video.always_play_thumbnail)) &&
             <LazyImage src={media.image.thumbnail} borderRadius={'10px'} />}
             {(media.video && (media.video.always_play_thumbnail || isVideoVisible)) &&
-            <VideoCell src={media.video.thumbnail_video} poster={media.image.thumbnail} borderRadius={'10px'} />}
+            <div className={style['video-wrapper']}>
+                <VideoCell src={media.video.thumbnail_video} poster={media.image.thumbnail} borderRadius={'10px'} />
+            </div>
+            }
             <div style={overlayStyle} />
         </div>)
     }
