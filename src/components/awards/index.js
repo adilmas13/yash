@@ -26,7 +26,6 @@ const MediaCell = (props) => {
 };
 
 const Awards = () => {
-        const containerRef = createRef();
         const [preview, setPreview] = useState(undefined);
         const [description, setDescription] = useState(undefined);
 
@@ -44,8 +43,7 @@ const Awards = () => {
         const handleDescriptionBackClick = () => setDescription(undefined);
 
         useEffect(() => {
-            const container = containerRef.current;
-            container.style.overflow = preview ? 'hidden' : 'inherit';
+            document.body.style.overflow = preview ? 'hidden' : 'inherit';
         }, [preview])
 
         useEffect(() => {
@@ -56,7 +54,7 @@ const Awards = () => {
             <div className={style['logo-wrapper']}>
                 <Logo />
             </div>
-            <div className={style.container} ref={containerRef}>
+            <div className={style.container}>
                 <div className={style.grid}>
                     {awardsThumbnails.map(data => <MediaCell media={data} onClicked={() => onClicked(data)} />)}
                 </div>
