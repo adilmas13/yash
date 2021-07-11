@@ -258,13 +258,13 @@ const DesktopView = (props) => <>
         <Designation />
     </div>
     <div class={style["logo-wrapper"]}>
-        <Logo />
+        <Logo hideText={true} />
     </div>
 </>
 
 const MobileView = (props) => <>
     <div className={style["logo-wrapper"]}>
-        <Logo />
+        <Logo hideText={true} />
     </div>
     <div className={style["three-layer"]}>
         <Yash />
