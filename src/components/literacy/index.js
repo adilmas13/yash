@@ -3,30 +3,7 @@ import React from "preact";
 import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {literacy as data} from "../../dataSource/aboutMe";
-import {cvUrl} from "../../dataSource/home";
-import {Details, Header} from "../about-me-common-components";
-
-const downloadCv = () => {
-    fetch(cvUrl)
-        .then(resp => resp.blob())
-        .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'yash-ambre.pdf';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-        })
-        .catch((e) => {
-            alert('OOPS... Something went wrong, unable to download resume at the moment');
-            console.error('Download CV FAILED -- ', e);
-        });
-}
-
-const DownloadRow = () =>
-    <div className={style['download-cv']} onClick={() => downloadCv()}>download</div>
+import {Details, Download, Header} from "../about-me-common-components";
 
 const Literacy = () => <div className={style.parent}>
     <div className={style["image-wrapper"]}>
@@ -38,7 +15,7 @@ const Literacy = () => <div className={style.parent}>
             <Header header={'literacy'} />
             <div className={style['details-wrapper']}>
                 <Details data={data}>
-                    <DownloadRow />
+                    <Download />
                 </Details>
             </div>
         </div>

@@ -3,6 +3,7 @@ import React from "preact";
 import style from './style.css';
 import {aboutMeImg} from "../../service/imgService";
 import {literacy as data} from "../../dataSource/aboutMe";
+import {Details, Download} from "../about-me-common-components";
 
 
 const LiteracyMobile = () => {
@@ -20,20 +21,9 @@ const LiteracyMobile = () => {
                 </div>
             </div>
             <div className={style.bottom}>
-                <div className={style.details}>
-                    <div className={style.titles}>
-                        {data.map(it => <span>{it.text1} <span>&#8250;</span></span>)}
-                        <span><span>&#8250;</span></span>
-                    </div>
-                    <div className={style.desc}>
-                        {data.map(it => (
-                            <span>{it.text2}
-                                {it.text3 && <span className={style.degree}>{it.text3}</span>}
-                                </span>)
-                        )}
-                        <span><div className={style['download-cv']}>download CV</div></span>
-                    </div>
-                </div>
+                <Details data={data}>
+                    <Download />
+                </Details>
             </div>
         </div>
     </div>

@@ -33,19 +33,6 @@
     .parent .details-container .wrapper .details-wrapper {
       margin-top: 4rem; }
 
-.download-cv {
-  height: fit-content;
-  font-family: b-light, sans-serif;
-  font-size: 14px;
-  border-radius: 5px;
-  background: black;
-  cursor: pointer;
-  color: white;
-  padding: 0 4px;
-  transition: 0.3s ease-out transform; }
-  .download-cv:hover {
-    transform: scale(1.1); }
-
 @media only screen and (max-width: 950px) {
   .parent .details-container {
     padding-right: 0;

@@ -121,23 +121,6 @@
               }
             }
           }
-
-          span .download-cv {
-            height: fit-content;
-            width: fit-content;
-            font-family: b-light, sans-serif;
-            font-size: 3vw;
-            border-radius: 5px;
-            background: black;
-            cursor: pointer;
-            color: white;
-            padding: 0 5px;
-            transition: 0.3s ease-out transform;
-
-            &:hover {
-              transform: scale(1.1);
-            }
-          }
         }
       }
     }
