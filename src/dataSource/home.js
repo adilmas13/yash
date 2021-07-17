@@ -1,7 +1,7 @@
 const PAGE_NO_KEY = "PAGE_NO";
 
 export const homeVideoForwardSlots = [
-    {start: 1, end: 12},
+    {start: 1, end: 11},
     {start: 12, end: 23},
     {start: 23, end: 31},
     {start: 31, end: 52.5},
