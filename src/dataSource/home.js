@@ -1,3 +1,5 @@
+const BASE_URL = "https://firebasestorage.googleapis.com/v0/b/portfolio-371bd.appspot.com/o/";
+
 const PAGE_NO_KEY = "PAGE_NO";
 
 export const homeVideoForwardSlots = [
@@ -19,6 +21,6 @@ export const setPageNo = (pageNo) => localStorage.setItem(PAGE_NO_KEY, pageNo);
 
 export const getPageNo = () => parseInt(localStorage.getItem(PAGE_NO_KEY) || "0", 10);
 
-export const videoPlaceholder = 'https://firebasestorage.googleapis.com/v0/b/yash-portfolio-79bbe.appspot.com/o/home%2Fvideo_placeholder.jpeg?alt=media';
+export const videoPlaceholder = `${BASE_URL}home%2Fvideo_placeholder.jpeg?alt=media`;
 
-export const cvUrl = 'https://firebasestorage.googleapis.com/v0/b/yash-portfolio-79bbe.appspot.com/o/about-me%2Fyash-cv.pdf?alt=media';
+export const cvUrl = `${BASE_URL}about-me%2Fyash-cv.pdf?alt=media`;

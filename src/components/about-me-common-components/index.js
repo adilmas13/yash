@@ -27,7 +27,9 @@ export const Details = (props) => {
 
 export const Download = () => {
     const downloadCv = () => {
-        fetch(cvUrl)
+        fetch(cvUrl, {
+            mode: 'no-cors' // 'cors' by default
+        })
             .then(resp => resp.blob())
             .then(blob => {
                 const url = window.URL.createObjectURL(blob);
