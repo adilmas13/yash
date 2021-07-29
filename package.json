@@ -10,7 +10,8 @@
     "lint": "eslint src",
     "test": "jest",
     "build-it": "preact build && cp _redirects build",
-    "build-no-prerender": "preact build --no-prerender && cp _redirects build"
+    "build-no-prerender": "preact build --no-prerender && cp _redirects build",
+    "deploy" : "preact build && cp _redirects build && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": "preact",

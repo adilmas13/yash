@@ -1,0 +1,23 @@
+.logo-parent {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 10px 0;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-out transform; }
+  .logo-parent .logo {
+    height: 40px;
+    width: 40px; }
+  .logo-parent .logo-text {
+    font-size: 10px;
+    font-family: Yfx, serif;
+    font-weight: 200;
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 3px; }
+  .logo-parent:hover {
+    transform: scale(1.1); }
+
+/*# sourceMappingURL=style.css.map */
