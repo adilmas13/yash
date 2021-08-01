@@ -238,8 +238,32 @@ export const arts_mobile = [
     },
     {
         id: 40,
+        image_name: "gc2",
+        groupId: 7,
+        ratio: "11:16"
+    },
+    {
+        id: 45,
+        image_name: "gc1",
+        groupId: 7,
+        ratio: "11:16"
+    },
+    {
+        id: 36,
+        image_name: "gc5",
+        groupId: 7,
+        ratio: "11:16"
+    },
+    {
+        id: 37,
+        image_name: "gc4",
+        groupId: 7,
+        ratio: "11:16"
+    },
+    {
+        id: 43,
         image_name: "axn6",
-        groupId: 8,
+        groupId: 9,
         ratio: "16:9"
     },
     {
@@ -249,40 +273,16 @@ export const arts_mobile = [
         ratio: ''
     },
     {
-        id: 45,
-        image_name: "axn5",
-        groupId: 8,
-        ratio: "11:16"
-    },
-    {
-        id: 36,
-        image_name: "gc1",
-        groupId: 7,
-        ratio: "11:16"
-    },
-    {
-        id: 37,
-        image_name: "gc2",
-        groupId: 7,
-        ratio: "11:16"
-    },
-    {
-        id: 43,
-        image_name: "gc4",
-        groupId: 7,
-        ratio: "11:16"
-    },
-    {
         id: 44,
-        image_name: "gc5",
-        groupId: 7,
+        image_name: "axn5",
+        groupId: 9,
         ratio: "11:16"
     },
     {
         id: 41,
         image_name: "axn1",
         groupId: 9,
-        ratio: "16:9"
+        ratio: "16:11"
     },
     {
         id: 'blank',
@@ -305,20 +305,14 @@ export const arts_mobile = [
     {
         id: 48,
         image_name: "axn3",
-        groupId: 8,
+        groupId: 9,
         ratio: "16:9"
     },
     {
         id: 49,
         image_name: "axn4",
-        groupId: 8,
+        groupId: 9,
         ratio: "16:9"
-    },
-    {
-        id: 'blank',
-        image_name: '',
-        groupId: '',
-        ratio: ''
     },
     {
         id: 50,
@@ -380,6 +374,7 @@ export const arts_mobile = [
         groupId: 10,
         ratio: "11:16"
     },
+
 ].map(mapTo);
 
 export const arts = [
@@ -777,13 +772,13 @@ export const arts = [
     {
         id: 41,
         image_name: "axn1",
-        groupId: 9,
+        groupId: 8,
         ratio: "16:9"
     },
     {
         id: 42,
         image_name: "axn2",
-        groupId: 9,
+        groupId: 8,
         ratio: "16:9"
     },
     {
@@ -852,6 +847,7 @@ export const arts = [
         groupId: 10,
         ratio: "11:16"
     },
+
 ].map(mapTo);
 
 function mapTo(media) {
