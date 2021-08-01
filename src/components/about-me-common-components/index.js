@@ -27,24 +27,7 @@ export const Details = (props) => {
 
 export const Download = () => {
     const downloadCv = () => {
-        fetch(cvUrl, {
-            mode: 'no-cors' // 'cors' by default
-        })
-            .then(resp => resp.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'yash-ambre.pdf';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            })
-            .catch((e) => {
-                alert('OOPS... Something went wrong, unable to download resume at the moment');
-                console.error('Download CV FAILED -- ', e);
-            });
+        window.open(cvUrl, '_blank');
     }
 
     return <div className={downloadStyle['download-cv']} onClick={() => downloadCv()}>download</div>
