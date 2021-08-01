@@ -34,7 +34,7 @@ const Page = (props) => {
                 src={media.image.src}
                 css={{
                     width: ratioWidth > ratioHeight ? '100%' : 'auto',
-                    height: ratioWidth > ratioHeight ? 'auto' : '100%'
+                    height: ratioWidth > ratioHeight ? 'auto' : '100vh'
                 }} />}
     </div>
 };
