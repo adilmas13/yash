@@ -364,6 +364,18 @@ $cell-padding: 5px;
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .parent {
+
+    .logo-wrapper {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 20px);
+      margin-top: 20px;
+    }
+  }
+}
+
 @media only screen and (max-width: 450px) {
   :global {
     .column {
