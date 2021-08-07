@@ -30,6 +30,6 @@ export const Download = () => {
         window.open(cvUrl, '_blank');
     }
 
-    return <div className={downloadStyle['download-cv']} onClick={() => downloadCv()}>download</div>
+    return <div className={downloadStyle['download-cv']} onClick={() => downloadCv()}>download CV</div>
 }
 
