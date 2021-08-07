@@ -9,18 +9,19 @@
   transition: 0.3s ease-out transform;
 
   .logo {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
   }
 
   .logo-text {
-    font-size: 12px;
+    font-size: 11px;
     font-family: Yfx, serif;
     font-weight: 200;
     text-transform: capitalize;
     text-align: center;
     margin-top: 10px;
-    letter-spacing: 3px;
+    padding-left: 1px;
+    letter-spacing: 1.5px;
   }
 
   &:hover {
