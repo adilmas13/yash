@@ -24,12 +24,12 @@ const VerticalPreview = (props) => {
         }
     }, [])
 
-    return <div className={style['preview-parent']}>
+    return <div className={style['preview-parent']} onClick={() => props.handleBackClick()}>
         <div className={style.cancel}>
             <Back onCancel={() => props.handleBackClick()} />
         </div>
         <div className={style['preview-container']}>
-            <div className={style['scroll-container']} ref={scrollContainerRef}>
+            <div className={style['scroll-container']} ref={scrollContainerRef} onClick={evt => evt.stopPropagation()}>
                 {group.map((it, index) => {
                     return (
                         <div className={style['media-wrapper']} key={index}>
