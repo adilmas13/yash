@@ -10,8 +10,7 @@ export const awardsThumbnails = [
     {id: 7, image: "7loveH", color: "#CBa43b"},
     {id: 8, image: "8mercyH", color: "#9f2d33"},
     {id: 9, image: "9hateH", color: "#771d1c"},
-    {id: 10, image: "10jeepH", color: "#d3693b"},
-    {id: 11, image: "11youngH", color: "#f2fc75"}
+    {id: 10, image: "10jeepH", color: "#d3693b"}
 ].map(it => {
     it.thumbnail = awardsThumbnail(it.image);
     return it;
@@ -353,20 +352,6 @@ export const awardsDetails = [
         image_name: "1jeepInside",
         ratio: "16:9",
         groupId: 10
-    },
-    {
-        id: "11-1",
-        image_name: "",
-        videoId: "XjAWoUc4Aj4",
-        ratio: "16:9",
-        groupId: 11
-    },
-    {
-        id: "11-2",
-        image_name: "",
-        videoId: "4txgs7qIgGo",
-        ratio: "16:9",
-        groupId: 11
     }
 ].map(media => {
     media['image'] = {
