@@ -101,7 +101,7 @@ const revealArrow = arrow => {
         {opacity: 0.7}
     ], {
         duration: 1500,
-        delay: 2000,
+        delay: 3000,
         fill: "forwards"
     });
     animation.play();
@@ -118,7 +118,7 @@ export const decreaseYashTextOpacity = () => {
         {opacity: 0.3}
     ], {
         duration: 500,
-        delay: 3000,
+        delay: 4000,
         fill: "forwards"
     });
     animation.play();
