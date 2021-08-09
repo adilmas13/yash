@@ -2,13 +2,20 @@
   display: flex;
   position: relative;
   height: 100vh;
-  justify-content: flex-end;
   min-width: 100%;
   overflow: hidden; }
+  .parent .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1; }
+    .parent .details-container .wrapper .details-wrapper {
+      margin-top: 4rem; }
   .parent .image-wrapper {
     position: relative;
     height: 100%;
-    width: 60%; }
+    flex: 1; }
     .parent .image-wrapper .main-image-shadow {
       height: 90%;
       position: absolute;
@@ -19,24 +26,15 @@
       position: absolute;
       left: 100px;
       bottom: 0; }
-  .parent .details-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: calc(100% / 2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding-right: 4rem; }
-    .parent .details-container .wrapper .details-wrapper {
-      margin-top: 4rem; }
 
 @media only screen and (max-width: 950px) {
   .parent .details-container {
-    padding-right: 0;
-    align-items: center;
-    width: 60%; } }
+    padding-right: 0; }
+  .parent .image-wrapper {
+    flex: 0.8; }
+    .parent .image-wrapper .main-image-shadow {
+      left: 0; }
+    .parent .image-wrapper .main-image {
+      left: 60px; } }
 
 /*# sourceMappingURL=style.css.map */

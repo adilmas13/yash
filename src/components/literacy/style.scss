@@ -4,14 +4,28 @@
   display: flex;
   position: relative;
   height: 100vh;
-  justify-content: flex-end;
   min-width: 100%;
   overflow: hidden;
+
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+
+    .wrapper {
+
+      .details-wrapper {
+        margin-top: 4rem;
+      }
+    }
+  }
 
   .image-wrapper {
     position: relative;
     height: 100%;
-    width: 60%;
+    flex: 1;
 
     .main-image-shadow {
       height: 90%;
@@ -28,33 +42,26 @@
     }
   }
 
-  .details-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: calc(100% / 2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding-right: 4rem;
 
-    .wrapper {
 
-      .details-wrapper {
-        margin-top: 4rem;
-      }
-    }
-  }
 }
 
 @media only screen and (max-width: 950px) {
   .parent {
     .details-container {
       padding-right: 0;
-      align-items: center;
-      width: 60%;
+    }
+
+    .image-wrapper{
+      flex: 0.8;
+
+      .main-image-shadow {
+        left: 0;
+      }
+
+      .main-image {
+        left: 60px;
+      }
     }
   }
 }
