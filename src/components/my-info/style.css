@@ -9,36 +9,61 @@
   .parent .image-wrapper {
     position: relative;
     height: 100%;
-    margin-right: 3.5rem; }
+    margin-right: 6rem;
+    display: flex;
+    align-items: flex-end; }
+    .parent .image-wrapper .main-image {
+      height: 90%;
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    .parent .image-wrapper .image-shadow {
+      height: 90%; }
   .parent .details-wrapper {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: calc(100% / 2);
+    width: 70%;
     display: flex;
     flex-direction: column;
-    padding: 0 8vw;
-    justify-content: space-evenly;
+    padding-left: 100px;
+    justify-content: center;
     overflow: hidden; }
     .parent .details-wrapper .top-wrapper {
       color: #353335; }
       .parent .details-wrapper .top-wrapper .gender-age {
-        font-size: 6rem;
+        font-size: 5vw;
         text-transform: capitalize;
         font-family: Yfx, serif;
         word-spacing: 20px; }
       .parent .details-wrapper .top-wrapper .designation {
-        font-size: 3rem;
+        font-size: 1.5vw;
         text-transform: capitalize;
         font-family: Yfx, serif;
-        margin-top: 2rem;
         letter-spacing: 2px;
         display: flex;
         flex-direction: column;
-        line-height: 60px; }
+        line-height: 60px;
+        text-decoration: underline solid 1px;
+        text-underline-offset: 15px; }
+      .parent .details-wrapper .top-wrapper .jury-wrapper {
+        display: flex;
+        align-items: center;
+        font-family: Yfx, serif;
+        margin-top: 12px; }
+        .parent .details-wrapper .top-wrapper .jury-wrapper .jury {
+          text-transform: capitalize;
+          font-size: 20px; }
+        .parent .details-wrapper .top-wrapper .jury-wrapper .arrow {
+          width: 10px;
+          transform: rotate(90deg);
+          margin: 0 2px; }
+        .parent .details-wrapper .top-wrapper .jury-wrapper .adstars {
+          font-size: 14px; }
     .parent .details-wrapper .middle-wrapper {
-      color: #000000; }
+      color: #000000;
+      margin: 70px 0; }
       .parent .details-wrapper .middle-wrapper .name {
         font-family: b-light, serif;
         font-size: 50px;
@@ -71,13 +96,10 @@
             font-family: b-regular-italics, serif;
             font-size: 16px;
             margin-top: 4px; }
-  .parent .main-image {
-    height: 100%;
-    position: absolute;
-    right: 10px; }
-  .parent .image-shadow {
-    height: 100%; }
 
+@media only screen and (max-width: 1680px) {
+  .parent .image-wrapper {
+    margin-right: 3.5rem; } }
 @media only screen and (max-width: 1200px) {
   .parent {
     display: flex;
@@ -99,14 +121,12 @@
       width: calc(100% * 0.75); }
     .parent .details-wrapper {
       position: relative;
-      flex: 0.3;
+      flex: 0.9;
       padding-left: 3vw; }
       .parent .details-wrapper .top-wrapper {
         color: #353335; }
-        .parent .details-wrapper .top-wrapper .gender-age {
-          font-size: 5vw; }
         .parent .details-wrapper .top-wrapper .designation {
-          font-size: 4vw;
+          font-size: 2vw;
           line-height: 50px; }
       .parent .details-wrapper .middle-wrapper .name {
         font-size: 3vw; }
@@ -124,23 +144,23 @@
 @media only screen and (max-width: 900px) {
   .parent .details-wrapper {
     position: relative;
-    flex: 0.3;
     padding-left: 3vw; }
     .parent .details-wrapper .top-wrapper {
       color: #353335; }
       .parent .details-wrapper .top-wrapper .gender-age {
         font-size: 6vw; }
-      .parent .details-wrapper .top-wrapper .designation {
-        font-size: 4vw; }
     .parent .details-wrapper .middle-wrapper .name {
       font-size: 5vw; }
     .parent .details-wrapper .middle-wrapper .noun-success {
       font-size: 3vw; }
     .parent .details-wrapper .middle-wrapper .description {
-      font-size: 1.8vw; }
+      font-size: 2.5vw; }
     .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split:last-child {
       margin-left: 2rem; }
     .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper .split span:last-child {
-      font-size: 1.6vw; } }
+      font-size: 2vw; } }
+@media only screen and (max-width: 850px) {
+  .parent .image-wrapper {
+    right: -40%; } }
 
 /*# sourceMappingURL=style.css.map */
