@@ -41,23 +41,23 @@ const MobileView = (props) => {
             <LiteracyMobile />
         </div>
         <div className={style['top-arrow-container']}>
-            {props.pageNo === 0 && <div className={style['logo-container']}><Logo /></div>}
-            <div
-                style={props.pageNo > 0 ? showIcon : hideIcon}
-                className={style['icon-wrapper']}
-                onClick={() => props.onPrevClicked()}>
-                <img src={'assets/arrow_blunt.svg'} />
-                <div>previous</div>
-            </div>
+            {/*{props.pageNo === 0 && <div className={style['logo-container']}><Logo /></div>}*/}
+            {/*<div*/}
+            {/*    style={props.pageNo > 0 ? showIcon : hideIcon}*/}
+            {/*    className={style['icon-wrapper']}*/}
+            {/*    onClick={() => props.onPrevClicked()}>*/}
+            {/*    <img src={'assets/arrow_blunt.svg'} />*/}
+            {/*    <div>previous</div>*/}
+            {/*</div>*/}
         </div>
         <div className={style['bottom-arrow-container']}>
-            <div
-                style={props.pageNo < 2 ? showIcon : hideIcon}
-                className={style['icon-wrapper']}
-                onClick={() => props.onNextClicked()}>
-                <div>next</div>
-                <img src={'assets/arrow_blunt.svg'} />
-            </div>
+            {/*<div*/}
+            {/*    style={props.pageNo < 2 ? showIcon : hideIcon}*/}
+            {/*    className={style['icon-wrapper']}*/}
+            {/*    onClick={() => props.onNextClicked()}>*/}
+            {/*    <div>next</div>*/}
+            {/*    <img src={'assets/arrow_blunt.svg'} />*/}
+            {/*</div>*/}
         </div>
     </div>
 }

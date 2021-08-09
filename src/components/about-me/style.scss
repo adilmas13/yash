@@ -155,11 +155,17 @@
 
   .scroll-container {
     display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+  }
+
+  .scroll-container > div{
+    width: 100vw;
+    scroll-snap-align: start;
   }
 
   .top-arrow-container {
