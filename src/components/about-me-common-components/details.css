@@ -12,7 +12,8 @@
   .header {
     font-size: 7vw; } }
 .details {
-  display: flex; }
+  display: flex;
+  z-index: 1; }
   .details .title-container {
     font-family: b-light, serif;
     font-size: 30px;
@@ -59,7 +60,7 @@
   .details {
     display: flex; }
     .details .title-container {
-      font-size: 25px; }
+      font-size: 20px; }
     .details .desc {
       font-size: 16px; }
       .details .desc span {

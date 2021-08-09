@@ -112,7 +112,8 @@
   }
 }
 
-@media only screen and (max-width: 1420px) {
+
+@media only screen and (max-width: 1200px) {
   .parent {
 
     .image-wrapper {
@@ -120,7 +121,7 @@
       height: 100%;
       width: 65%;
       display: flex;
-      left: 0;
+      left: -10%;
       top: 0;
       bottom: 0;
       justify-content: flex-end;
@@ -172,11 +173,10 @@
   }
 }
 
-@media only screen and (max-width: 840px) {
+@media only screen and (max-width: 900px) {
   .parent {
 
     .right-content {
-      width: 60%;
 
       .details-wrapper {
 

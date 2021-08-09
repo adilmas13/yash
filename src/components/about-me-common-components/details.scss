@@ -22,6 +22,7 @@
 
 .details {
   display: flex;
+  z-index: 1;
 
   .title-container {
     font-family: b-light, serif;
@@ -84,10 +85,9 @@
 @media only screen and (max-width: 950px) {
   .details {
     display: flex;
-    //margin-top: 4rem;
 
     .title-container {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     .desc {
