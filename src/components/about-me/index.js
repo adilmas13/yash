@@ -14,50 +14,28 @@ import {route} from "preact-router";
 
 const MobileView = (props) => {
     const scrollerRef = createRef();
+    const [active, setActive] = useState(props.pageNo);
 
     useEffect(() => {
         const element = scrollerRef.current;
-        element.scroll({
-            top: (element.clientHeight) * props.pageNo,
-            behavior: "smooth"
-        });
-    }, [props.pageNo]);
-
-    const hideIcon = {
-        opacity: 0,
-        userSelect: 'none',
-        pointerEvents: 'none'
-    }
-    const showIcon = {
-        opacity: 1,
-        userSelect: 'all',
-        pointerEvents: 'all'
-    }
+        const scrollListener = () => setActive(Math.floor(element.scrollLeft / element.clientWidth));
+        element.addEventListener('scroll', scrollListener);
+        return () => element.removeEventListener('scroll', scrollListener)
+    }, []);
 
     return <div className={style.parent}>
+        <div className={style['top-arrow-container']}>
+            <div className={style['logo-container']}><Logo /></div>
+            <div className={style['page-indicator-container']}>
+                <div className={style['page-indicator']} style={{opacity: active === 0 ? 1 : 0.3}} />
+                <div className={style['page-indicator']} style={{opacity: active === 1 ? 1 : 0.3}} />
+                <div className={style['page-indicator']} style={{opacity: active === 2 ? 1 : 0.3}} />
+            </div>
+        </div>
         <div className={style['scroll-container']} ref={scrollerRef}>
             <MyInfoMobile />
             <ExperienceMobile />
             <LiteracyMobile />
-        </div>
-        <div className={style['top-arrow-container']}>
-            {/*{props.pageNo === 0 && <div className={style['logo-container']}><Logo /></div>}*/}
-            {/*<div*/}
-            {/*    style={props.pageNo > 0 ? showIcon : hideIcon}*/}
-            {/*    className={style['icon-wrapper']}*/}
-            {/*    onClick={() => props.onPrevClicked()}>*/}
-            {/*    <img src={'assets/arrow_blunt.svg'} />*/}
-            {/*    <div>previous</div>*/}
-            {/*</div>*/}
-        </div>
-        <div className={style['bottom-arrow-container']}>
-            {/*<div*/}
-            {/*    style={props.pageNo < 2 ? showIcon : hideIcon}*/}
-            {/*    className={style['icon-wrapper']}*/}
-            {/*    onClick={() => props.onNextClicked()}>*/}
-            {/*    <div>next</div>*/}
-            {/*    <img src={'assets/arrow_blunt.svg'} />*/}
-            {/*</div>*/}
         </div>
     </div>
 }
