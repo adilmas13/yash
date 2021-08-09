@@ -7,27 +7,26 @@ import Video from "../video";
 
 
 const Page = (props) => {
+    const pageContainerRef = createRef();
     const media = props.data;
+    const [videoDimension, setVideoDimension] = useState({w: 0, h: 0});
     const [ratioWidth, ratioHeight] = media.ratio.split(":").map(it => parseInt(it));
 
-    const parentHeight = document.body.clientHeight;
-    const parentWidth = document.body.clientWidth;
+    useEffect(() => {
+        if (media.video) {
+            const containerWidth = pageContainerRef.current.clientWidth;
+            setVideoDimension({
+                w: containerWidth,
+                h: containerWidth * ratioHeight / ratioWidth
+            })
+        }
+    }, [])
 
-    let width = parentWidth * 0.75;
-    let height;
-
-    if (ratioWidth > ratioHeight) {
-        height = width * (ratioHeight / ratioWidth);
-    } else {
-        height = parentHeight * 0.80;
-        width = height * 0.709; // this is not 9:16 as the images are not been given in those dimensions
-    }
-
-    return <div className={style['page-container']}>
+    return <div className={style['page-container']} ref={pageContainerRef}>
         {media.video
             ? <Video
-                width={width}
-                height={height}
+                width={videoDimension.w}
+                height={videoDimension.h}
                 src={media.video.src}
             />
             : <LazyImage
