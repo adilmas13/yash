@@ -66,10 +66,10 @@
       margin: 70px 0; }
       .parent .details-wrapper .middle-wrapper .name {
         font-family: b-light, serif;
-        font-size: 50px;
+        font-size: 40px;
         letter-spacing: 1px; }
       .parent .details-wrapper .middle-wrapper .noun-success {
-        font-size: 30px; }
+        font-size: 25px; }
         .parent .details-wrapper .middle-wrapper .noun-success span:first-child {
           font-family: b-bold-italic, serif; }
         .parent .details-wrapper .middle-wrapper .noun-success span:last-child {
@@ -78,7 +78,7 @@
         font-family: b-regular-italics, serif;
         line-height: 1.5;
         letter-spacing: 2px;
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 1rem; }
     .parent .details-wrapper .bottom-wrapper {
       color: #000000; }
