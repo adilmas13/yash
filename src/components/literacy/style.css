@@ -10,12 +10,12 @@
     height: 100%;
     width: 60%; }
     .parent .image-wrapper .main-image-shadow {
-      height: 100%;
+      height: 90%;
       position: absolute;
       left: 20px;
       bottom: 0; }
     .parent .image-wrapper .main-image {
-      height: 100%;
+      height: 90%;
       position: absolute;
       left: 100px;
       bottom: 0; }
