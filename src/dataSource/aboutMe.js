@@ -16,10 +16,11 @@ export const details = {
 };
 
 export const experience = [
-    {text1: 'ddb mudra', text2: '1.7 YEARS', text3: 'senior art director'},
-    {text1: 'leo burnett', text2: '3.8 YEARS', text3: 'art director'},
-    {text1: 'witty arts', text2: '2.0 YEARS', text3: 'graphic designer'},
-    {text1: 'percept art', text2: '1.0 YEARS', text3: 'freelance designer'}
+    {text1: 'l&k saatchi', text2: '5.0 MONTHS', text3: 'Associate Creative Director'},
+    {text1: 'ddb mudra', text2: '1.7 YEARS', text3: 'Senior Art Director'},
+    {text1: 'leo burnett', text2: '3.8 YEARS', text3: 'Art Director'},
+    {text1: 'witty arts', text2: '2.0 YEARS', text3: 'Graphic Designer'},
+    {text1: 'percept art', text2: '1.0 YEARS', text3: 'Freelance Designer'}
 ];
 
 export const literacy = [
