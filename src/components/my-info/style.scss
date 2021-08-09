@@ -74,13 +74,14 @@
         }
 
         .arrow {
-          width: 10px;
+          width: 8px;
           transform: rotate(90deg);
-          margin: 0 2px;
+          margin: -2px 2px 0 2px;
         }
 
         .adstars {
           font-size: 14px;
+          padding-top: 2px;
         }
       }
     }
@@ -272,15 +273,15 @@
       .middle-wrapper {
 
         .name {
-          font-size: 5vw;
+          font-size: 4.5vw;
         }
 
         .noun-success {
-          font-size: 3vw;
+          font-size: 2.5vw;
         }
 
         .description {
-          font-size: 2.5vw;
+          font-size: 1.8vw;
         }
       }
 
