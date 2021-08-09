@@ -30,7 +30,8 @@ const LazyImage = (props) => {
 
     return <div
         style={wrapperStyle}
-        className={style['lazy-image-wrapper']}>
+        className={style['lazy-image-wrapper']}
+        onClick={event => event.stopPropagation()}>
         <img
             style={imageStyle}
             className={isImageLoaded ? style["visible"] : style["hidden"]}

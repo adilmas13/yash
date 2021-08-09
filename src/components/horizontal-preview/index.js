@@ -44,9 +44,15 @@ const HorizontalPreview = (props) => {
     const group = props.data.group;
     const [pageNo, setPageNo] = useState(props.data.selected);
 
-    const onPrevClicked = () => setPageNo((currentPageNo) => currentPageNo - 1);
+    const onPrevClicked = (event) => {
+        setPageNo((currentPageNo) => currentPageNo - 1);
+        event.stopPropagation();
+    };
 
-    const onNextClicked = () => setPageNo((currentPageNo) => currentPageNo + 1);
+    const onNextClicked = (event) => {
+        setPageNo((currentPageNo) => currentPageNo + 1);
+        event.stopPropagation();
+    };
 
     useEffect(() => {
         const element = scrollRef.current;
@@ -67,7 +73,7 @@ const HorizontalPreview = (props) => {
         pointerEvents: 'none'
     }
 
-    return (<div class={style.parent}>
+    return (<div class={style.parent} onClick={() => props.handleBackClick()}>
         <div className={style['container']}>
             <div className={style.cancel}>
                 <Back onCancel={() => props.handleBackClick()} />
