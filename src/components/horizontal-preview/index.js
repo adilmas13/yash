@@ -29,14 +29,16 @@ const Page = (props) => {
                 height={videoDimension.h}
                 src={media.video.src}
             />
-            : <LazyImage
-                src={media.image.src}
-                css={{
-                    width: ratioWidth > ratioHeight ? '100%' : 'auto',
-                    height: ratioWidth > ratioHeight ? 'auto' : '100vh'
-                }} />}
+            : <div onClick={event => event.stopPropagation()}>
+                <LazyImage
+                    src={media.image.src}
+                    css={{
+                        width: ratioWidth > ratioHeight ? '100%' : 'auto',
+                        height: ratioWidth > ratioHeight ? 'auto' : '100vh'
+                    }} />
+            </div>}
     </div>
-};
+}
 
 const HorizontalPreview = (props) => {
     const scrollRef = createRef();

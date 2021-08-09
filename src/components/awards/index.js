@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import {createRef, React} from "preact";
+import {React} from "preact";
 import style from './style.css';
 import {awardsDescription, awardsDetails, awardsThumbnails} from "../../dataSource/awards";
 import {useEffect, useState} from "preact/hooks";
