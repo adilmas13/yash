@@ -154,21 +154,26 @@
     display: flex;
     flex-direction: column;
   }
+
   .top-arrow-container {
+    position: absolute;
+    top: 0;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-bottom: 20px;
+    height: 120px;
 
     .logo-container {
-      padding-top: 20px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .page-indicator-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 15px;
       display: flex;
-      margin-top: 20px;
 
       .page-indicator {
         width: 25px;
@@ -196,6 +201,7 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
+    padding-top: 120px;
   }
 
   .scroll-container > div {

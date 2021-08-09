@@ -52,7 +52,6 @@
 
 @media only screen and (max-width: 850px) {
   .time-parent {
-    margin-top: 20px;
 
     .number {
       display: flex;
@@ -81,7 +80,8 @@
     font-family: Yfx, serif;
     color: $secondary-text-color;
     justify-content: space-between;
-    opacity: 0.4;
+    opacity: 0.6;
+    margin-top: 15px;
 
     .number {
       display: flex;
