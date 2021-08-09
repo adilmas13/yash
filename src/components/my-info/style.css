@@ -80,7 +80,8 @@
         line-height: 1.5;
         letter-spacing: 2px;
         font-size: 16px;
-        margin-top: 1rem; }
+        margin-top: 1rem;
+        font-weight: 600; }
     .parent .details-wrapper .bottom-wrapper {
       color: #000000; }
       .parent .details-wrapper .bottom-wrapper .digits-letters-wrapper {
