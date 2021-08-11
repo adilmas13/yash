@@ -14,7 +14,10 @@ const Page = (props) => {
 
     useEffect(() => {
         if (media.video) {
-            const containerWidth = pageContainerRef.current.clientWidth;
+            const containerWidth = Math.min(
+                pageContainerRef.current.clientWidth,
+                1600
+            );
             setVideoDimension({
                 w: containerWidth,
                 h: containerWidth * ratioHeight / ratioWidth

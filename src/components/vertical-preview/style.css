@@ -24,7 +24,6 @@
     height: 100%;
     align-items: center; }
     .preview-parent .preview-container .scroll-container {
-      width: 90%;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -37,15 +36,20 @@
         .preview-parent .preview-container .scroll-container .media-wrapper iframe {
           width: 100%; }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1680px) {
+  .preview-parent .preview-container .scroll-container {
+    width: 95%; } }
+@media only screen and (max-width: 1350px) {
   .preview-parent .preview-container {
     max-width: 1300px;
     width: 100%; } }
 @media only screen and (max-width: 600px) {
-  .preview-parent .preview-container .scroll-container .media-wrapper {
-    width: 100%;
-    margin-bottom: 5px; }
-    .preview-parent .preview-container .scroll-container .media-wrapper:last-child {
-      margin-bottom: 60px; } }
+  .preview-parent .preview-container .scroll-container {
+    width: 90%; }
+    .preview-parent .preview-container .scroll-container .media-wrapper {
+      width: 100%;
+      margin-bottom: 5px; }
+      .preview-parent .preview-container .scroll-container .media-wrapper:last-child {
+        margin-bottom: 60px; } }
 
 /*# sourceMappingURL=style.css.map */
