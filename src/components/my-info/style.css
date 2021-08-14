@@ -9,7 +9,7 @@
   .parent .image-wrapper {
     position: relative;
     height: 100%;
-    margin-right: 6rem;
+    margin-right: 7rem;
     display: flex;
     align-items: flex-end; }
     .parent .image-wrapper .main-image {
@@ -27,7 +27,7 @@
     width: 70%;
     display: flex;
     flex-direction: column;
-    padding-left: 100px;
+    padding-left: 150px;
     justify-content: center;
     overflow: hidden; }
     .parent .details-wrapper .top-wrapper {
@@ -101,7 +101,9 @@
 
 @media only screen and (max-width: 1680px) {
   .parent .image-wrapper {
-    margin-right: 3.5rem; } }
+    margin-right: 3.5rem; }
+  .parent .details-wrapper {
+    padding-left: 100px; } }
 @media only screen and (max-width: 1200px) {
   .parent {
     display: flex;
