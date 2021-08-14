@@ -7,7 +7,7 @@ import Logo from "../logo";
 import {
     getPageNo,
     homeVideoForwardSlots,
-    homeVideoReverseSlots,
+    homeVideoReverseSlots, mainVideo,
     setPageNo,
     videoPlaceholder
 } from "../../dataSource/home";
@@ -227,7 +227,7 @@ const YashVideo = (props) => {
 
     return <div className={style['video-container']}>
         <video ref={videoRef}
-               src={"assets/videos/video.mp4"}
+               src={mainVideo}
                onClick={() => props.onClick()}
                autoPlay={true}
                style={{cursor: props.action.position > 0 ? 'pointer' : 'auto'}}

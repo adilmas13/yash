@@ -23,4 +23,6 @@ export const getPageNo = () => parseInt(localStorage.getItem(PAGE_NO_KEY) || "0"
 
 export const videoPlaceholder = `${BASE_URL}home%2Fvideo_placeholder.jpeg?alt=media`;
 
+export const mainVideo = `${BASE_URL}home%2Fvideo.mp4?alt=media`;
+
 export const cvUrl = `${BASE_URL}about-me%2Fyash-cv.pdf?alt=media`;
