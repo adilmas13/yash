@@ -870,57 +870,63 @@ export const advertsDescription = [
         id: "kwality-1",
         logo: {src: "KW", top: "-60px", width: "70px"},
         layout: {paddingTop: "90px"},
-        description: "All “Art directors” wish to have a film in their book that is entirely theirs. This is the one for me. Fun fact: The ‘first draft’ of my script is what was filmed. No edits. No changes. Yes, even I thought I was in a movie.\n" +
-            "And this had to win a Prestigious Kyoorius Elephant.",
-        closeText: "This better be good"
+        description: "All “Art directors” wish to have a film in their book that is entirely theirs.\n" +
+            "This is that ‘dream-come-true’ TVC for me.  Fun fact: The ‘first draft’ of my script is what was filmed. No edits. No changes.\n" +
+            "Yes, even I thought I was dreaming.\n" +
+            "And to add to the whole dreamy vibe, this even won a prestigious Kyoorius Elephant.",
+        closeText: "And… Action!"
     },
     {
         id: "stayfree-1",
         logo: {src: "SF", top: "-60px", width: "90px"},
         layout: {paddingTop: "100px"},
-        description: "Remember how uncomfortable, lost and insecure we felt when we got our first period? \n" +
-            "Now imagine getting your periods when you are confined in a room, with the entire country in a state of lockdown. And not just one, or two, but a staggering 23 million girls in India would get their first period during this state.\n" +
+        description: "A girl feels incredibly uncomfortable, lost and insecure when she gets her first period. (Damn.)\n" +
+            "Now imagine a girl getting her periods when she is confined in a room with the entire country in a state of lockdown. (Double damn.)\n" +
+            "And wait, now imagine a staggering 23 million girls in India getting their first period during these circumstances. (Triple damn.)\n" +
             "And that is the ‘Insight’ of this film.\n" +
-            "And the ‘Results’ would be a Silver for Video and a Bronze for Social under the Digital Strategy category at Spikes!",
-        closeText: "You have my full attention"
+            "Results?\n" +
+            "- Silver for Video and a Bronze for Social under the Digital Strategy category at Spikes Asia.\n" +
+            "But even better? Breaking a cultural taboo in the best way possible.",
+        closeText: "Quadruple freaking damn!"
     },
     {
         id: "stayfree-2",
         logo: {src: "SKC", top: "-40px", width: "110px"},
         layout: {paddingTop: "80px"},
-        description: "The Stayfree ‘cloth’ film spoke about the hindrance and humiliation that young girls have to face was a poignant success in breaking taboos. So we decided to take it further and collaborate with UNICEF to reach out to girls to talk about what they are most hesitant to- their periods. Guess what it won? - A Majestic Silver Effie! Come on, this had to happen!",
-        closeText: "Empathy points on the way."
+        description: "The Stayfree ‘cloth’ film spoke about the hindrance and humiliation that young girls have to face when forced to use ‘cloth’ and not sanitary napkins during their periods.\n" +
+            "The embarrassment is such that they refuse to go to school.\n" +
+            "To help them, we decided to collaborate with UNICEF to reach out to these girls and get them to talk about their periods in an honest, and symbiotic way.\n" +
+            "Oh this film and activation won a Majestic Silver Effie.\n" +
+            "You know, no biggie.",
+        closeText: "You gotta love a happy beginning too"
     },
     {
         id: "facebook",
         logo: null,
         layout: {paddingTop: "50px"},
         description: "During the worldwide coronavirus lockdown, there was another, just as deadly epidemic on the rise.\n" +
-            "And yet, the increasing numbers for this illness was not getting reported, was not making the headlines.\n" +
-            "It's known as Depression. \n" +
-            "Along with Facebook, the social media giant, we wanted to make a difference.\n" +
-            "We launched a campaign to urge people to share how they're feeling, to start a conversation about mental health\n" +
-            "and most importantly to let people know that no matter what, there's always someone who is listening.",
-        closeText: "Thank You China!"
+            "And that illness was Depression.\n" +
+            "Along with Facebook, the social media giant, we wanted to spread awareness about the same and get people to reach out and support one another. Because this pandemic reinforced human care and connection in us, that must be given freely.",
+        closeText: "Seems Epic-demic!"
     },
     {
         id: "walls-global",
         logo: null,
         layout: {paddingTop: "50px"},
-        description: "People did a lot to help other people during the pandemic. But there were some special ones who focussed on bringing happiness during this time.\n" +
-            "And who better spreads happiness than Wall’s? So we took such stories from 5 countries - Turkey, Mexico, Germany, India and Indonesia; and showed to the world.\n" +
-            "Because Happiness was one of the essential item in the lockdown list.",
-        closeText: "Go Wall’s!!"
+        description: "During this pandemic there were some heartwarming stories of people who took it upon themselves to spread happiness.\n" +
+            "And so for Wall’s we took ‘Happier Together’ stories from 5 countries - Turkey, Mexico, Germany, India and Indonesia; and showed them to the world.\n" +
+            "Because one can never get enough of happiness.",
+        closeText: "Insert Pharrell William’s ‘Happy’"
     },
     {
         id: "polo",
         logo: {src: "GCFI", top: "-40px", width: "90px"},
         layout: {paddingTop: "60px"},
         description: "An Indian Cricket Superstar cheers for a German Football team during the FIFA World Cup, 2016.\n" +
-            "Now it’s 2019, we have Indian team playing in the Cricket World Cup. Would you expect the Germans to return the cheer?\n" +
-            "Why would they right?\n" +
-            "Well… There’s a reason why this got nominated for DDB’s Global Lemon Awards.",
-        closeText: "Can I be the Umpire here?"
+            "Now it’s 2019, we have the Indian Cricket Team playing in the Cricket World Cup.  Would Germans return the cheer?\n" +
+            "Why would they, right?\n" +
+            "There’s a reason this won a nomination at  DDB’s Global Lemon Awards.",
+        closeText: "Patriotic vibes happening!"
     }
 ].map(it => {
     if (it.logo) {
