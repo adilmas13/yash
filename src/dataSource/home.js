@@ -3,7 +3,7 @@ const BASE_URL = "https://firebasestorage.googleapis.com/v0/b/portfolio-371bd.ap
 const PAGE_NO_KEY = "PAGE_NO";
 
 export const homeVideoForwardSlots = [
-    {start: 1, end: 11},
+    {start: 1, end: 12},
     {start: 12, end: 23},
     {start: 23, end: 31},
     {start: 31, end: 52.5},
@@ -14,7 +14,7 @@ export const homeVideoReverseSlots = [
     {start: 61, end: 75},
     {start: 75, end: 79.5},
     {start: 79.5, end: 86},
-    {start: 86, end: 108},
+    {start: 86, end: 96},
 ]
 
 export const setPageNo = (pageNo) => localStorage.setItem(PAGE_NO_KEY, pageNo);
