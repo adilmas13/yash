@@ -8,10 +8,11 @@ export const details = {
     email: 'yash.ambre92@gmail.com',
     gender: 'male',
     description: [
-        'Passionate, ambitious and artistic',
-        'towards work and life equally.',
-        'A rare combination of positive and',
-        'creative blood, living up to its name.'
+        'Passionate, ambitious, artistic,',
+        'and incredibly focused on life goals.',
+        'A rare breed with creativity and',
+        'positivity coursing through his veins',
+        'and living up to his name.'
     ]
 };
 
