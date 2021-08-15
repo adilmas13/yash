@@ -445,8 +445,9 @@ export const adverts = [
         id: 40
     },
     {
-        image_name: "vw-7",
-        ratio: "16:9",
+        image_name: "vw-11",
+        ratio: "2:1",
+        extension: "gif",
         groupId: "volkswagen-new",
         id: 41
     },
@@ -469,9 +470,8 @@ export const adverts = [
         ratio: ''
     },
     {
-        image_name: "vw-11",
-        ratio: "2:1",
-        extension: "gif",
+        image_name: "vw-7",
+        ratio: "16:9",
         groupId: "volkswagen-new",
         id: 42
     },
@@ -518,7 +518,6 @@ export const adverts = [
         groupId: "mac-d",
         id: 49
     },
-
 ].map(mapTo);
 
 export const adverts_mobile = [
