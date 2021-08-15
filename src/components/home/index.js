@@ -25,6 +25,7 @@ import {
     showUpArrow
 } from "./animationController";
 import {useIsMobileView} from "../../hooks/mobileViewHook";
+import {useLayoutEffect} from "preact/compat";
 
 const redirect = (position) => {
     switch (position) {
@@ -202,7 +203,9 @@ const Yash = (props) => {
 const YashVideo = (props) => {
     const videoRef = createRef()
 
-    useEffect(() => {
+    // FYI: using useLayoutEffect instead of useEffect to allow video.play to work in safari
+    // https://lukecod.es/2020/08/27/ios-cant-play-youtube-via-react-useeffect/
+    useLayoutEffect(() => {
         const action = props.action;
         if (action.isFirst) {
             return;
