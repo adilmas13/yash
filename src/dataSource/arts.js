@@ -873,10 +873,12 @@ export const artsDescription = [
         id: 2,
         logo: null,
         layout: {paddingTop: "50px"},
-        description: "How often do we get to “CREATE” something in art with your own hands and not use any Shutterstock or Getty?\n" +
-            "Let’s get a little old school here and reminisce the campaigns that were done on a paper.\n" +
-            "Idea behind this one was to apply war-paints before you start hustling the day, as everyday is a war.\n" +
-            "And Park Avenue suggests to ‘Wear the Fight’. I suggest you to not skip the BTS video.\n",
-        closeText: "And I suggest you to get rid of these Pop-ups!"
+        description: "We made BTS videos a thing, before they were a thing. For real.\n" +
+            "We truly ‘hand made’ prints for Park Avenue in a very colourful, old school manner and sidelined Shutterstock and Getty images.\n" +
+            "On paper. By hand.\n" +
+            "The concept?\n" +
+            "The idea that wearing Park Avenue at the start of the day is like applying War Paint before you start your daily hustle.  As every single day is a War and one should #WearTheFight.\n" +
+            "I suggest you not to skip the BTS video.",
+        closeText: "And I take your suggestion to get rid of these Pop-ups. Win-Win"
     }
 ]
