@@ -1,26 +1,31 @@
 @font-face {
     font-family: Yfx;
     src: url(Yfx-Regular.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: b-bold;
     src: url(Brandon_bld.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: b-regular-italics;
     src: url(brandon-grotesque-regular-italic.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: b-light;
     src: url(brandon-grotesque-light.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: b-bold-italic;
     src: url(brandon-grotesque-bold-italic.ttf);
+    font-display: swap;
 }
 
 
