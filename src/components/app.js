@@ -4,21 +4,25 @@ import AboutMe from "./about-me";
 import Adverts from "./adverts";
 import Arts from "./arts";
 import Awards from "./awards";
-import {useEffect} from "preact/hooks";
+import {useEffect, useState} from "preact/hooks";
 import {setPageNo} from "../dataSource/home";
+import Loader from "./loader";
 
 
 const App = () => {
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => setPageNo(0), [])
 
-    return <Router>
-        <Home default path="home" />
-        <AboutMe path="about-me" />
-        <Adverts path="adverts" />
-        <Arts path="arts" />
-        <Awards path="awards" />
-    </Router>
+    return loaded
+        ? <Router>
+            <Home default path="home" />
+            <AboutMe path="about-me" />
+            <Adverts path="adverts" />
+            <Arts path="arts" />
+            <Awards path="awards" />
+        </Router>
+        : <Loader onComplete={() => setLoaded(true)} />
 }
 
 
