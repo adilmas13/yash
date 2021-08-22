@@ -7,22 +7,31 @@ import Awards from "./awards";
 import {useEffect, useState} from "preact/hooks";
 import {setPageNo} from "../dataSource/home";
 import Loader from "./loader";
-
+import {refreshLoaderTime, shouldShowLoader} from "../dataSource/misc";
 
 const App = () => {
-    const [loaded, setLoaded] = useState(false);
+    const [showLoader, setShowLoader] = useState(shouldShowLoader());
+    const [loaded, setLoaded] = useState(!showLoader);
 
-    useEffect(() => setPageNo(0), [])
+    useEffect(() => setPageNo(0), []);
 
-    return loaded
-        ? <Router>
-            <Home default path="home" />
-            <AboutMe path="about-me" />
-            <Adverts path="adverts" />
-            <Arts path="arts" />
-            <Awards path="awards" />
-        </Router>
-        : <Loader onComplete={() => setLoaded(true)} />
+    const routerComponent = <Router>
+        <Home default path="home" />
+        <AboutMe path="about-me" />
+        <Adverts path="adverts" />
+        <Arts path="arts" />
+        <Awards path="awards" />
+    </Router>;
+
+    const loaderComponent = <Loader onComplete={() => {
+        refreshLoaderTime();
+        setLoaded(true);
+        setShowLoader(false);
+    }} />;
+
+    return showLoader
+        ? loaderComponent
+        : loaded ? routerComponent : loaderComponent
 }
 
 
