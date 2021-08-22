@@ -3,12 +3,13 @@ const LOADER_EXPIRY_TIME_IN_MINUTES = 60;
 const LOADER_EXPIRY_TIME_IN_MILLIS = 1000 * 60 * LOADER_EXPIRY_TIME_IN_MINUTES;
 
 export const shouldShowLoader = () => {
-    if (typeof window === undefined) return true;
-    const previousTime = localStorage.getItem(LOADER_PREVIOUS_TIMESTAMP);
-    if (previousTime) {
-        const pt = parseInt(previousTime);
-        const ct = Date.now();
-        return (ct - pt) >= LOADER_EXPIRY_TIME_IN_MILLIS;
+    if (typeof window !== "undefined") {
+        const previousTime = localStorage.getItem(LOADER_PREVIOUS_TIMESTAMP);
+        if (previousTime) {
+            const pt = parseInt(previousTime);
+            const ct = Date.now();
+            return (ct - pt) >= LOADER_EXPIRY_TIME_IN_MILLIS;
+        }
     }
     return true;
 };
