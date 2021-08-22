@@ -6,3 +6,5 @@ node_modules
 size-plugin.json
 .sass-cache/
 #*.css
+.firebase/hosting.YnVpbGQ.cache
+size-plugin.json
