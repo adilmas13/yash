@@ -42,6 +42,7 @@ const MobileView = (props) => {
 
 const DesktopView = (props) => {
     const scrollerRef = createRef();
+    const nextArrowRef = createRef();
 
     useEffect(() => {
         const element = scrollerRef.current;
@@ -52,6 +53,17 @@ const DesktopView = (props) => {
         return () => {
         };
     }, [props.pageNo]);
+
+    useEffect(() => {
+        const next = nextArrowRef.current;
+        next.style.transformOrigin = 'right';
+        const animation = next.animate([
+            {transform: 'scale(1.0) translateX(0)'},
+            {transform: 'scale(1.2) translateX(-10px)'},
+            {transform: 'scale(1.0) translateX(0)'}
+        ], {duration: 1000, fill: "forwards", iterations: 3});
+        animation.play();
+    }, []);
 
     return <div className={style['parent']}>
         <div className={style['container']}>
@@ -69,7 +81,8 @@ const DesktopView = (props) => {
                     <Experience />
                     <Literacy />
                 </div>
-                {props.pageNo < 2 && <div className={style['next-wrapper']} onClick={() => props.onNextClicked()}>
+                {props.pageNo < 2 &&
+                <div ref={nextArrowRef} className={style['next-wrapper']} onClick={() => props.onNextClicked()}>
                     <div className={style.text}>next</div>
                     <img src={"assets/arrow_blunt.svg"} className={style.arrow} />
                 </div>}
