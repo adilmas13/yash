@@ -871,7 +871,8 @@ export const advertsDescription = [
         logo: {src: "KW", top: "-60px", width: "70px"},
         layout: {paddingTop: "90px"},
         description: "All “Art directors” wish to have a film in their book that is entirely theirs.\n" +
-            "This is that ‘dream-come-true’ TVC for me.  Fun fact: The ‘first draft’ of my script is what was filmed. No edits. No changes.\n" +
+            "This is that ‘dream-come-true’ TVC for me.\n" +
+            "Fun fact: The ‘first draft’ of my script is what was filmed. No edits. No changes.\n" +
             "Yes, even I thought I was dreaming.\n" +
             "And to add to the whole dreamy vibe, this even won a prestigious Kyoorius Elephant.",
         closeText: "And… Action!"
