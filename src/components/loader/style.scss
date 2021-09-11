@@ -11,3 +11,14 @@
     height: 200px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .loader-parent {
+
+    video {
+      width: 130px;
+      height: 130px;
+      margin-bottom: 56px;
+    }
+  }
+}
