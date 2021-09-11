@@ -11,8 +11,8 @@
     "test": "jest",
     "build-it": "preact build && cp _redirects build",
     "build-no-prerender": "preact build --no-prerender && cp _redirects build",
-    "deploy" : "rm -rf build && preact build && cp _redirects build && firebase deploy --only hosting",
-    "deploy-no-prerender" : "rm -rf build && preact build --no-prerender && firebase deploy --only hosting"
+    "deploy": "rm -rf build && preact build && cp _redirects build && firebase deploy --only hosting",
+    "deploy-no-prerender": "rm -rf build && preact build --no-prerender && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": "preact",
@@ -27,7 +27,9 @@
     "eslint-config-preact": "^1.1.0",
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
+    "node-sass": "^6.0.1",
     "preact-cli": "^3.2.2",
+    "sass-loader": "^10.2.0",
     "sirv-cli": "1.0.3"
   },
   "dependencies": {
