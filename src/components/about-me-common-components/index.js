@@ -1,7 +1,6 @@
-import detailsStyle from './details.css'
-import downloadStyle from './download.css'
-import headerStyle from './header.css'
-import React from "preact";
+import detailsStyle from './details.scss';
+import downloadStyle from './download.scss';
+import headerStyle from './header.scss';
 import {cvUrl} from "../../dataSource/home";
 
 export const Header = (props) => <div className={headerStyle.header}>{props.header}</div>;

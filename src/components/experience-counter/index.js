@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import style from './style.css';
+import style from './style.scss';
 import {useEffect, useState} from "preact/hooks";
 import {getExperience} from "../../service/calculationService";
 

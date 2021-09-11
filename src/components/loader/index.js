@@ -1,4 +1,4 @@
-import style from './style.css'
+import style from './style.scss'
 
 const Loader = (props) => {
     return <div className={style['loader-parent']}>

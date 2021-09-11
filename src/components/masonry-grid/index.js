@@ -1,5 +1,5 @@
 import {Fragment} from "preact";
-import style from './style.css';
+import style from './style.scss';
 import {useEffect, useState} from "preact/hooks";
 import {useMasonryData} from "./masonryData";
 import LazyImage from "../lazy-image";

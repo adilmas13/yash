@@ -1,5 +1,5 @@
 import {useState} from "preact/hooks";
-import style from './style.css'
+import style from './style.scss';
 
 /*
 * props = {

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import {createRef, React} from "preact";
-import style from './style.css';
+import style from './style.scss';
 import {useEffect} from "preact/hooks";
 
 const Description = (props) => {

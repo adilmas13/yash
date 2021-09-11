@@ -1,5 +1,5 @@
 import {useEffect, useRef, useState} from "preact/hooks";
-import style from "./style.css";
+import style from './style.scss';
 import Back from "../back";
 import {createRef} from "preact";
 import LazyImage from "../lazy-image";

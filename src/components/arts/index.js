@@ -3,7 +3,7 @@ import React from "preact";
 import MasonryGrid from "../masonry-grid";
 import {arts, arts_mobile, artsDescription} from "../../dataSource/arts";
 import {useEffect, useState} from "preact/hooks";
-import style from "./style.css"
+import style from './style.scss';
 import HorizontalPreview from "../horizontal-preview";
 import Description from "../description";
 import Logo from "../logo";

@@ -1,4 +1,4 @@
-import style from './style.css';
+import style from './style.scss';
 import {useEffect, useState} from "preact/hooks";
 import MyInfo from "../my-info";
 import Experience from "../experience";

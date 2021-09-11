@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, {createRef} from "preact";
-import style from './style.css';
+import style from './style.scss';
 import {useEffect, useState} from "preact/hooks";
 import {route} from "preact-router";
 import Logo from "../logo";

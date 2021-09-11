@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "preact";
-import style from './style.css';
+import style from './style.scss';
 import {aboutMeImg} from "../../service/imgService";
 import {experience as data} from "../../dataSource/aboutMe";
 import ExperienceCounter from "../experience-counter";

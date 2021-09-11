@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import style from './style.css';
+import style from './style.scss';
 import {aboutMeImg} from "../../service/imgService";
 import {details} from "../../dataSource/aboutMe";
 
