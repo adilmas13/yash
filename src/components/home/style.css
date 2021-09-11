@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-top: 5px;
   min-height: 72px; }
 
 .parent {
@@ -22,17 +21,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     transition: 0.3s ease-out filter; }
     .parent .body .three-layer {
-      height: 270px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
+      height: 260px;
+      position: relative; }
       .parent .body .three-layer .yash-text-wrapper {
         position: absolute;
         right: calc(50% + 60px);
-        padding-bottom: 40px;
+        top: 30%;
         z-index: 1; }
         .parent .body .three-layer .yash-text-wrapper .yash-text {
           font-size: 80px;
@@ -57,10 +54,9 @@
       .parent .body .three-layer .slot-wrapper {
         position: absolute;
         left: calc(50% + 60px);
-        padding-bottom: 40px; }
+        top: 30%; }
         .parent .body .three-layer .slot-wrapper .slot-parent {
-          display: flex;
-          flex-direction: column; }
+          position: relative; }
           .parent .body .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
             font-size: 80px; }
@@ -68,8 +64,7 @@
               display: flex;
               font-family: Yfx, serif;
               width: 65px;
-              height: 72px;
-              padding-top: 5px; }
+              height: 72px; }
             .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
               height: 72px;
               overflow: hidden;
@@ -77,20 +72,22 @@
               display: flex;
               cursor: pointer; }
           .parent .body .three-layer .slot-wrapper .slot-parent .arrow {
+            position: absolute;
             width: 30px;
             opacity: 0;
             cursor: pointer;
-            margin-left: 32%;
             pointer-events: none;
-            margin-bottom: 20px; }
+            top: -55px;
+            left: 32%; }
           .parent .body .three-layer .slot-wrapper .slot-parent .down-arrow {
+            position: absolute;
             width: 30px;
             opacity: 0;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 32%;
             pointer-events: none;
-            margin-top: 20px; }
+            bottom: -47px;
+            left: 32%; }
     .parent .body .designation {
       font-family: Yfx, serif;
       display: flex;
@@ -115,7 +112,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 5px;
     min-height: 62px; }
 
   .parent .body .three-layer {
@@ -130,8 +126,7 @@
       font-size: 65px; }
       .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .a-text {
         width: 55px;
-        height: 62px;
-        padding-top: 5px; }
+        height: 62px; }
       .parent .body .three-layer .slot-wrapper .slot-parent .slot-container .slot {
         height: 62px; }
   .parent .body .designation {
@@ -152,7 +147,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 5px;
     min-height: 72px;
     font-size: 8vh; }
 
@@ -210,7 +204,7 @@
           align-items: center; }
           .parent .three-layer .slot-wrapper .slot-parent .slot-container {
             display: flex;
-            margin-top: 15px; }
+            margin-top: 22px; }
             .parent .three-layer .slot-wrapper .slot-parent .slot-container .slot {
               height: 72px;
               overflow: hidden;
@@ -228,7 +222,7 @@
             transform: rotate(180deg);
             cursor: pointer;
             pointer-events: none;
-            margin-top: 0; } }
+            margin-top: -5px; } }
 @media only screen and (max-width: 600px) {
   .parent .logo-wrapper {
     position: absolute;

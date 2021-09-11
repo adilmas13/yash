@@ -3,7 +3,6 @@
 $cell-width: 65px;
 $cell-height: 72px;
 $cell-font-size: 80px;
-$cell-padding: 5px;
 
 :global {
   .column {
@@ -16,7 +15,6 @@ $cell-padding: 5px;
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: $cell-padding;
     min-height: $cell-height;
   }
 }
@@ -35,19 +33,17 @@ $cell-padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     transition: 0.3s ease-out filter;
 
     .three-layer {
-      height: 270px;
+      height: 260px;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       .yash-text-wrapper {
         position: absolute;
         right: calc(50% + 60px);
-        padding-bottom: 40px;
+        top: 30%;
         z-index: 1;
 
         .yash-text {
@@ -82,11 +78,10 @@ $cell-padding: 5px;
       .slot-wrapper {
         position: absolute;
         left: calc(50% + 60px);
-        padding-bottom: 40px;
+        top: 30%;
 
         .slot-parent {
-          display: flex;
-          flex-direction: column;
+          position: relative;
 
           .slot-container {
             display: flex;
@@ -97,7 +92,6 @@ $cell-padding: 5px;
               font-family: Yfx, serif;
               width: $cell-width;
               height: $cell-height;
-              padding-top: $cell-padding;
             }
 
             .slot {
@@ -110,26 +104,27 @@ $cell-padding: 5px;
           }
 
           .arrow {
+            position: absolute;
             width: 30px;
             opacity: 0;
             cursor: pointer;
-            margin-left: 32%;
             pointer-events: none;
-            margin-bottom: 20px;
+            top: -55px;
+            left: 32%;
           }
 
           .down-arrow {
+            position: absolute;
             width: 30px;
             opacity: 0;
             transform: rotate(180deg);
             cursor: pointer;
-            margin-left: 32%;
             pointer-events: none;
-            margin-top: 20px;
+            bottom: -47px;
+            left: 32%;
           }
         }
       }
-
     }
 
     .designation {
@@ -159,7 +154,6 @@ $cell-padding: 5px;
   $cell-width: 55px;
   $cell-height: 62px;
   $cell-font-size: 65px;
-  $cell-padding: 5px;
 
   :global {
     .column {
@@ -172,7 +166,6 @@ $cell-padding: 5px;
       display: flex;
       justify-content: center;
       width: 100%;
-      padding-top: $cell-padding;
       min-height: $cell-height;
     }
   }
@@ -207,7 +200,6 @@ $cell-padding: 5px;
               .a-text {
                 width: $cell-width;
                 height: $cell-height;
-                padding-top: $cell-padding;
               }
 
               .slot {
@@ -251,7 +243,6 @@ $cell-padding: 5px;
       display: flex;
       justify-content: center;
       width: 100%;
-      padding-top: $cell-padding;
       min-height: $cell-height;
       font-size: 8vh;
     }
@@ -332,7 +323,7 @@ $cell-padding: 5px;
 
           .slot-container {
             display: flex;
-            margin-top: 15px;
+            margin-top: 22px;
 
             .slot {
               height: $cell-height;
@@ -356,7 +347,7 @@ $cell-padding: 5px;
             transform: rotate(180deg);
             cursor: pointer;
             pointer-events: none;
-            margin-top: 0;
+            margin-top: -5px;
           }
         }
       }
